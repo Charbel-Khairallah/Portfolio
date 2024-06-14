@@ -1,10 +1,26 @@
 @import "./../Resources/Theme.css";
 
+
 html, body {
     height: 100%;
     width: 100%;
     margin: 0px;
+    font-family: Georgia, serif;
 }
+
+a {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#LinkedInPath {
+  fill: var(--MainBackground);
+}
+
+/*#MailPath {
+ stroke: var(--SecondaryBackground);
+ stroke-width: 6px;;
+}*/
 
 #MainContainer{
     display: block;
@@ -106,6 +122,12 @@ html, body {
   }
 
 
+
+  .SocialMediaSVG{
+    fill: var(--SecondaryBackground);
+  }
+
+
 @keyframes GlowInAnimation {
   0% {
     filter: none;
@@ -114,14 +136,14 @@ html, body {
 
   100% {
     filter: drop-shadow(0px 0px 3px var(--SecondaryTextColor));
-    fill: var(--SecondaryTextColor);
+    fill: var(--SecondaryBackground);
   }
 }
 
 @keyframes GlowOutAnimation {
   0% {
     filter: drop-shadow(0px 0px 3px var(--SecondaryTextColor));
-    fill: var(--SecondaryTextColor);
+    fill: var(--SecondaryBackground);
   }
 
   100% {
