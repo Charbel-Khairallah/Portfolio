@@ -1,0 +1,13 @@
+:root {
+    --MainBackground: rgba(54, 57, 63, 1);
+    --SecondaryBackground: rgba(40, 41, 46, 1);
+    --MainTextColor: rgba(240, 240, 240, 1);
+    --SecondaryTextColor: rgba(0, 139, 139, 1);
+
+    --FirstHeaderSize: 40px;
+    --SecondHeaderSize: 30px;
+    --ThirdHeaderSize: 24px;
+    --MainTextSize: 20px;
+
+    --NormalSpace: 20px;
+}
