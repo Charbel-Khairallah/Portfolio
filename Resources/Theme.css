@@ -5,12 +5,40 @@
     /*--SecondaryTextColor: rgba(0, 139, 139, 1);*/
     --SecondaryTextColor: rgba(255, 238, 16, 1);
 
-    --FirstHeaderSize: 40px;
-    --SecondHeaderSize: 30px;
-    --ThirdHeaderSize: 24px;
-    --MainTextSize: 20px;
+    @media only screen and (hover: none) and (pointer: coarse) {
+        --HeaderHeight: 180px;
+        --HeaderGradientHeight: 40px;
+
+        --FirstHeaderSize: 56px;
+        --SecondHeaderSize: 44px;
+        --ThirdHeaderSize: 32px;
+        --MainTextSize: 28px;
+
+        --IconSize: 100px;
+
+        --AnimationDuration: 0.25s;
+        
+        --IsMobile: 1;
+    };
+
+    @media (hover: hover) {
+        --HeaderHeight: 80px;
+        --HeaderGradientHeight: 25px;
+
+        --FirstHeaderSize: 40px;
+        --SecondHeaderSize: 30px;
+        --ThirdHeaderSize: 24px;
+        --MainTextSize: 20px;
+
+        --IconSize: 40px;
+
+        --AnimationDuration: 0.5s;
+
+        --IsMobile: 0;
+    };
+
+    --MobileTopSpace: calc(var(--HeaderHeight) * 0.5 - var(--IconSize) * 0.5);
+    
 
     --NormalSpace: 20px;
-
-    --AnimationDuration: 0.5s;
 }

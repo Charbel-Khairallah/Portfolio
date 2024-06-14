@@ -1,0 +1,22 @@
+@import "./../Resources/Theme.css";
+
+@media (hover: hover) {
+  #MoreSeparator {
+    display: none;
+  }
+
+  #SocialMediaIconsList {
+    top: 50%;
+  }
+
+  #SocialMediaButtonsToggle {
+    display: none;
+  }
+}
+
+  
+
+
+
+
+
