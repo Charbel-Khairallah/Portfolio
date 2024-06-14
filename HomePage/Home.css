@@ -18,7 +18,7 @@ html, body {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    height: 90px;
+    height: 80px;
     background-color: var(--SecondaryBackground);
     color: var(--MainTextColor);
 }
@@ -26,7 +26,7 @@ html, body {
 #HeaderGradient{
     display: block;
     width: 100%;
-    height: 30px;
+    height: 25px;
     background-image: linear-gradient(var(--SecondaryBackground), var(--MainBackground));
 }
 
@@ -57,10 +57,10 @@ html, body {
   #SocialMediaIconsList li a {
     position: relative; 
     display: block;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     text-align: center;
-    line-height: 63px;
+    /*line-height: 63px;*/
     background: var(--MainBackground);
     border-radius: 50%;
     font-size: 30px;
@@ -70,19 +70,13 @@ html, body {
 
 
   #SocialMediaIconsList li a svg {
-    width: 70%;
-    height: 70%;
-    top: 15%;
-    left: 15%;
+    width: 60%;
+    height: 60%;
+    top: 10%;
+    position: relative;
     fill: var(--SecondaryBackground);
-    transition: transform ease 0.5s;
+    transition: transform ease var(--AnimationDuration);
     animation-iteration-count: 1;
-
-
-    /*animation-name: GlowInAnimation;
-    animation-duration: 0.5s;
-    animation-direction: forwards;
-    animation-iteration-count: 1;*/
   }
 
   
@@ -95,7 +89,7 @@ html, body {
     height: 100%;
     border-radius: 50%;
     background: var(--SecondaryTextColor);
-    transition: .5s;
+    transition: var(--AnimationDuration);
     transform: scale(.9);
     z-index: -1;
   }
@@ -119,22 +113,14 @@ html, body {
   }
 
   100% {
-    filter: /*drop-shadow(0px 0px 1px rgba(40, 41, 46, 1))
-            drop-shadow(0px 0px 1px rgba(30, 65, 69, 1))
-            drop-shadow(0px 0px 1px rgba(20, 90, 92, 1))
-            drop-shadow(0px 0px 1px rgba(10, 114, 116, 1))*/
-            drop-shadow(0px 0px 3px rgba(0, 139, 139, 1));
+    filter: drop-shadow(0px 0px 3px var(--SecondaryTextColor));
     fill: var(--SecondaryTextColor);
   }
 }
 
 @keyframes GlowOutAnimation {
   0% {
-    filter: /*drop-shadow(0px 0px 1px rgba(40, 41, 46, 1))
-            drop-shadow(0px 0px 1px rgba(30, 65, 69, 1))
-            drop-shadow(0px 0px 1px rgba(20, 90, 92, 1))
-            drop-shadow(0px 0px 1px rgba(10, 114, 116, 1))*/
-            drop-shadow(0px 0px 3px rgba(0, 139, 139, 1));
+    filter: drop-shadow(0px 0px 3px var(--SecondaryTextColor));
     fill: var(--SecondaryTextColor);
   }
 
