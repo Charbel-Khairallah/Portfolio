@@ -124,11 +124,83 @@ a {
     transition: var(--AnimationDuration);
 }
 
+#BodyContainer{
+    width: 100%;
+}
 
 
+#ProfileDescription {
+    color: var(--MainTextColor);
+    background-color: var(--MainBackground);
+    font-size: var(--MainTextSize);
+    line-height: var(--LineHeight);
+    border: solid 2px var(--MainTextColor);
+    padding: 0% 2%;
+    border-radius: var(--BorderRadius);
+    box-shadow: 0 0 10px var(--MainTextColor);
+
+    margin-top: var(--VerticalBoxMargin);
+    margin-left: var(--HorizontalBoxMargin);
+    margin-right: var(--HorizontalBoxMargin);
+    
+    position: relative;
+    z-index: 1;
+
+    /*transition-duration: var(--AnimationDuration);*/
+}
+
+#ProfileDescriptionSubContainer {
+    color: transparent;
+    background-color: var(--SecondaryTextColor);
+    font-size: var(--MainTextSize);
+    line-height: var(--LineHeight);
+    border: solid 2px var(--SecondaryTextColor);
+    padding: 0% 2%;
+    border-radius: var(--BorderRadius);
+    position: absolute;
+
+    margin-top: var(--VerticalBoxMargin);
+    margin-left: var(--HorizontalBoxMargin);
+    margin-right: var(--HorizontalBoxMargin);
+
+    -webkit-transform: translate(6px, calc(-100% - var(--VerticalBoxMargin) + 6px)); 
+    transform: translate(6px ,calc(-100% - var(--VerticalBoxMargin) + 6px));
+
+    box-shadow: 0 0 10px var(--SecondaryTextColor);
+
+    transition-duration: var(--AnimationDuration);
+
+    animation: MovementAnimation 2s ease-in-out infinite;
+
+    z-index: 0;
+}
+
+#ProfileDescriptionSubContainer:hover {
+    -webkit-transform: translate(12px, calc(-100% - var(--VerticalBoxMargin) + 12px)); 
+    transform: translate(12px ,calc(-100% - var(--VerticalBoxMargin) + 12px));
+}
+
+/*#ProfileDescription:hover {
+    border-color: var(--SecondaryTextColor);
+}*/
 
 
+@keyframes MovementAnimation {
+    0% {
+        -webkit-transform: translate(-0px, calc(-100% - var(--VerticalBoxMargin) + -0px)); 
+        transform: translate(-0px ,calc(-100% - var(--VerticalBoxMargin) + -0px));
+    }
 
+    50% {
+        -webkit-transform: translate(5px, calc(-100% - var(--VerticalBoxMargin) + 5px)); 
+        transform: translate(5px ,calc(-100% - var(--VerticalBoxMargin) + 5px));
+    }
+  
+    100% {
+        -webkit-transform: translate(-0px, calc(-100% - var(--VerticalBoxMargin) + -0px)); 
+        transform: translate(-0px ,calc(-100% - var(--VerticalBoxMargin) + -0px));
+    }
+  }
 
 
 

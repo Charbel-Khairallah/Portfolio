@@ -38,6 +38,7 @@ SocialMediaCircles.forEach(Circle => {
 
 });
 
+
 if(IsMobile){
     function ShowMore(){
         var IconsDiv = document.getElementById('SocialMediaIcons');

@@ -14,7 +14,12 @@
         --ThirdHeaderSize: 32px;
         --MainTextSize: 28px;
 
+        --BorderRadius: 40px;
+        --LineHeight: 40px;
         --IconSize: 100px;
+
+        --HorizontalBoxMargin: 60px; /*6%;*/
+        --VerticalBoxMargin: 60px; /*6%;*/
 
         --AnimationDuration: 0.25s;
         
@@ -30,7 +35,12 @@
         --ThirdHeaderSize: 24px;
         --MainTextSize: 20px;
 
+        --BorderRadius: 30px;
+        --LineHeight: 30px;
         --IconSize: 40px;
+
+        --HorizontalBoxMargin: 60px; /*6%;*/
+        --VerticalBoxMargin: 20px; /*2%;*/
 
         --AnimationDuration: 0.5s;
 
@@ -41,4 +51,5 @@
     
 
     --NormalSpace: 20px;
+
 }
