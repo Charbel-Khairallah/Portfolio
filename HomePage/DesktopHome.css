@@ -1,6 +1,27 @@
 @import "./../Resources/Theme.css";
 
 @media (hover: hover) {
+  .SectionSelection {
+    width: 30%;
+    /*min-width: 200px;*/
+  }
+
+  /*.SectionSeparator {
+    display: inline-block;
+    min-width: 40px;
+  }*/
+
+  .SectionTitle {
+    transition-duration: var(--AnimationDuration);
+    max-width: 100%;
+    /*white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: clip; */
+  }
+
+
+
+
   #MoreSeparator {
     display: none;
   }
