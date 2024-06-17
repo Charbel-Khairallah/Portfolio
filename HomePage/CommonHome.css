@@ -18,23 +18,23 @@ svg {
     transition-duration: var(--AnimationDuration);
 }
 
-
 .SocialMediaSVG {
-    fill: var(--SecondaryBackground);
+    fill: var(--BackgroundDarkGrey);
 }
 
 .IconOutline {
-    stroke: var(--SecondaryBackground);
+    stroke: var(--BackgroundDarkGrey);
 }
 
 .SectionSelection {
     box-sizing: border-box;
     padding: 7%;
-    box-shadow: 0 0 15px var(--MainTextColor);
+    box-shadow: 0 0 15px var(--TextLightGrey);
     border-radius: var(--BorderRadius);
-    border: solid 2px var(--MainTextColor);
+    border: solid 2px var(--TextLightGrey);
     display: inline-block;
     transition-duration: calc(var(--AnimationDuration) * 0.4);
+    background: var(--BackgroundLightGrey);
 }
 
 .SectionSelection:hover {
@@ -45,14 +45,19 @@ svg {
     margin-top: 20px;
     text-align: center;
     font-size: var(--ThirdHeaderSize);
-    color: var(--MainTextColor);
+    color: var(--TextWhite);
+    transition-duration: var(--AnimationDuration);
 }
 
 .SectionSVG {
-    fill: var(--MainTextColor);
+    fill: var(--BackgroundWhite);
 }
 
 
+
+::-webkit-scrollbar {
+    display: none;
+}
 
 
 
@@ -66,15 +71,15 @@ svg {
     justify-content: space-between;
     width: 100%;
     height: var(--HeaderHeight);
-    background-color: var(--SecondaryBackground);
-    color: var(--MainTextColor);
+    background-color: var(--BackgroundDarkGrey);
+    color: var(--TextLightGrey);
 }
 
 #HeaderGradient{
     display: block;
     width: 100%;
     height: var(--HeaderGradientHeight);
-    background-image: linear-gradient(var(--SecondaryBackground), var(--MainBackground));
+    background-image: linear-gradient(var(--BackgroundDarkGrey), var(--BackgroundLightGrey));
 }
 
   
@@ -82,7 +87,7 @@ svg {
     display: block;
     width: 100%;
     min-height: 100%;
-    background-color: var(--MainBackground);
+    background-color: var(--BackgroundLightGrey);
 }
 
 #H1{
@@ -90,7 +95,7 @@ svg {
     margin: var(--NormalSpace);
     overflow: hidden;
     transition-duration: var(--AnimationDuration);
-    color: var(--HeaderTextColor);
+    color: var(--TextWhite);
 }
 
 #SocialMediaIconsList {
@@ -112,7 +117,7 @@ svg {
     height: 60%;
     top: 20%;
     position: relative;
-    fill: var(--SecondaryBackground);
+    fill: var(--BackgroundLightGrey);
     transition: transform ease var(--AnimationDuration);
     animation-iteration-count: 1;
 }
@@ -125,7 +130,7 @@ svg {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: var(--SecondaryTextColor);
+    background: var(--MainThemeColor);
     transition: var(--AnimationDuration);
     transform: scale(.9);
     z-index: -1;
@@ -133,27 +138,27 @@ svg {
 
 #SocialMediaIconsList li a:hover::before {
     transform: scale(1.1);
-    box-shadow: 0 0 15px var(--SecondaryTextColor);
+    box-shadow: 0 0 15px var(--MainThemeColor);
 }
 
 
 #SocialMediaIconsList li a:hover {
-    color: var(--SecondaryTextColor);
-    box-shadow: 0 0 5px var(--SecondaryTextColor);
-    text-shadow: 0 0 5px var(--SecondaryTextColor);
-    background: var(--MainBackground);
+    color: var(--MainThemeColor);
+    box-shadow: 0 0 5px var(--MainThemeColor);
+    text-shadow: 0 0 5px var(--MainThemeColor);
+    background: var(--BackgroundWhite);
 }
 
 #SocialMediaIconsList li a {
     position: relative; 
     display: block;
     text-align: center;
-    background: var(--MainBackground);
+    background: var(--BackgroundWhite);
     border-radius: 50%;
     width: var(--IconSize);
     height: var(--IconSize);
 
-    color: var(--MainTextColor);
+    color: var(--TextLightGrey);
     transition: var(--AnimationDuration);
 }
 
@@ -162,7 +167,6 @@ svg {
 }
 
 #SecondBodyContainer {
-    margin-top: var(--VerticalBoxMargin);
     margin-left: var(--HorizontalBoxMargin);
     margin-right: var(--HorizontalBoxMargin);
 
@@ -173,14 +177,14 @@ svg {
 
 
 #ProfileDescription {
-    color: var(--MainTextColor);
-    background-color: var(--MainBackground);
+    color: var(--TextWhite);
+    background-color: var(--BackgroundLightGrey);
     font-size: var(--MainTextSize);
     line-height: var(--LineHeight);
-    border: solid 2px var(--MainTextColor);
+    border: solid 2px var(--TextWhite);
     padding: 0% 2%;
     border-radius: var(--BorderRadius);
-    box-shadow: 0 0 10px var(--MainTextColor);
+    box-shadow: 0 0 10px var(--TextWhite);
 
     margin-top: var(--VerticalBoxMargin);
     margin-left: var(--HorizontalBoxMargin);
@@ -192,10 +196,10 @@ svg {
 
 #ProfileDescriptionSubContainer {
     color: transparent;
-    background-color: var(--SecondaryTextColor);
+    background-color: var(--MainThemeColor);
     font-size: var(--MainTextSize);
     line-height: var(--LineHeight);
-    border: solid 2px var(--SecondaryTextColor);
+    border: solid 2px var(--MainThemeColor);
     padding: 0% 2%;
     border-radius: var(--BorderRadius);
 
@@ -206,7 +210,7 @@ svg {
     -webkit-transform: translate(6px, calc(-100% - var(--VerticalBoxMargin) + 6px)); 
     transform: translate(6px ,calc(-100% - var(--VerticalBoxMargin) + 6px));
 
-    box-shadow: 0 0 10px var(--SecondaryTextColor);
+    box-shadow: 0 0 10px var(--MainThemeColor);
 
     transition-duration: var(--AnimationDuration);
 

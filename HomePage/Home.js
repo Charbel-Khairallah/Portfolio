@@ -2,8 +2,7 @@ const RootStyles = getComputedStyle(document.documentElement);
 var AnimationDuration =  RootStyles.getPropertyValue('--AnimationDuration');
 var IsMobile = (RootStyles.getPropertyValue('--IsMobile') == '1');
 
-var SecondaryTextColor = RootStyles.getPropertyValue('--SecondaryTextColor');
-var MainTextColor = RootStyles.getPropertyValue('--MainTextColor');
+var SecondaryTextColor = RootStyles.getPropertyValue('--MainThemeColor');
 
 
 
@@ -47,13 +46,13 @@ function SelectSection(ID){
         const Icon = SectionSelection.children[0];
         const Title = SectionSelection.children[1];
         if(SectionSelection.id == ID) {
-            SectionSelection.style.setProperty('border', 'solid 2px var(--SecondaryTextColor)');
-            SectionSelection.style.setProperty('box-shadow', '0 0 30px var(--SecondaryTextColor)');
-            Icon.style.setProperty('filter', 'drop-shadow(0px 0px 8px var(--SecondaryTextColor))');
-            Title.style.setProperty('filter', 'drop-shadow(0px 0px 8px var(--SecondaryTextColor))');
+            SectionSelection.style.setProperty('border', 'solid 2px var(--MainThemeColor)');
+            SectionSelection.style.setProperty('box-shadow', '0 0 30px var(--MainThemeColor)');
+            Icon.style.setProperty('filter', 'drop-shadow(0px 0px 8px var(--MainThemeColor))');
+            Title.style.setProperty('filter', 'drop-shadow(0px 0px 8px var(--MainThemeColor))');
         } else {
-            SectionSelection.style.setProperty('border', 'solid 2px var(--MainTextColor)');
-            SectionSelection.style.setProperty('box-shadow', '0 0 15px var(--MainTextColor)');
+            SectionSelection.style.setProperty('border', 'solid 2px var(--TextWhite)');
+            SectionSelection.style.setProperty('box-shadow', '0 0 15px var(--TextWhite)');
             Icon.style.setProperty('filter', 'none');
             Title.style.setProperty('filter', 'none');
         }
@@ -119,7 +118,7 @@ if(IsMobile){
 
         var Title = document.getElementById('H1');
         Title.style.setProperty('width', '100%');
-        Title.style.setProperty('color', 'var(--HeaderTextColor)');
+        Title.style.setProperty('color', 'var(--TextWhite)');
     }
 
 
@@ -131,7 +130,7 @@ if(IsMobile){
         Button.style.setProperty('box-shadow', '0 0 20px ' + SecondaryTextColor);
         Button.style.setProperty('text-shadow', '0 0 20px ' + SecondaryTextColor);
         Button.style.setProperty('transform', 'scale(1.1)');
-        Button.style.setProperty('background', 'var(--MainTextColor)');
+        Button.style.setProperty('background', 'var(--TextLightGrey)');
     });
 
     document.getElementById('SocialMediaButtonsToggleA').addEventListener('touchend', function() {
@@ -150,7 +149,7 @@ if(IsMobile){
         Button.style.setProperty('box-shadow', 'none');
         Button.style.setProperty('text-shadow', 'none');
         Button.style.setProperty('transform', 'scale(1)');
-        Button.style.setProperty('background', 'var(--MainBackground)');
+        Button.style.setProperty('background', 'var(--BackgroundWhite)');
     });
 } else {
     var OldTime = new Date(); 
@@ -167,7 +166,7 @@ if(IsMobile){
             let NewColor;
 
             if (windowWidth > 800) {
-                NewColor = 'var(--MainTextColor)';
+                NewColor = 'var(--TextWhite)';
             } else {
                 NewColor = 'transparent';
             }

@@ -2,6 +2,16 @@
 
 @media only screen and (hover: none) and (pointer: coarse) {
 
+  .SectionSelection{
+    max-width: 200px;
+  }
+
+  .SectionTitle {
+    margin-left: -100%;
+    margin-right: -100%;
+  }
+
+
   #H1{
     display: flex;
     justify-content: center;
@@ -27,7 +37,7 @@
     display: inline-block;
     width: calc(var(--IconSize) + 2 * 20px);
     height: var(--HeaderHeight);
-    background-color: var(--SecondaryBackground);
+    background-color: var(--BackgroundDarkGrey);
   }
 
   #MoreSeparator {
@@ -35,7 +45,7 @@
     right: calc(var(--IconSize) + 2 * 19px);
     width: 50px;
     height: var(--HeaderHeight);
-    background: linear-gradient(90deg, transparent 0%, var(--SecondaryBackground) 100%);
+    background: linear-gradient(90deg, transparent 0%, var(--BackgroundDarkGrey) 100%);
   }
 
   #SocialMediaButtonsToggle a svg{
@@ -44,7 +54,7 @@
     top: 20%;
     left: 20%;
     position: relative;
-    fill: var(--SecondaryBackground);
+    fill: var(--BackgroundDarkGrey);
     transition: transform ease var(--AnimationDuration);
     animation-iteration-count: 1;
   }
@@ -53,8 +63,8 @@
     position: relative;
     left: 20px;
     top: var(--MobileTopSpace);
-    color: var(--SecondaryTextColor);
-    background: var(--MainBackground);
+    color: var(--MainThemeColor);
+    background: var(--BackgroundWhite);
     display: inline-block;
     width: var(--IconSize);
     height: var(--IconSize);
@@ -62,7 +72,9 @@
     transition: var(--AnimationDuration);
   }
 
-
+  #SecondBodyContainer {
+    margin-top: calc( 1 * var(--VerticalBoxMargin));
+  }
 }
 
 

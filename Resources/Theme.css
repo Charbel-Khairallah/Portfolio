@@ -1,23 +1,30 @@
 :root {
-    --MainBackground: rgba(240, 240, 240, 1);
+    /*--MainBackground: rgba(240, 240, 240, 1);
     --SecondaryBackground: rgba(40, 41, 46, 1);
     --MainTextColor: rgba(54, 57, 63, 1);
     --SecondaryTextColor: rgba(0, 139, 139, 1);
-    /*--SecondaryTextColor: rgba(255, 238, 16, 1);*/
+    --SecondaryTextColor: rgba(255, 238, 16, 1);*/
 
-    --HeaderTextColor: var(--MainBackground);
+    --BackgroundWhite: rgba(240, 240, 240, 1);
+    --TextWhite: rgba(240, 240, 240, 1);
+    --BackgroundLightGrey: rgba(54, 57, 63, 1);
+    --TextLightGrey: rgba(54, 57, 63, 1);
+    --BackgroundDarkGrey: rgba(40, 41, 46, 1);
+    --TextDarkGrey: rgba(40, 41, 46, 1);
+    --MainThemeColor: rgba(0, 139, 139, 1);
 
+    /* Mobile */
     @media only screen and (hover: none) and (pointer: coarse) {
         --HeaderHeight: 180px;
         --HeaderGradientHeight: 40px;
 
-        --FirstHeaderSize: 56px;
+        --FirstHeaderSize: 70px;
         --SecondHeaderSize: 44px;
-        --ThirdHeaderSize: 32px;
-        --MainTextSize: 28px;
+        --ThirdHeaderSize: 20px;
+        --MainTextSize: 7px;
 
         --BorderRadius: 40px;
-        --LineHeight: 40px;
+        --LineHeight: 20px;
         --IconSize: 100px;
 
         --HorizontalBoxMargin: 60px; /*6%;*/
@@ -28,6 +35,7 @@
         --IsMobile: 1;
     };
 
+    /* Desktop */
     @media (hover: hover) {
         --HeaderHeight: 80px;
         --HeaderGradientHeight: 25px;
