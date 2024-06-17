@@ -20,11 +20,11 @@
 
         --FirstHeaderSize: 70px;
         --SecondHeaderSize: 44px;
-        --ThirdHeaderSize: 20px;
-        --MainTextSize: 7px;
+        --ThirdHeaderSize: 24px;
+        --MainTextSize: 8px;
 
         --BorderRadius: 40px;
-        --LineHeight: 20px;
+        --LineHeight: 14px;
         --IconSize: 100px;
 
         --HorizontalBoxMargin: 60px; /*6%;*/
