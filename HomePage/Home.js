@@ -7,6 +7,7 @@ var MainTextColor = RootStyles.getPropertyValue('--MainTextColor');
 /*var MainBackground = RootStyles.getPropertyValue('--MainBackground');*/
 
 
+
 const SocialMediaList = document.getElementById('SocialMediaIconsList');
 const SocialMediaCircles = SocialMediaList.querySelectorAll('*');
 

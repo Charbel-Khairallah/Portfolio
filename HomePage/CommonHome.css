@@ -175,8 +175,6 @@ a {
     
     position: relative;
     z-index: 1;
-
-    /*transition-duration: var(--AnimationDuration);*/
 }
 
 #ProfileDescriptionSubContainer {
@@ -187,7 +185,6 @@ a {
     border: solid 2px var(--SecondaryTextColor);
     padding: 0% 2%;
     border-radius: var(--BorderRadius);
-    position: absolute;
 
     margin-top: var(--VerticalBoxMargin);
     margin-left: var(--HorizontalBoxMargin);
@@ -202,6 +199,7 @@ a {
 
     animation: MovementAnimation 2s ease-in-out infinite;
 
+    position: relative;
     z-index: 0;
 }
 
