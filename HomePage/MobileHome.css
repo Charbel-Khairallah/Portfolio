@@ -54,7 +54,7 @@
     left: 20px;
     top: var(--MobileTopSpace);
     color: var(--SecondaryTextColor);
-    background: var(--MainTextColor);
+    background: var(--MainBackground);
     display: inline-block;
     width: var(--IconSize);
     height: var(--IconSize);

@@ -4,7 +4,6 @@ var IsMobile = (RootStyles.getPropertyValue('--IsMobile') == '1');
 
 var SecondaryTextColor = RootStyles.getPropertyValue('--SecondaryTextColor');
 var MainTextColor = RootStyles.getPropertyValue('--MainTextColor');
-/*var MainBackground = RootStyles.getPropertyValue('--MainBackground');*/
 
 
 
@@ -39,6 +38,52 @@ SocialMediaCircles.forEach(Circle => {
 
 });
 
+var SelectedSectionID = 'Section1';
+
+function SelectSection(ID){
+    SelectedSectionID = ID;
+    const SectionSelections = document.querySelectorAll('.SectionSelection');
+    SectionSelections.forEach(SectionSelection => {
+        const Icon = SectionSelection.children[0];
+        const Title = SectionSelection.children[1];
+        if(SectionSelection.id == ID) {
+            SectionSelection.style.setProperty('border', 'solid 2px var(--SecondaryTextColor)');
+            SectionSelection.style.setProperty('box-shadow', '0 0 30px var(--SecondaryTextColor)');
+            Icon.style.setProperty('filter', 'drop-shadow(0px 0px 8px var(--SecondaryTextColor))');
+            Title.style.setProperty('filter', 'drop-shadow(0px 0px 8px var(--SecondaryTextColor))');
+        } else {
+            SectionSelection.style.setProperty('border', 'solid 2px var(--MainTextColor)');
+            SectionSelection.style.setProperty('box-shadow', '0 0 15px var(--MainTextColor)');
+            Icon.style.setProperty('filter', 'none');
+            Title.style.setProperty('filter', 'none');
+        }
+    });
+}
+
+SelectSection(SelectedSectionID);
+
+
+const SectionSelections = document.querySelectorAll('.SectionSelection');
+SectionSelections.forEach(SectionSelection => {
+    const Icon = SectionSelection.children[0];
+    const Title = SectionSelection.children[1];
+
+    SectionSelection.addEventListener('mouseover', function() {
+        Icon.style.setProperty('animation', 'GlowInOutAnimationWithoutFill 1s linear Infinite');
+        Title.style.setProperty('animation', 'GlowInOutAnimationWithoutFill 1s linear Infinite');
+        SectionSelection.style.setProperty('animation', 'GlowInOutAnimationWithFill 1s linear Infinite');
+    });
+
+    SectionSelection.addEventListener('mouseout', function() {
+        Icon.style.setProperty('animation', 'none');
+        Title.style.setProperty('animation', 'none');
+        SectionSelection.style.setProperty('animation', 'none');
+    });
+
+    SectionSelection.addEventListener('click', function(){
+        SelectSection(SectionSelection.id);
+    });
+});
 
 
 if(IsMobile){
@@ -57,7 +102,7 @@ if(IsMobile){
 
         var Title = document.getElementById('H1');
         Title.style.setProperty('width', '100%');
-        Title.style.setProperty('color', MainTextColor);
+        Title.style.setProperty('color', 'var(--HeaderTextColor)');
     }
 
 
@@ -69,7 +114,7 @@ if(IsMobile){
         Button.style.setProperty('box-shadow', '0 0 20px ' + SecondaryTextColor);
         Button.style.setProperty('text-shadow', '0 0 20px ' + SecondaryTextColor);
         Button.style.setProperty('transform', 'scale(1.1)');
-        Button.style.setProperty('background', 'var(--MainBackground)');
+        Button.style.setProperty('background', 'var(--MainTextColor)');
     });
 
     document.getElementById('SocialMediaButtonsToggleA').addEventListener('touchend', function() {
@@ -88,17 +133,16 @@ if(IsMobile){
         Button.style.setProperty('box-shadow', 'none');
         Button.style.setProperty('text-shadow', 'none');
         Button.style.setProperty('transform', 'scale(1)');
-        Button.style.setProperty('background', 'var(--MainTextColor)');
+        Button.style.setProperty('background', 'var(--MainBackground)');
     });
 } else {
     var OldTime = new Date(); 
     var NewTime = null;
     var ThreashHold = 100;
 
-    function ShowHideSectionTitle() {
+    function ShowHideSectionTitle(ForceExecution = false) {
         NewTime = new Date();
-        if(((NewTime - OldTime)) >= ThreashHold){
-            console.log("Resized");
+        if(ForceExecution || ((NewTime - OldTime)) >= ThreashHold){
             OldTime = NewTime;
 
             const Titles = document.querySelectorAll('.SectionTitle');
@@ -127,12 +171,10 @@ if(IsMobile){
                 if(NewColor == 'transparent') {
                     Title.style.setProperty('transform', 'translateY(-200%)');
                     CurrentHeight = SVG_Height + 2 * ParentPadding;
-                    //ParentTag.style.setProperty('height', SVG_Height + 2 * ParentPadding + 'px');
                 }
                 else {
                     Title.style.setProperty('transform', 'translateY(0%)');
                     CurrentHeight = SVG_Height + 2 * ParentPadding + TitleHeight;
-                    //ParentTag.style.setProperty('height', SVG_Height + 2 * ParentPadding + TitleHeight + 'px');
                 }
 
                 if(CurrentHeight > SectionHeight) SectionHeight = CurrentHeight;
@@ -146,22 +188,6 @@ if(IsMobile){
     }
 
     window.addEventListener('resize', ShowHideSectionTitle);
-      
 
-    ShowHideSectionTitle();
-
-    /*function isTextOverflowing(element) {
-        const isOverflowing = element.scrollWidth > element.clientWidth;
-        console.log('scrollWidth:', element.scrollWidth, 'clientWidth:', element.clientWidth, 'isOverflowing:', isOverflowing);
-        return isOverflowing;
-      }
-
-      function ShowHideSectionTitle(){
-        const Titles = document.querySelectorAll('.SectionSeparator');
-        Titles.forEach(Title => {
-            isTextOverflowing(Title);
-        });
-      }
-
-      window.addEventListener('resize', ShowHideSectionTitle);*/
+    ShowHideSectionTitle(true);
 }

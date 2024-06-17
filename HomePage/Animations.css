@@ -1,0 +1,77 @@
+
+
+@keyframes MovementAnimation {
+    0% {
+        -webkit-transform: translate(-0px, calc(-100% - var(--VerticalBoxMargin) + -0px)); 
+        transform: translate(-0px ,calc(-100% - var(--VerticalBoxMargin) + -0px));
+    }
+
+    50% {
+        -webkit-transform: translate(5px, calc(-100% - var(--VerticalBoxMargin) + 5px)); 
+        transform: translate(5px ,calc(-100% - var(--VerticalBoxMargin) + 5px));
+    }
+  
+    100% {
+        -webkit-transform: translate(-0px, calc(-100% - var(--VerticalBoxMargin) + -0px)); 
+        transform: translate(-0px ,calc(-100% - var(--VerticalBoxMargin) + -0px));
+    }
+  }
+
+
+
+@keyframes GlowInAnimation {
+    0% {
+      filter: none;
+      fill: var(--SecondaryBackground);
+    }
+  
+    100% {
+      filter: drop-shadow(0px 0px 3px var(--SecondaryTextColor));
+      fill: var(--SecondaryBackground);
+    }
+  }
+  
+@keyframes GlowOutAnimation {
+    0% {
+      filter: drop-shadow(0px 0px 3px var(--SecondaryTextColor));
+      fill: var(--SecondaryBackground);
+    }
+  
+    100% {
+      filter: none;
+      fill: var(--SecondaryBackground);
+    }
+}
+
+
+@keyframes GlowInOutAnimationWithFill {
+    0% {
+        border: solid 2px var(--MainTextColor);
+        box-shadow: 0 0 15px var(--MainTextColor);
+    }
+
+    50% {
+        border: solid 2px var(--SecondaryTextColor);
+        box-shadow: 0 0 30px var(--SecondaryTextColor);
+    }
+    
+    100% {
+        border: solid 2px var(--MainTextColor);
+        box-shadow: 0 0 15px var(--MainTextColor);
+    }
+}
+
+
+@keyframes GlowInOutAnimationWithoutFill {
+    0% {
+        filter: none;
+    }
+
+    50% {
+        filter: drop-shadow(0px 0px 8px var(--SecondaryTextColor));
+    }
+    
+    100% {
+      filter: none;
+    }
+}
