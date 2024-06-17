@@ -68,13 +68,26 @@ SectionSelections.forEach(SectionSelection => {
     const Icon = SectionSelection.children[0];
     const Title = SectionSelection.children[1];
 
-    SectionSelection.addEventListener('mouseover', function() {
-        Icon.style.setProperty('animation', 'GlowInOutAnimationWithoutFill 1s linear Infinite');
-        Title.style.setProperty('animation', 'GlowInOutAnimationWithoutFill 1s linear Infinite');
-        SectionSelection.style.setProperty('animation', 'GlowInOutAnimationWithFill 1s linear Infinite');
+    var MouseOverEvent;
+    var MouseOutEvent;
+    var Duration;
+    if(IsMobile) {
+        MouseOverEvent = 'touchstart';
+        MouseOutEvent = 'touchend';
+        Duration = '2s';
+    } else {
+        MouseOverEvent = 'mouseover';
+        MouseOutEvent = 'mouseout';
+        Duration = '1s';
+    }
+
+    SectionSelection.addEventListener(MouseOverEvent, function() {
+        Icon.style.setProperty('animation', 'GlowInOutAnimationWithoutFill ' + Duration + ' linear Infinite');
+        Title.style.setProperty('animation', 'GlowInOutAnimationWithoutFill ' + Duration + ' linear Infinite');
+        SectionSelection.style.setProperty('animation', 'GlowInOutAnimationWithFill ' + Duration + ' linear Infinite');
     });
 
-    SectionSelection.addEventListener('mouseout', function() {
+    SectionSelection.addEventListener(MouseOutEvent, function() {
         Icon.style.setProperty('animation', 'none');
         Title.style.setProperty('animation', 'none');
         SectionSelection.style.setProperty('animation', 'none');
