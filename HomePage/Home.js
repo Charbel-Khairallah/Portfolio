@@ -84,12 +84,16 @@ SectionSelections.forEach(SectionSelection => {
     SectionSelection.addEventListener(MouseOverEvent, function() {
         Icon.style.setProperty('animation', 'GlowInOutAnimationWithoutFill ' + Duration + ' linear Infinite');
         Title.style.setProperty('animation', 'GlowInOutAnimationWithoutFill ' + Duration + ' linear Infinite');
+        Title.style.setProperty('scale', '1.2');
+        Icon.style.setProperty('scale', '1.2');
         SectionSelection.style.setProperty('animation', 'GlowInOutAnimationWithFill ' + Duration + ' linear Infinite');
     });
 
     SectionSelection.addEventListener(MouseOutEvent, function() {
         Icon.style.setProperty('animation', 'none');
         Title.style.setProperty('animation', 'none');
+        Title.style.setProperty('scale', '1');
+        Icon.style.setProperty('scale', '1');
         SectionSelection.style.setProperty('animation', 'none');
     });
 
