@@ -53,6 +53,21 @@ svg {
     fill: var(--BackgroundWhite);
 }
 
+#SectionsDots {
+    display: flex;
+    justify-content: center;
+
+}
+.SectionDot {
+    border-radius: 50%;
+    background: var(--BackgroundWhite);
+    width: 26px;
+    height: 26px;
+    display: inline-block;
+    margin: 20px;
+    transition-duration: var(--AnimationDuration);
+}
+
 
 
 ::-webkit-scrollbar {

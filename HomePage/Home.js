@@ -57,6 +57,20 @@ function SelectSection(ID){
             Title.style.setProperty('filter', 'none');
         }
     });
+
+    var SectionNumber = SelectedSectionID.charAt(SelectedSectionID.length - 1);
+    var SelectedDotID = 'Dot' + SectionNumber;
+    const Dots = Array.from(document.getElementById('SectionsDots').children);
+    Dots.forEach(Dot => {
+        if(Dot.id == SelectedDotID) {
+            Dot.style.setProperty('opacity', '1');
+            Dot.style.setProperty('scale', '1.2');
+        } else {
+            Dot.style.setProperty('opacity', '0.4');
+            Dot.style.setProperty('scale', '0.9');
+        }
+    });
+
 }
 
 SelectSection(SelectedSectionID);
