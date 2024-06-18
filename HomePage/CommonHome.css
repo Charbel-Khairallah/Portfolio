@@ -53,6 +53,24 @@ svg {
     fill: var(--BackgroundWhite);
 }
 
+
+.SectionDetail {
+    display: inline-block;
+    transition-duration: var(--AnimationDuration);
+    overflow: hidden;
+    height: 200px;
+    border-radius: var(--BorderRadius);
+    box-sizing: border-box;
+}
+
+#SectionDetails {
+    display: block;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
 #SectionsDots {
     display: flex;
     justify-content: center;

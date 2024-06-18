@@ -71,6 +71,29 @@ function SelectSection(ID){
         }
     });
 
+    const SectionsDetail = document.querySelectorAll('.SectionDetail');
+    SectionsDetail.forEach(SectionDetail => {
+        if(SectionDetail.id == (SelectedSectionID + "Details")){
+            SectionDetail.style.setProperty("width", "90%");
+            SectionDetail.style.setProperty("text-wrap", "wrap");
+            SectionDetail.style.setProperty("border", "solid 2px var(--TextWhite)");
+            SectionDetail.style.setProperty("box-shadow", "0 0 10px var(--TextWhite)");
+            SectionDetail.style.setProperty("padding", "20px");
+            SectionDetail.style.setProperty("color", "var(--TextWhite)");
+            SectionDetail.style.setProperty("transform", "translateX(0%)");
+        } else {
+            SectionDetail.style.setProperty("width", "0%");
+            SectionDetail.style.setProperty("text-wrap", "nowrap");
+            SectionDetail.style.setProperty("border", "none");
+            SectionDetail.style.setProperty("box-shadow", "none");
+            SectionDetail.style.setProperty("padding", "0px");
+            SectionDetail.style.setProperty("color", "transparent");
+            if(SectionDetail.id > (SelectedSectionID + "Details"))
+                SectionDetail.style.setProperty("transform", "translateX(100%)");
+            else 
+                SectionDetail.style.setProperty("transform", "translateX(-100%)");
+        }
+    });
 }
 
 SelectSection(SelectedSectionID);
@@ -95,11 +118,13 @@ SectionSelections.forEach(SectionSelection => {
     }
 
     SectionSelection.addEventListener(MouseOverEvent, function() {
-        Icon.style.setProperty('animation', 'GlowInOutAnimationWithoutFill ' + Duration + ' linear Infinite');
-        Title.style.setProperty('animation', 'GlowInOutAnimationWithoutFill ' + Duration + ' linear Infinite');
-        Title.style.setProperty('scale', '1.2');
-        Icon.style.setProperty('scale', '1.2');
-        SectionSelection.style.setProperty('animation', 'GlowInOutAnimationWithFill ' + Duration + ' linear Infinite');
+        if(SectionSelection.id != SelectedSectionID){
+            Icon.style.setProperty('animation', 'GlowInOutAnimationWithoutFill ' + Duration + ' linear Infinite');
+            Title.style.setProperty('animation', 'GlowInOutAnimationWithoutFill ' + Duration + ' linear Infinite');
+            Title.style.setProperty('scale', '1.2');
+            Icon.style.setProperty('scale', '1.2');
+            SectionSelection.style.setProperty('animation', 'GlowInOutAnimationWithFill ' + Duration + ' linear Infinite');
+        }
     });
 
     SectionSelection.addEventListener(MouseOutEvent, function() {
