@@ -58,10 +58,72 @@ svg {
     display: inline-block;
     transition-duration: var(--AnimationDuration);
     overflow: hidden;
-    height: 200px;
+    min-height: 200px;
     border-radius: var(--BorderRadius);
     box-sizing: border-box;
 }
+
+.SectionDot {
+    border-radius: 50%;
+    background: var(--BackgroundWhite);
+    width: 26px;
+    height: 26px;
+    display: inline-block;
+    margin: 20px;
+    transition-duration: var(--AnimationDuration);
+}
+
+.WorkExperienceImage svg{
+    fill: var(--BackgroundWhite);
+    max-width: 200px;
+    max-height: 200px;
+    padding-top: 10px;
+}
+
+.WorkExperienceTitle {
+    font-size: var(--SecondHeaderSize);
+}
+
+.WorkExperienceDuration {
+    font-size: var(--ThirdHeaderSize);
+}
+
+.WorkExperienceSection {
+    display: flex;
+}
+
+.WorkExperienceHeader {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.WorkExperienceDetails {
+    width: 100%;
+}
+
+.WorkExperienceBody {
+    padding: 20px;
+    font-size: var(--MainTextSize);
+    line-height: var(--LineHeight);
+}
+
+.WorkExperienceSeperator {
+    display: block;
+    width: 60%;
+    margin-left: 220px;
+    height: 2px;
+    border-bottom: 1px solid var(--MainThemeColor);
+    background: var(--BackgroundDarkGrey);
+  }
+
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
 
 #SectionDetails {
     display: block;
@@ -76,23 +138,6 @@ svg {
     justify-content: center;
 
 }
-.SectionDot {
-    border-radius: 50%;
-    background: var(--BackgroundWhite);
-    width: 26px;
-    height: 26px;
-    display: inline-block;
-    margin: 20px;
-    transition-duration: var(--AnimationDuration);
-}
-
-
-
-::-webkit-scrollbar {
-    display: none;
-}
-
-
 
 #TranslatedSVG{
     transform: translateY(11.175px);
