@@ -79,7 +79,8 @@ function SelectSection(ID){
             SectionDetail.style.setProperty("border", "solid 2px var(--TextWhite)");
             SectionDetail.style.setProperty("box-shadow", "0 0 10px var(--TextWhite)");
             SectionDetail.style.setProperty("padding", "20px");
-            SectionDetail.style.setProperty("color", "var(--TextWhite)");
+            //SectionDetail.style.setProperty("color", "var(--TextWhite)");
+            UpdateColor(SectionDetail, "var(--TextWhite)");
             SectionDetail.style.setProperty("transform", "translateX(0%)");
         } else {
             SectionDetail.style.setProperty("width", "0%");
@@ -87,7 +88,8 @@ function SelectSection(ID){
             SectionDetail.style.setProperty("border", "none");
             SectionDetail.style.setProperty("box-shadow", "none");
             SectionDetail.style.setProperty("padding", "0px");
-            SectionDetail.style.setProperty("color", "transparent");
+            //SectionDetail.style.setProperty("color", "transparent");
+            UpdateColor(SectionDetail, "transparent");
             if(SectionDetail.id > (SelectedSectionID + "Details"))
                 SectionDetail.style.setProperty("transform", "translateX(100%)");
             else 
@@ -97,6 +99,14 @@ function SelectSection(ID){
 }
 
 SelectSection(SelectedSectionID);
+
+function UpdateColor(tag, target){
+    tag.style.setProperty("color", target);
+    tag.style.setProperty("fill", target);
+    for (let i = 0; i < tag.children.length; i++) {
+        UpdateColor(tag.children[i], target);
+    }
+}
 
 
 const SectionSelections = document.querySelectorAll('.SectionSelection');
