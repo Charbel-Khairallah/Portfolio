@@ -25,37 +25,30 @@ polyline, rect, line {
 
 .WorkExperienceBodyLineSection {
     display: flex;
+    margin-bottom: 40px;
 }
 
+.WorkExperienceBodyLineSvg svg {
+    width: 25px;
+    height: 25px;
+}
 
 .WorkExperienceBodyLineSvg {
-    width: 70px;
-    height: 40px;
-    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+
+    min-width: 50px;
+    min-height: 50px;
+    max-width: 50px;
+    max-height: 50px;
+    padding: 10px;
     margin: 10px;
     border-radius: 20px;
 
     animation: Spin 2.5s infinite linear;
-    /*background: linear-gradient(
-        to bottom,
-        var(--BackgroundLightGrey),
-        var(--BackgroundLightGrey)
-      )
-      padding-box,
-    conic-gradient(
-        from var(--bg-angle) in oklch longer hue,
-        oklch(95.51% 0 0) 0deg,
-        oklch(95.51% 0 0) 90deg,
-        oklch(95.51% 0 0 / 0%) 90deg,
-        oklch(95.51% 0 0 / 0%) 180deg,
-        oklch(95.51% 0 0) 180deg,
-        oklch(95.51% 0 0) 270deg,
-        oklch(95.51% 0 0 / 0%) 270deg,
-        oklch(95.51% 0 0 / 0%) 360deg
-      )
-      border-box; */
-  
-  border: 3px solid transparent;
+    border: 3px solid transparent;
 }
 
 .SocialMediaSVG {

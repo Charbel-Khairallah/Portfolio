@@ -11,8 +11,8 @@
     --TextLightGrey: rgba(54, 57, 63, 1);
     --BackgroundDarkGrey: rgba(40, 41, 46, 1);
     --TextDarkGrey: rgba(40, 41, 46, 1);
-    /*--MainThemeColor: rgba(0, 139, 139, 1);*/
-    --MainThemeColor: rgba(255, 238, 16, 1);
+    --MainThemeColor: rgba(0, 139, 139, 1);
+    /*--MainThemeColor: rgba(255, 238, 16, 1);*/
 
     /* Mobile */
     @media only screen and (hover: none) and (pointer: coarse) {
