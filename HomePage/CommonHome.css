@@ -33,6 +33,11 @@ polyline, rect, line {
     height: 25px;
 }
 
+.SpecialCaseIconPath {
+    fill: transparent !important;
+    stroke: var(--TextWhite) !important;
+}
+
 .WorkExperienceBodyLineSvg {
     display: flex;
     align-items: center;
