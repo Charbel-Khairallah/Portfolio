@@ -1,11 +1,224 @@
+
+/*function ToOklch(RGBA) {
+    const { parse, convert, formatRgb } = culori;
+
+    const ParsedColor = parse(RGBA);
+    const OklchColor = convert('oklch')(ParsedColor);
+    
+    return OklchColor;
+}
+
+function Mix(Color1, Color2, Percentage) {
+    const { parse, interpolate, formatRgb } = culori;
+  
+    // Ensure percentage is between 0 and 100
+    const clampedPercentage = Math.max(0, Math.min(Percentage, 100)) / 100;
+  
+    // Parse the colors
+    const color1 = parse(Color1);
+    const color2 = parse(Color2);
+  
+    // Interpolate between the two colors
+    const interpolator = interpolate([color1, color2]);
+    const mixedColor = interpolator(clampedPercentage);
+  
+    // Return the mixed color in rgba format
+    return formatRgb(mixedColor);
+}
+*/
+
+function lerp(start, end, percentage) {
+    return start + (end - start) * percentage;
+  }
+  
+  function parseRGBA(rgba) {
+    const matches = rgba.match(/rgba?\((\d+),\s*(\d+),\s*(\d+),?\s*(\d*\.?\d+)?\)/);
+    return {
+      r: parseInt(matches[1], 10),
+      g: parseInt(matches[2], 10),
+      b: parseInt(matches[3], 10),
+      a: matches[4] !== undefined ? parseFloat(matches[4]) : 1
+    };
+  }
+  
+  function formatRGBA(color) {
+    return `rgba(${color.r}, ${color.g}, ${color.b}, ${color.a})`;
+  }
+  
+  function Mix(Color1, Color2, Percentage) {
+    const clampedPercentage = Math.max(0, Math.min(Percentage, 100)) / 100;
+    const color1 = parseRGBA(Color1);
+    const color2 = parseRGBA(Color2);
+  
+    const mixedColor = {
+      r: Math.round(lerp(color1.r, color2.r, clampedPercentage)),
+      g: Math.round(lerp(color1.g, color2.g, clampedPercentage)),
+      b: Math.round(lerp(color1.b, color2.b, clampedPercentage)),
+      a: lerp(color1.a, color2.a, clampedPercentage)
+    };
+  
+    return formatRGBA(mixedColor);
+  }
+
+  function RGBtoXYZ(R, G, B)
+{
+    var_R = parseFloat( R / 255 )        //R from 0 to 255
+    var_G = parseFloat( G / 255 )        //G from 0 to 255
+    var_B = parseFloat( B / 255 )        //B from 0 to 255
+
+    if ( var_R > 0.04045 ) var_R = ( ( var_R + 0.055 ) / 1.055 ) ^ 2.4
+    else                   var_R = var_R / 12.92
+    if ( var_G > 0.04045 ) var_G = ( ( var_G + 0.055 ) / 1.055 ) ^ 2.4
+    else                   var_G = var_G / 12.92
+    if ( var_B > 0.04045 ) var_B = ( ( var_B + 0.055 ) / 1.055 ) ^ 2.4
+    else                   var_B = var_B / 12.92
+
+    var_R = var_R * 100
+    var_G = var_G * 100
+    var_B = var_B * 100
+
+    //Observer. = 2°, Illuminant = D65
+    X = var_R * 0.4124 + var_G * 0.3576 + var_B * 0.1805
+    Y = var_R * 0.2126 + var_G * 0.7152 + var_B * 0.0722
+    Z = var_R * 0.0193 + var_G * 0.1192 + var_B * 0.9505
+    return [X, Y, Z]
+}
+
+function XYZtoLAB(x, y, z)
+{
+    var ref_X =  95.047;
+    var ref_Y = 100.000;
+    var ref_Z = 108.883;
+
+    var_X = x / ref_X          //ref_X =  95.047   Observer= 2°, Illuminant= D65
+    var_Y = y / ref_Y          //ref_Y = 100.000
+    var_Z = z / ref_Z          //ref_Z = 108.883
+
+    if ( var_X > 0.008856 ) var_X = var_X ^ ( 1/3 )
+    else                    var_X = ( 7.787 * var_X ) + ( 16 / 116 )
+    if ( var_Y > 0.008856 ) var_Y = var_Y ^ ( 1/3 )
+    else                    var_Y = ( 7.787 * var_Y ) + ( 16 / 116 )
+    if ( var_Z > 0.008856 ) var_Z = var_Z ^ ( 1/3 )
+    else                    var_Z = ( 7.787 * var_Z ) + ( 16 / 116 )
+
+    CIE_L = ( 116 * var_Y ) - 16
+    CIE_a = 500 * ( var_X - var_Y )
+    CIE_b = 200 * ( var_Y - var_Z )
+
+return [CIE_L, CIE_a, CIE_b]
+}
+
+function LabToOklch(l, a, b1) {
+    const c = Math.sqrt(a * a + b1 * b1);
+    let h = (Math.atan2(b1, a) * 180) / Math.PI;
+    if (h < 0) {
+      h += 360;
+    }
+  
+    // Format output
+    l = (l * 100).toFixed(2); // Convert lightness to percentage
+  
+    return `oklch(${l}% ${c.toFixed(2)} ${h.toFixed(2)})`;
+}
+
+function ToOklch(RGBA) {
+    const color = parseRGBA(RGBA);
+  
+    // Convert RGB to LAB
+    let r = color.r;
+    let g = color.g;
+    let b = color.b;
+
+    return LabToOklch(XYZtoLAB(RGBtoXYZ(r, g, b)));
+}
+ 
+  /*function ToOklch(RGBA) {
+    const color = parseRGBA(RGBA);
+  
+    // Convert RGB to LAB
+    let r = color.r;
+    let g = color.g;
+    let b = color.b;
+  
+    r = r > 0.04045 ? Math.pow((r + 0.055) / 1.055, 2.4) : r / 12.92;
+    g = g > 0.04045 ? Math.pow((g + 0.055) / 1.055, 2.4) : g / 12.92;
+    b = b > 0.04045 ? Math.pow((b + 0.055) / 1.055, 2.4) : b / 12.92;
+  
+    const x = r * 0.4124564 + g * 0.3575761 + b * 0.1804375;
+    const y = r * 0.2126729 + g * 0.7151522 + b * 0.0721750;
+    const z = r * 0.0193339 + g * 0.1191920 + b * 0.9503041;
+  
+    let l = y;
+    let a = (x - y) * 500;
+    let b1 = (y - z) * 200;
+  
+    // Convert LAB to OKLCH
+    const c = Math.sqrt(a * a + b1 * b1);
+    let h = (Math.atan2(b1, a) * 180) / Math.PI;
+    if (h < 0) {
+      h += 360;
+    }
+  
+    // Format output
+    l = (l * 100).toFixed(2); // Convert lightness to percentage
+  
+    return `oklch(${l}% ${c.toFixed(2)} ${h.toFixed(2)})`;
+  }*/
+  
+
+
 const RootStyles = getComputedStyle(document.documentElement);
 var AnimationDuration =  RootStyles.getPropertyValue('--AnimationDuration');
 var IsMobile = (RootStyles.getPropertyValue('--IsMobile') == '1');
 
 var SecondaryTextColor = RootStyles.getPropertyValue('--MainThemeColor');
 
+//--------------------- OnLoad Apply Oklch Border Gradient --------------------//
+const Icons = document.querySelectorAll('.WorkExperienceBodyLineSvg');
+var Color1 = 'rgba(0, 0, 0, 0)';
+var Color2 = RootStyles.getPropertyValue('--TextWhite');
+var Color3 = RootStyles.getPropertyValue('--MainThemeColor');
+
+var BackgroundResult = 'linear-gradient(to bottom, var(--BackgroundLightGrey), var(--BackgroundLightGrey)) padding-box, ';
+BackgroundResult += 'conic-gradient(from var(--bg-angle) in oklch longer hue, ';
+/*BackgroundResult += 'oklch(95.51% 0 0) 0deg,';
+BackgroundResult += 'oklch(95.51% 0 0) 180deg,';
+BackgroundResult += 'oklch(95.51% 0 0 / 0%) 180deg,';
+BackgroundResult += 'oklch(95.51% 0 0 / 0%) 360deg';*/
+
+var Angle = 360;
+var AngleMultiplier = 2;
+var MaxAngle = Angle * AngleMultiplier;
+for(var i = 0; i < MaxAngle; i += 1){
+    var Value = (100 - ((i / Angle) * 100) % 100) * 1;
+    if(Value < 0) Value = -Value;
+
+    if(i < Angle){
+        //var Color = ToOklch(Mix(Color2, Color1, Value));
+        var Color = ToOklch(Color2);
+        BackgroundResult += Color + ' ' + (i / MaxAngle * Angle).toString() + 'deg,'
+        //BackgroundResult += 'oklch(95.51% 0 0 / ' + Value.toString() + '%) ' + (i / MaxAngle * Angle).toString() + 'deg,'
+    }
+    else {
+        //var Color = ToOklch(Mix(Color3, Color1, Value));
+        var Color = ToOklch(Color2);
+        BackgroundResult += Color + ' ' + (i / MaxAngle * Angle).toString() + 'deg,'
+        //BackgroundResult += 'oklch(93.32% 0.19552642129227554 104.2423750230839 / ' + Value.toString() + '%) ' + (i / MaxAngle * Angle).toString() + 'deg,'
+    }
+}
+BackgroundResult += 'oklch(95.51% 0 0 / 0%) 360deg';
+BackgroundResult += ') border-box';
 
 
+Icons.forEach(Icon => {
+    
+    Icon.style.setProperty('background', BackgroundResult);
+
+});
+
+
+
+//----------------------------- Mouse Over Events -----------------------------//
 const SocialMediaList = document.getElementById('SocialMediaIconsList');
 const SocialMediaCircles = SocialMediaList.querySelectorAll('*');
 
@@ -36,6 +249,9 @@ SocialMediaCircles.forEach(Circle => {
 
 
 });
+
+
+//----------------------------- Section Selection -----------------------------//
 
 var SelectedSectionID = 'Section1';
 
@@ -151,6 +367,8 @@ SectionSelections.forEach(SectionSelection => {
 });
 
 
+
+//----------------------------- Mobile Vs Desktop -----------------------------//
 if(IsMobile){
     function ShowMore(){
         var IconsDiv = document.getElementById('SocialMediaIcons');

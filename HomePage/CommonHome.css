@@ -18,6 +18,46 @@ svg {
     transition-duration: var(--AnimationDuration);
 }
 
+polyline, rect, line {
+    fill: transparent !important;
+    stroke: var(--TextWhite) !important;
+}
+
+.WorkExperienceBodyLineSection {
+    display: flex;
+}
+
+
+.WorkExperienceBodyLineSvg {
+    width: 70px;
+    height: 40px;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 20px;
+
+    animation: Spin 2.5s infinite linear;
+    /*background: linear-gradient(
+        to bottom,
+        var(--BackgroundLightGrey),
+        var(--BackgroundLightGrey)
+      )
+      padding-box,
+    conic-gradient(
+        from var(--bg-angle) in oklch longer hue,
+        oklch(95.51% 0 0) 0deg,
+        oklch(95.51% 0 0) 90deg,
+        oklch(95.51% 0 0 / 0%) 90deg,
+        oklch(95.51% 0 0 / 0%) 180deg,
+        oklch(95.51% 0 0) 180deg,
+        oklch(95.51% 0 0) 270deg,
+        oklch(95.51% 0 0 / 0%) 270deg,
+        oklch(95.51% 0 0 / 0%) 360deg
+      )
+      border-box; */
+  
+  border: 3px solid transparent;
+}
+
 .SocialMediaSVG {
     fill: var(--BackgroundDarkGrey);
 }
@@ -225,7 +265,7 @@ svg {
     color: var(--MainThemeColor);
     box-shadow: 0 0 5px var(--MainThemeColor);
     text-shadow: 0 0 5px var(--MainThemeColor);
-    background: var(--BackgroundWhite);
+    background: var(--BackgroundDarkGrey);
 }
 
 #SocialMediaIconsList li a {
