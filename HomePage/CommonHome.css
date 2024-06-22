@@ -39,12 +39,16 @@ polyline, rect, line {
     justify-content: center;
     flex: 1;
 
-    min-width: 50px;
-    min-height: 50px;
-    max-width: 50px;
-    max-height: 50px;
+    min-width: 40px;
+    min-height: 40px;
+    max-width: 40px;
+    max-height: 40px;
     padding: 10px;
-    margin: 10px;
+    /*margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+    margin-right: 10px;*/
+    margin: auto 10px;
     border-radius: 20px;
 
     animation: Spin 2.5s infinite linear;
