@@ -23,6 +23,46 @@ polyline, rect, line {
     stroke: var(--TextWhite) !important;
 }
 
+.WorkProjects {
+    display: flex;
+    justify-content: space-around;
+}
+
+.WorkProject {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+
+    border-radius: 20px;
+    animation: Spin 2.5s infinite linear paused;
+    border: 3px solid transparent;
+}
+
+.WorkProject:hover {
+    cursor: pointer;
+    animation: Spin 2.5s infinite linear;
+}
+
+.WorkProject a {
+    display: inline-block;
+    width: 100%;
+    height: 60%;
+}
+
+.WorkProject a svg {
+    width: 100%;
+    height: 100%;
+}
+
+.WorkProject a div {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    font-size: var(--SecondHeaderSize);
+    margin-bottom: 20px;
+}
+
 .WorkExperienceBodyLineSection {
     display: flex;
     margin-bottom: 40px;
@@ -36,6 +76,17 @@ polyline, rect, line {
 .SpecialCaseIconPath {
     fill: transparent !important;
     stroke: var(--TextWhite) !important;
+}
+
+.WorkExperienceBodyLineDetailsTitle {
+    font-weight: bold;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+    text-shadow: 0 0 10px var(--MainThemeColor);
+    /*background: -webkit-linear-gradient(45deg, var(--TextWhite), var(--MainThemeColor));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;*/
 }
 
 .WorkExperienceBodyLineSvg {
@@ -146,9 +197,13 @@ polyline, rect, line {
 }
 
 .WorkExperienceBody {
-    padding: 20px;
+    /*padding: 20px;*/
+    padding: 0px;
     font-size: var(--MainTextSize);
     line-height: var(--LineHeight);
+    height: auto;
+    overflow: hidden;
+    transition-duration: var(--AnimationDuration);
 }
 
 .WorkExperienceSeperator {
@@ -159,6 +214,26 @@ polyline, rect, line {
     border-bottom: 1px solid var(--MainThemeColor);
     background: var(--BackgroundDarkGrey);
   }
+
+.ToggleWorkExperienceBody {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.ToggleWorkExperienceBody svg {
+    width: 40px;
+    height: 40px;
+    fill: var(--TextWhite);
+    display: block;
+    position: relative;
+    right: 20px;
+    transition-duration: var(--AnimationDuration);
+}
+
+.ToggleWorkExperienceBody svg:hover {
+    cursor: pointer;
+}
+
 
 
 ::-webkit-scrollbar {

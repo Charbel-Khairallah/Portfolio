@@ -39,11 +39,72 @@ BackgroundResult += ') border-box';
 
 
 Icons.forEach(Icon => {
-    
     Icon.style.setProperty('background', BackgroundResult);
-
 });
 
+const ProjectIcons = document.querySelectorAll('.WorkProject');
+
+ProjectIcons.forEach(ProjectIcon => {
+    ProjectIcon.style.setProperty('background', BackgroundResult);
+});
+
+//---------------- Expand And Contract Work Experience Details ----------------//
+var SelectedWorkExperienceDetailsID = '';
+
+function ExpandAndHideSections(){
+    const Sections = document.querySelectorAll('.WorkExperienceBody');
+    var SelectedID = SelectedWorkExperienceDetailsID.substring(6);
+    Sections.forEach(Section => {
+        if(Section.id == SelectedID){
+            Section.style.setProperty('max-height', '100%');
+        } else {
+            Section.style.setProperty('max-height', '0px');
+        }
+    });
+
+    const ToggleIcons = document.querySelectorAll('.ToggleWorkExperienceBody');
+    ToggleIcons.forEach(ToggleIcon => {
+        const Svg = ToggleIcon.querySelector('svg');
+        if(SelectedWorkExperienceDetailsID != ToggleIcon.id){
+            Svg.style.setProperty('-moz-transform', 'scale(1, 1)');
+            Svg.style.setProperty('-webkit-transform', 'scale(1, 1)');
+            Svg.style.setProperty('-o-transform', 'scale(1, 1)');
+            Svg.style.setProperty('-ms-transform', 'scale(1, 1)');
+            Svg.style.setProperty('transform', 'scale(1, 1)');
+        } else {
+            Svg.style.setProperty('-moz-transform', 'scale(1, -1)');
+            Svg.style.setProperty('-webkit-transform', 'scale(1, -1)');
+            Svg.style.setProperty('-o-transform', 'scale(1, -1)');
+            Svg.style.setProperty('-ms-transform', 'scale(1, -1)');
+            Svg.style.setProperty('transform', 'scale(1, -1)');
+        }
+    });
+}
+
+const ToggleIcons = document.querySelectorAll('.ToggleWorkExperienceBody');
+ToggleIcons.forEach(ToggleIcon => {
+    ToggleIcon.addEventListener('click', function(){
+        const Svg = ToggleIcon.querySelector('svg');
+        if(SelectedWorkExperienceDetailsID == ToggleIcon.id){
+            SelectedWorkExperienceDetailsID = '';
+            Svg.style.setProperty('-moz-transform', 'scale(1, 1)');
+            Svg.style.setProperty('-webkit-transform', 'scale(1, 1)');
+            Svg.style.setProperty('-o-transform', 'scale(1, 1)');
+            Svg.style.setProperty('-ms-transform', 'scale(1, 1)');
+            Svg.style.setProperty('transform', 'scale(1, 1)');
+        } else {
+            SelectedWorkExperienceDetailsID = ToggleIcon.id;
+            Svg.style.setProperty('-moz-transform', 'scale(1, -1)');
+            Svg.style.setProperty('-webkit-transform', 'scale(1, -1)');
+            Svg.style.setProperty('-o-transform', 'scale(1, -1)');
+            Svg.style.setProperty('-ms-transform', 'scale(1, -1)');
+            Svg.style.setProperty('transform', 'scale(1, -1)');
+        }
+        ExpandAndHideSections();
+    });
+});
+
+ExpandAndHideSections();
 
 
 //----------------------------- Mouse Over Events -----------------------------//
