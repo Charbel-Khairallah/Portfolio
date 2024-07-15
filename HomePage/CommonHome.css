@@ -25,14 +25,14 @@ polyline, rect, line {
 
 .WorkProjects {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .WorkProject {
     display: inline-block;
-    width: 200px;
-    height: 200px;
-    padding: 20px;
+    width: 80px;
+    height: 80px;
+    padding: 30px;
 
     border-radius: 20px;
     animation: Spin 2.5s infinite linear paused;
@@ -198,6 +198,7 @@ polyline, rect, line {
 
 .WorkExperienceBody {
     /*padding: 20px;*/
+    margin-top: 40px;
     padding: 0px;
     font-size: var(--MainTextSize);
     line-height: var(--LineHeight);
