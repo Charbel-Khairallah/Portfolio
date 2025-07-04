@@ -52,13 +52,6 @@
   <div id="loader">
     Loading, please wait...
   </div>
-  <!-- Page content -->
-  <div id="content">
-    <h1>Welcome!</h1>
-    <p>The loading is complete.</p>
-    <div id="timer">Timer: 0s</div>
-  </div>
-
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
@@ -178,19 +171,19 @@
          
   <script>
     // Wait X seconds (3000ms = 3 seconds)
+    var TimeOut = 10000;
     setTimeout(() => {
       // Hide the loader and show the content
       document.getElementById('loader').style.display = 'none';
-      document.getElementById('content').style.display = 'block';
 
       // Start the timer
       let seconds = 0;
       setInterval(() => {
         seconds++;
-        document.getElementById('timer').textContent = 'Timer: ' + seconds + 's';
+        document.getElementById('loader').textContent = 'Timer: ' + TimeOut / 1000 - seconds + 's';
       }, 1000);
 
-    }, 3000); // <-- Change 3000 to desired loading delay (in ms)
+    }, TimeOut); // <-- Change 3000 to desired loading delay (in ms)
   </script>
   </body>
 </html>
