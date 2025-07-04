@@ -42,6 +42,35 @@
         z-index: 9999;
       }
 
+      #loader-message {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #121212;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        z-index: 9999;
+
+        animation: fadeInOut 2s infinite;
+      }
+
+      @keyframes fadeInOut {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
     </style>
 	
   </head>
@@ -50,7 +79,9 @@
 	
 	 <!-- Loading screen -->
   <div id="loader">
-    Loading, please wait...
+    <div id="loader-message">
+      Loading, please wait...
+    </div>
   </div>
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
@@ -171,17 +202,18 @@
          
   <script>
     // Wait X seconds (3000ms = 3 seconds)
-    var TimeOut = 10000;
+    var TimeOut = 5000;
     setTimeout(() => {
       // Hide the loader and show the content
       document.getElementById('loader').style.display = 'none';
 
-      // Start the timer
+      /*// Start the timer
       let seconds = 0;
       setInterval(() => {
         seconds++;
         document.getElementById('loader').innerHTML = 'Please Wait: ' + TimeOut / 1000 - seconds + 's';
-      }, 1000);
+        alert( document.getElementById('loader').innerHTML );
+      }, 1000);*/
 
     }, TimeOut); // <-- Change 3000 to desired loading delay (in ms)
   </script>
