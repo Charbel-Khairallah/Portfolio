@@ -180,7 +180,7 @@
       let seconds = 0;
       setInterval(() => {
         seconds++;
-        document.getElementById('loader').textContent = 'Timer: ' + TimeOut / 1000 - seconds + 's';
+        document.getElementById('loader').innerHTML = 'Please Wait: ' + TimeOut / 1000 - seconds + 's';
       }, 1000);
 
     }, TimeOut); // <-- Change 3000 to desired loading delay (in ms)
