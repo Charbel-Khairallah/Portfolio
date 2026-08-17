@@ -23,6 +23,7 @@
   font-weight: 500;
   margin-bottom: 0;
   white-space: nowrap;
+  max-width: 100%;
 }
 
 .status-dot {
@@ -35,6 +36,7 @@
 
 .page-header {
   max-width: 1050px;
+  width: 100%;
   margin: 2.25rem auto 0;
   padding: 0 1.5rem;
   display: flex;
@@ -58,6 +60,7 @@
 .hero {
   padding: 1.5rem 0 2.5rem;
   max-width: 780px;
+  width: 100%;
 }
 
 
@@ -163,6 +166,8 @@
 
   .status-badge {
     margin-left: 0;
+    max-width: 100%;
+    white-space: normal;
   }
 
   .hero {
