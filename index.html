@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alex Rivera — Creative Engineer & Designer</title>
+  <title>Alex Rivera — Portfolio</title>
   <style>
     /* Design Tokens: Deep Cobalt & Electric Cyan Theme */
     :root {
@@ -121,7 +121,7 @@
 
     /* Hero Section */
     .hero {
-      padding: 4rem 0 3rem;
+      padding: 3.5rem 0 2.5rem;
       max-width: 780px;
     }
 
@@ -168,129 +168,75 @@
       margin-bottom: 2rem;
     }
 
-    .cta-group {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      background: var(--gradient-primary);
-      color: #ffffff;
-      padding: 0.8rem 1.6rem;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      text-decoration: none;
-      box-shadow: 0 4px 20px var(--glow-blue);
-      transition: transform 0.2s ease, opacity 0.2s ease;
-    }
-
-    .btn-secondary {
-      background: var(--bg-surface);
-      border: 1px solid var(--card-border);
-      color: var(--text-main);
-      padding: 0.8rem 1.6rem;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      text-decoration: none;
-      transition: border-color 0.2s ease, background 0.2s ease;
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--card-border-hover);
-      background: rgba(30, 41, 59, 0.6);
-    }
-
-    .btn-primary:active, .btn-secondary:active {
-      transform: scale(0.98);
-    }
-
-    /* Section Header */
-    .section-title {
-      font-size: 1.25rem;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      margin: 3.5rem 0 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .section-title::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: rgba(255, 255, 255, 0.08);
-    }
-
-    /* Portfolio Cards Grid */
-    .projects-grid {
+    /* Interactive Navigation Cards Grid */
+    .nav-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
     }
 
-    .project-card {
+    .nav-card {
       background: var(--bg-surface);
       border: 1px solid var(--card-border);
       border-radius: 16px;
       padding: 1.75rem;
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      transition: transform 0.2s ease, border-color 0.2s ease;
+      text-decoration: none;
+      color: var(--text-main);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .project-card:hover {
-      transform: translateY(-3px);
+    .nav-card:hover {
+      transform: translateY(-4px);
       border-color: var(--card-border-hover);
+      box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.2);
     }
 
-    .card-tags {
+    .nav-card-header {
       display: flex;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .tag {
-      font-size: 0.75rem;
-      color: var(--accent-cyan);
-      background: rgba(56, 189, 248, 0.08);
-      padding: 0.2rem 0.6rem;
-      border-radius: 6px;
-      font-weight: 500;
-    }
-
-    .project-card h3 {
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    .project-card p {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .card-link {
-      color: var(--text-main);
-      font-size: 0.875rem;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 0.4rem;
-      transition: color 0.2s ease;
+      margin-bottom: 1rem;
     }
 
-    .card-link:hover {
+    .nav-card-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: var(--accent-cyan);
+    }
+
+    .nav-card-arrow {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .nav-card:hover .nav-card-arrow {
+      transform: translateX(4px);
+      color: var(--accent-cyan);
+    }
+
+    .nav-card h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .nav-card p {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      line-height: 1.5;
     }
 
     /* Responsive adjustments */
@@ -298,12 +244,8 @@
       .hero {
         padding-top: 2rem;
       }
-      .cta-group {
-        flex-direction: column;
-      }
-      .btn-primary, .btn-secondary {
-        width: 100%;
-        text-align: center;
+      .nav-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -327,8 +269,9 @@
   <nav>
     <a href="#" class="brand">alex<span>.dev</span></a>
     <div class="nav-links">
-      <a href="#work">Work</a>
-      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#profile">Profile</a>
+      <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
@@ -338,57 +281,67 @@
     <section class="hero">
       <div class="status-badge">
         <span class="status-dot"></span>
-        Available for new projects
+        Available for new opportunities
       </div>
-      <h1>Building high-performance digital <span>experiences.</span></h1>
-      <p>I am a full-stack developer and UI designer specializing in building minimal, lightning-fast digital products with modern Web technologies.</p>
-      
-      <div class="cta-group">
-        <a href="#work" class="btn-primary">View Featured Work</a>
-        <a href="#contact" class="btn-secondary">Get in Touch</a>
-      </div>
+      <h1>Creative Engineer & <span>UI Designer.</span></h1>
+      <p>Hello! I'm Alex Rivera. I craft high-performance web applications, scalable digital products, and refined design systems with a focus on speed and user experience.</p>
     </section>
 
-    <!-- Selected Projects Section -->
-    <div class="section-title" id="work">Featured Projects</div>
-
-    <section class="projects-grid">
-      <article class="project-card">
+    <!-- Navigation Hub Cards -->
+    <section class="nav-grid">
+      
+      <!-- My Projects Card -->
+      <a href="#projects" class="nav-card">
         <div>
-          <div class="card-tags">
-            <span class="tag">TypeScript</span>
-            <span class="tag">React</span>
-            <span class="tag">Node.js</span>
+          <div class="nav-card-header">
+            <div class="nav-card-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 10h16M4 14h8"></path></svg>
+            </div>
           </div>
-          <h3>Aura Cloud Platform</h3>
-          <p>A real-time developer metrics dashboard focused on speed, minimal resource usage, and clean data visualization.</p>
+          <h2>My Projects</h2>
+          <p>Explore my recent web apps, open-source work, and design systems.</p>
         </div>
-        <a href="#" class="card-link">View Case Study &rarr;</a>
-      </article>
+      </a>
 
-      <article class="project-card">
+      <!-- Profile & About Card -->
+      <a href="#profile" class="nav-card">
         <div>
-          <div class="card-tags">
-            <span class="tag">Next.js</span>
-            <span class="tag">Tailwind CSS</span>
+          <div class="nav-card-header">
+            <div class="nav-card-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"></circle><path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"></path></svg>
+            </div>
           </div>
-          <h3>Pulse Design System</h3>
-          <p>An accessible, dark-first UI kit designed for fintech platforms requiring modern UI components.</p>
+          <h2>Profile & Bio</h2>
+          <p>Learn more about my background, technical skill set, and philosophy.</p>
         </div>
-        <a href="#" class="card-link">View Case Study &rarr;</a>
-      </article>
+      </a>
 
-      <article class="project-card">
+      <!-- Work Experience Card -->
+      <a href="#experience" class="nav-card">
         <div>
-          <div class="card-tags">
-            <span class="tag">WebGPU</span>
-            <span class="tag">Canvas API</span>
+          <div class="nav-card-header">
+            <div class="nav-card-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            </div>
           </div>
-          <h3>Nexus Engine</h3>
-          <p>Lightweight browser-based rendering pipeline built for interactive micro-animations and zero-latency graphics.</p>
+          <h2>Work Experience</h2>
+          <p>View my career timeline, past roles, achievements, and impact.</p>
         </div>
-        <a href="#" class="card-link">View Case Study &rarr;</a>
-      </article>
+      </a>
+
+      <!-- Contact Me Card -->
+      <a href="#contact" class="nav-card">
+        <div>
+          <div class="nav-card-header">
+            <div class="nav-card-icon">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+          </div>
+          <h2>Contact Me</h2>
+          <p>Get in touch for collaborations, freelance work, or full-time roles.</p>
+        </div>
+      </a>
+
     </section>
   </main>
 
