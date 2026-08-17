@@ -41,6 +41,9 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   position: relative;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 /* Lightweight Animated SVG Background Grid */
@@ -116,8 +119,7 @@ nav {
 
 /* Shared main container */
 main {
-  max-width: 1050px;
-  margin: 0 auto;
+  margin: auto 2.25rem;
   padding: 0 1.5rem 4rem;
   position: relative;
   z-index: 10;
