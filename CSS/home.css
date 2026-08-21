@@ -69,8 +69,9 @@
 }
 
 @keyframes gridDrift {
-  from { transform: scale(1.04) translate3d(0, -10px, 0); }
-  to { transform: scale(1) translate3d(0, 0, 0); }
+  0% { transform: scale(1.08) translate3d(0, -10px, 0); }
+  20% { transform: scale(1) translate3d(0, -10px, 0); }
+  100% { transform: scale(1.08) translate3d(0, -10px, 0); }
 }
 
 .page-header {
@@ -90,7 +91,7 @@
 }
 
 .bg-animation {
-  animation: gridDrift 1500ms ease-out both;
+  animation: gridDrift 8000ms ease-in-out both infinite, gridDiagonalFade 2s linear 1500ms infinite;
 }
 
 .hero {
