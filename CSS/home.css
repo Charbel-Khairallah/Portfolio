@@ -5,6 +5,94 @@
    ========================================================================== */
 
 /* Hero Section */
+@keyframes pageReveal {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.97);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes headerReveal {
+  from {
+    opacity: 0;
+    transform: translateY(-18px) scale(0.98);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes titleReveal {
+  from {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes badgeReveal {
+  from {
+    opacity: 0;
+    transform: translateX(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes lightSweep {
+  0% {
+    opacity: 0;
+    transform: translateX(-140%) skewX(-18deg);
+  }
+  15% { opacity: 1; }
+  82% { opacity: 1; }
+  100% {
+    opacity: 0;
+    transform: translateX(600%) skewX(-18deg);
+  }
+}
+
+@keyframes gridDrift {
+  from { transform: scale(1.04) translate3d(0, -10px, 0); }
+  to { transform: scale(1) translate3d(0, 0, 0); }
+}
+
+.page-header {
+  animation: headerReveal 1400ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero {
+  animation: pageReveal 1500ms 140ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.site-name {
+  animation: titleReveal 1100ms 220ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.status-badge {
+  animation: badgeReveal 700ms 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.bg-animation {
+  animation: gridDrift 1500ms ease-out both;
+}
+
 .hero {
   padding: 3.5rem 0 2.5rem;
   max-width: 780px;
@@ -75,9 +163,12 @@
 }
 
 .hero h1 span {
+  display: inline-block;
   background: var(--gradient-text);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: titleReveal 1050ms 320ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .hero p {
@@ -85,6 +176,7 @@
   font-size: clamp(1.05rem, 2vw, 1.2rem);
   line-height: 1.6;
   margin-bottom: 2rem;
+  animation: pageReveal 1300ms 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 /* Interactive Navigation Cards Grid */
@@ -96,6 +188,9 @@
 }
 
 .nav-card {
+  position: relative;
+  overflow: hidden;
+  animation: pageReveal 1200ms cubic-bezier(0.22, 1, 0.36, 1) both;
   background: var(--bg-surface);
   border: 1px solid var(--card-border);
   border-radius: 16px;
@@ -107,13 +202,35 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  scale: 1;
+  transition: transform 0.2s ease, scale 0.2s ease-out, border-color 0.2s ease, box-shadow 0.2s ease;
 }
+
+.nav-card::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 -35%;
+  width: 24%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+  pointer-events: none;
+  animation: lightSweep 700ms 700ms ease-in-out both;
+}
+
+.nav-card:nth-child(1) { animation-delay: 280ms; }
+.nav-card:nth-child(2) { animation-delay: 360ms; }
+.nav-card:nth-child(3) { animation-delay: 440ms; }
+.nav-card:nth-child(4) { animation-delay: 520ms; }
+.nav-card:nth-child(5) { animation-delay: 600ms; }
+.nav-card:nth-child(6) { animation-delay: 680ms; }
 
 .nav-card:hover {
   transform: translateY(-4px);
   border-color: var(--card-border-hover);
   box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.2);
+}
+
+.nav-card:active {
+  scale: 0.95;
 }
 
 .nav-card-header {
@@ -156,6 +273,20 @@
   color: var(--text-muted);
   font-size: 0.875rem;
   line-height: 1.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-header,
+  .hero,
+  .nav-card,
+  .site-name,
+  .status-badge,
+  .hero h1 span,
+  .hero p,
+  .bg-animation,
+  .nav-card::after {
+    animation: none;
+  }
 }
 
 /* Responsive adjustments */
