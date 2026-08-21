@@ -63,11 +63,7 @@
   }
 }
 
-@keyframes gridDrift {
-  0% { transform: scale(1.08) translate3d(0, -10px, 0); }
-  20% { transform: scale(1) translate3d(0, -10px, 0); }
-  100% { transform: scale(1.08) translate3d(0, -10px, 0); }
-}
+
 
 .bg-animation {
   animation: gridDrift 8000ms ease-in-out both infinite, gridDiagonalFade 2s linear 1500ms infinite;
