@@ -55,21 +55,21 @@ body {
   height: 100vh;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.25;
+  opacity: 0.35;
 }
 
 @keyframes pulseGlow {
-  0%, 100% { opacity: 0.15; transform: scale(1); }
-  50% { opacity: 0.3; transform: scale(1.08); }
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.08); }
 }
 
 .ambient-glow {
   position: absolute;
-  top: -150px;
-  left: 50%;
+  top: -100px;
+  left: 60%;
   transform: translateX(-50%);
   width: 650px;
-  height: 400px;
+  height: 600px;
   background: radial-gradient(circle, var(--glow-blue) 0%, rgba(9, 13, 22, 0) 70%);
   animation: pulseGlow 8s ease-in-out infinite;
   pointer-events: none;
