@@ -244,9 +244,20 @@ main {
 }
 
 .competition-copy h3 {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
   margin: 0 0 0.45rem;
   font-size: 1.1rem;
   color: var(--text-main);
+}
+
+.competition-year {
+  flex-shrink: 0;
+  color: var(--accent-cyan);
+  font-size: 1em;
+  font-weight: 600;
 }
 
 .competition-copy p {
@@ -588,6 +599,12 @@ main {
 
   .competition-copy {
     width: 100%;
+  }
+
+  .competition-copy h3 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.1rem;
   }
 
   .viewer-dialog {
