@@ -254,6 +254,10 @@ main {
   box-shadow: 0 10px 30px -10px var(--blue-shadow);
 }
 
+.skill-card:active {
+  transform: translateY(-4px) scale(0.95);
+}
+
 .skill-card h3 {
   font-size: 1.1rem;
   font-weight: 700;

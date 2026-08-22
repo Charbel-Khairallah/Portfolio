@@ -81,8 +81,8 @@ main {
   align-items: center;
   gap: 0.4rem;
   padding: 0.35rem 0.85rem;
-  background: rgba(56, 189, 248, 0.08);
-  border: 1px solid rgba(56, 189, 248, 0.25);
+  background: var(--accent-cyan-soft);
+  border: 1px solid var(--card-border-strong);
   border-radius: 99px;
   color: var(--accent-cyan);
   font-size: 0.825rem;
@@ -94,7 +94,7 @@ main {
 }
 
 .back-link:hover {
-  background: rgba(56, 189, 248, 0.16);
+  background: var(--accent-cyan-mid);
   transform: translateX(-2px);
 }
 
@@ -103,8 +103,8 @@ main {
   align-items: center;
   gap: 0.5rem;
   padding: 0.35rem 0.85rem;
-  background: rgba(56, 189, 248, 0.08);
-  border: 1px solid rgba(56, 189, 248, 0.25);
+  background: var(--accent-cyan-soft);
+  border: 1px solid var(--card-border-strong);
   border-radius: 99px;
   color: var(--accent-cyan);
   font-size: 0.825rem;
@@ -180,7 +180,7 @@ main {
   position: absolute;
   inset: 0 auto 0 -35%;
   width: 24%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+  background: linear-gradient(90deg, transparent, var(--white-soft), transparent);
   pointer-events: none;
   animation: lightSweep 700ms 700ms ease-in-out both;
 }
@@ -193,7 +193,11 @@ main {
 .contact-card:hover {
   transform: translateY(-4px);
   border-color: var(--card-border-hover);
-  box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 10px 30px -10px var(--blue-shadow);
+}
+
+.contact-card:active {
+  transform: translateY(-4px) scale(0.95);
 }
 
 .contact-card-header {
@@ -207,8 +211,8 @@ main {
   width: 42px;
   height: 42px;
   border-radius: 10px;
-  background: rgba(56, 189, 248, 0.08);
-  border: 1px solid rgba(56, 189, 248, 0.15);
+  background: var(--accent-cyan-soft);
+  border: 1px solid var(--card-border);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -259,7 +263,7 @@ main {
   flex-direction: column;
   gap: 0.25rem;
   padding: 0.65rem 1.1rem;
-  background: rgba(56, 189, 248, 0.06);
+  background: var(--accent-cyan-soft);
   border: 1px solid var(--card-border);
   border-radius: 12px;
 }
