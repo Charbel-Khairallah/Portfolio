@@ -172,7 +172,8 @@ main {
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  scale: 1;
+  transition: transform 0.2s ease, scale 0.2s ease-out, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .contact-card::after {
@@ -197,7 +198,7 @@ main {
 }
 
 .contact-card:active {
-  transform: translateY(-4px) scale(0.95);
+  scale: 0.95;
 }
 
 .contact-card-header {
