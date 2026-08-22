@@ -200,11 +200,12 @@ main {
 }
 
 .skills-list li {
-  padding: 0.45rem 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.7rem;
   border: 1px solid var(--card-border-strong);
-  border-radius: 999px;
-  background: var(--accent-cyan-soft);
-  color: var(--accent-cyan);
+  border-radius: 7px;
+  color: var(--text-muted);
   font-size: 0.8rem;
   line-height: 1.2;
 }

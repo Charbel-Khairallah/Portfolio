@@ -79,11 +79,11 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.35rem 0.85rem;
-  background: var(--accent-cyan-soft);
+  padding: 0.4rem 0.7rem;
   border: 1px solid var(--card-border-strong);
-  border-radius: 99px;
-  color: var(--accent-cyan);
+  border-radius: 7px;
+  background: var(--accent-cyan-soft);
+  color: var(--text-muted);
   font-size: 0.825rem;
   font-weight: 500;
   margin-bottom: 0;
