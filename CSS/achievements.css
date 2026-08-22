@@ -238,6 +238,71 @@ main {
   line-height: 1.7;
 }
 
+.rank-table-wrap {
+  margin-top: 1rem;
+  overflow-x: auto;
+}
+
+.rank-table {
+  width: min(100%, 480px);
+  border-collapse: collapse;
+  background: var(--bg-surface-alt);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 14px 28px rgba(10, 15, 30, 0.12);
+}
+
+.rank-table thead th {
+  background: var(--accent-cyan-soft);
+  color: var(--accent-cyan);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: left;
+  padding: 0.8rem 0.9rem;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.rank-table tbody td {
+  padding: 0.75rem 0.9rem;
+  border-bottom: 1px solid var(--card-border);
+  color: var(--text-main);
+  font-size: 0.86rem;
+}
+
+.rank-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.rank-table tbody tr:nth-child(even) {
+  background: rgba(148, 163, 184, 0.04);
+}
+
+.competition-actions {
+  margin-top: 1rem;
+}
+
+.view-certificates {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--card-border-strong);
+  background: var(--accent-cyan-soft);
+  color: var(--accent-cyan);
+  border-radius: 999px;
+  padding: 0.7rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.view-certificates:hover {
+  background: var(--accent-cyan-mid);
+  border-color: var(--card-border-hover);
+  transform: translateY(-1px);
+}
+
 .image-viewer {
   position: fixed;
   inset: 0;
@@ -448,6 +513,11 @@ main {
   margin: 0 auto;
 }
 
+
+.Rank {
+    font-weight: bold;
+    color: var(--text-main);
+}
 
 @media (max-width: 640px) {
   .competition-row {

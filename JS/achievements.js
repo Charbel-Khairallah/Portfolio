@@ -72,10 +72,13 @@ function closeViewer() {
   viewer.setAttribute('aria-hidden', 'true');
 }
 
-document.querySelectorAll('.certificate-trigger').forEach((button) => {
+document.querySelectorAll('.certificate-trigger, .view-certificates').forEach((button) => {
   button.addEventListener('click', () => {
-    const images = JSON.parse(button.dataset.images || '[]');
-    openViewer(images, button.dataset.title || 'Achievement');
+    const row = button.closest('.competition-row');
+    const trigger = row ? row.querySelector('.certificate-trigger') : null;
+    const images = trigger ? JSON.parse(trigger.dataset.images || '[]') : [];
+    const title = trigger ? (trigger.dataset.title || 'Achievement') : (button.dataset.title || 'Achievement');
+    openViewer(images, title);
   });
 });
 
