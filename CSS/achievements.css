@@ -591,10 +591,12 @@ main {
   .certificate-trigger {
     width: 100%;
     min-width: 0;
+    height: 165px;
   }
 
-  .certificate-trigger img {
-    height: 220px;
+  .certificate-trigger img,
+  .certificate-trigger .Logo {
+    height: 165px;
   }
 
   .competition-copy {
