@@ -1,0 +1,313 @@
+/* ==========================================================================
+   contact.css
+   Page-specific styles for contact.html
+   (hero section, contact method cards, socials)
+   ========================================================================== */
+
+/* Reveal Animations (shared pattern with home.css / profile.css / achievements.css) */
+@keyframes pageReveal {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.97);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes headerReveal {
+  from {
+    opacity: 0;
+    transform: translateY(-18px) scale(0.98);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes badgeReveal {
+  from {
+    opacity: 0;
+    transform: translateX(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes lightSweep {
+  0% {
+    opacity: 0;
+    transform: translateX(-140%) skewX(-18deg);
+  }
+  15% { opacity: 1; }
+  82% { opacity: 1; }
+  100% {
+    opacity: 0;
+    transform: translateX(600%) skewX(-18deg);
+  }
+}
+
+main {
+  margin: 0 2.4rem;
+}
+
+.bg-animation {
+  animation: gridDrift 8000ms ease-in-out both infinite, gridDiagonalFade 2s linear 1500ms infinite;
+}
+
+/* Header (identical pattern to profile.css / achievements.css) */
+.page-header {
+  width: 100%;
+  padding: 2rem 3.5rem 1rem 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  position: relative;
+  z-index: 10;
+  animation: headerReveal 1400ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.85rem;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 99px;
+  color: var(--accent-cyan);
+  font-size: 0.825rem;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s ease, transform 0.2s ease;
+  animation: badgeReveal 700ms 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.back-link:hover {
+  background: rgba(56, 189, 248, 0.16);
+  transform: translateX(-2px);
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 99px;
+  color: var(--accent-cyan);
+  font-size: 0.825rem;
+  font-weight: 500;
+  white-space: nowrap;
+  animation: badgeReveal 700ms 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  background-color: var(--accent-cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--accent-cyan);
+}
+
+/* Hero */
+.hero {
+  padding: 1rem 0 1rem 0rem;
+  width: 100%;
+  animation: pageReveal 1500ms 140ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero p {
+  color: var(--text-muted);
+  font-size: clamp(1.05rem, 2vw, 1.2rem);
+  line-height: 1.6;
+  margin-bottom: 0;
+  text-align: justify;
+  animation: pageReveal 1300ms 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Content Block wrapper (shared pattern) */
+.content-block {
+  margin-top: 2.5rem;
+  animation: pageReveal 1200ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.section-label {
+  display: flex;
+  align-items: baseline;
+  gap: 0.85rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Primary Contact Methods Grid */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.contact-card {
+  position: relative;
+  overflow: hidden;
+  animation: pageReveal 1200ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  background: var(--bg-surface);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 1.75rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  text-decoration: none;
+  color: var(--text-main);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-card::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 -35%;
+  width: 24%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+  pointer-events: none;
+  animation: lightSweep 700ms 700ms ease-in-out both;
+}
+
+.contact-card:nth-child(1) { animation-delay: 280ms; }
+.contact-card:nth-child(2) { animation-delay: 360ms; }
+.contact-card:nth-child(3) { animation-delay: 440ms; }
+.contact-card:nth-child(4) { animation-delay: 520ms; }
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--card-border-hover);
+  box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.2);
+}
+
+.contact-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.9rem;
+}
+
+.contact-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-cyan);
+}
+
+.contact-arrow {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.contact-card:hover .contact-arrow {
+  transform: translateX(4px);
+  color: var(--accent-cyan);
+}
+
+.contact-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.contact-card .contact-value {
+  color: var(--accent-cyan);
+  font-size: 0.9rem;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.contact-card p.contact-note {
+  color: var(--text-muted);
+  font-size: 0.825rem;
+  line-height: 1.5;
+  margin-top: 0.35rem;
+}
+
+/* Availability / Location strip */
+.facts-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+  animation: pageReveal 1200ms 120ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.fact-chip {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.65rem 1.1rem;
+  background: rgba(56, 189, 248, 0.06);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+}
+
+.fact-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.fact-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .page-header,
+  .hero,
+  .content-block,
+  .contact-card,
+  .facts-strip,
+  .site-name,
+  .back-link,
+  .status-badge,
+  .gradient-text,
+  .hero p,
+  .bg-animation,
+  .contact-card::after {
+    animation: none;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .hero {
+    padding-top: 2rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
