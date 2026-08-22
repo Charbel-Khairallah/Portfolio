@@ -51,6 +51,9 @@
 
 main {
   margin: 0 2.4rem;
+  width: auto;
+  max-width: calc(100% - 4.8rem);
+  min-width: 0;
 }
 
 .bg-animation {
@@ -118,6 +121,9 @@ main {
   display: grid;
   gap: 2rem;
   margin-top: 2.5rem;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   animation: pageReveal 1200ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
@@ -126,6 +132,10 @@ main {
   border: 1px solid var(--card-border);
   border-radius: 20px;
   padding: 1.5rem;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   opacity: 0;
@@ -240,11 +250,16 @@ main {
 
 .rank-table-wrap {
   margin-top: 1rem;
+  width: 100%;
+  max-width: 100%;
   overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 .rank-table {
-  width: min(100%, 480px);
+  width: max-content;
+  min-width: 100%;
   border-collapse: collapse;
   background: var(--bg-surface-alt);
   border: 1px solid var(--card-border);
@@ -520,6 +535,36 @@ main {
 }
 
 @media (max-width: 640px) {
+  main {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0 1rem 3rem;
+  }
+
+  .achievement-sections,
+  .competition-section,
+  .competition-row,
+  .competition-copy {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .competition-section {
+    overflow: hidden;
+  }
+
+  .rank-table-wrap {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .rank-table {
+    min-width: 600px;
+  }
+
   .competition-row {
     flex-direction: column;
   }
