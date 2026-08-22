@@ -8,18 +8,63 @@ const closeBtn = document.querySelector('.viewer-close');
 let viewerImages = [];
 let viewerIndex = 0;
 
-function updateViewer() {
+function triggerImageTransition(direction) {
+  const currentClasses = ['slide-left-out', 'slide-right-out', 'slide-left-in', 'slide-right-in'];
+  viewerImage.classList.remove(...currentClasses);
+  void viewerImage.offsetWidth;
+
+  if (direction === 'next') {
+    viewerImage.classList.add('slide-right-out');
+    setTimeout(() => {
+      const currentImage = viewerImages[viewerIndex];
+      if (!currentImage) return;
+      viewerImage.src = currentImage;
+      viewerImage.alt = 'Achievement certificate';
+      viewerImage.classList.remove('slide-right-out');
+      void viewerImage.offsetWidth;
+      viewerImage.classList.add('slide-left-in');
+
+      const fileName = currentImage.split('/').pop();
+      viewerDownload.href = currentImage;
+      viewerDownload.setAttribute('download', fileName);
+    }, 180);
+    return;
+  }
+
+  viewerImage.classList.add('slide-left-out');
+  setTimeout(() => {
+    const currentImage = viewerImages[viewerIndex];
+    if (!currentImage) return;
+    viewerImage.src = currentImage;
+    viewerImage.alt = 'Achievement certificate';
+    viewerImage.classList.remove('slide-left-out');
+    void viewerImage.offsetWidth;
+    viewerImage.classList.add('slide-right-in');
+
+    const fileName = currentImage.split('/').pop();
+    viewerDownload.href = currentImage;
+    viewerDownload.setAttribute('download', fileName);
+  }, 180);
+}
+
+function updateViewer(direction = 'next') {
   const currentImage = viewerImages[viewerIndex];
   if (!currentImage) return;
 
-  viewerImage.src = currentImage;
-  viewerImage.alt = 'Achievement certificate';
   const fileName = currentImage.split('/').pop();
   viewerDownload.href = currentImage;
   viewerDownload.setAttribute('download', fileName);
 
   prevBtn.style.visibility = viewerImages.length > 1 ? 'visible' : 'hidden';
   nextBtn.style.visibility = viewerImages.length > 1 ? 'visible' : 'hidden';
+
+  if (direction === 'next' || direction === 'prev') {
+    triggerImageTransition(direction);
+    return;
+  }
+
+  viewerImage.src = currentImage;
+  viewerImage.alt = 'Achievement certificate';
 }
 
 function openViewer(images, title) {
@@ -27,7 +72,14 @@ function openViewer(images, title) {
   viewerIndex = 0;
   viewer.classList.remove('hidden');
   viewer.setAttribute('aria-hidden', 'false');
-  updateViewer();
+  viewerImage.classList.remove('slide-left-out', 'slide-right-out', 'slide-left-in', 'slide-right-in');
+  viewerImage.src = viewerImages[viewerIndex];
+  viewerImage.alt = 'Achievement certificate';
+  const fileName = viewerImages[viewerIndex].split('/').pop();
+  viewerDownload.href = viewerImages[viewerIndex];
+  viewerDownload.setAttribute('download', fileName);
+  prevBtn.style.visibility = viewerImages.length > 1 ? 'visible' : 'hidden';
+  nextBtn.style.visibility = viewerImages.length > 1 ? 'visible' : 'hidden';
 }
 
 function closeViewer() {
@@ -45,13 +97,13 @@ document.querySelectorAll('.certificate-trigger').forEach((button) => {
 prevBtn.addEventListener('click', () => {
   if (viewerImages.length <= 1) return;
   viewerIndex = (viewerIndex - 1 + viewerImages.length) % viewerImages.length;
-  updateViewer();
+  updateViewer('prev');
 });
 
 nextBtn.addEventListener('click', () => {
   if (viewerImages.length <= 1) return;
   viewerIndex = (viewerIndex + 1) % viewerImages.length;
-  updateViewer();
+  updateViewer('next');
 });
 
 closeBtn.addEventListener('click', closeViewer);
@@ -68,13 +120,13 @@ document.addEventListener('keydown', (event) => {
   if (event.key === 'ArrowLeft') {
     if (viewerImages.length > 1) {
       viewerIndex = (viewerIndex - 1 + viewerImages.length) % viewerImages.length;
-      updateViewer();
+      updateViewer('prev');
     }
   }
   if (event.key === 'ArrowRight') {
     if (viewerImages.length > 1) {
       viewerIndex = (viewerIndex + 1) % viewerImages.length;
-      updateViewer();
+      updateViewer('next');
     }
   }
 });

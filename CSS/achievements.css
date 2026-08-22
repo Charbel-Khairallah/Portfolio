@@ -297,6 +297,51 @@ main {
   overflow: hidden;
   padding: 1rem 1.25rem 0.5rem;
   max-height: 90%;
+  position: relative;
+}
+
+@keyframes slideOutRight {
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(200px) scale(0.98);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-200px) scale(0.98);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-200px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(200px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
 }
 
 .viewer-stage img {
@@ -307,6 +352,24 @@ main {
   width: auto;
   object-fit: contain;
   border-radius: 10px;
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+.viewer-stage img.slide-left-out {
+  animation: slideOutLeft 0.38s ease forwards;
+}
+
+.viewer-stage img.slide-right-out {
+  animation: slideOutRight 0.38s ease forwards;
+}
+
+.viewer-stage img.slide-left-in {
+  animation: slideInFromLeft 0.38s ease forwards;
+}
+
+.viewer-stage img.slide-right-in {
+  animation: slideInFromRight 0.38s ease forwards;
 }
 
 .viewer-footer {
