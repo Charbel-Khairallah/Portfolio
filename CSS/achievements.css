@@ -114,124 +114,76 @@ main {
   animation: pageReveal 1200ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-/* Stats Strip */
-.stats-strip {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-bottom: 2.5rem;
-  animation: pageReveal 1200ms 120ms cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-.stat-chip {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  padding: 0.65rem 1.1rem;
-  background: rgba(56, 189, 248, 0.06);
-  border: 1px solid var(--card-border);
-  border-radius: 12px;
-}
-
-.stat-value {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--text-main);
-}
-
-.stat-label {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-muted);
-}
-
-/* Achievements Grid */
-.achievements-grid {
+.achievement-sections {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.25rem;
+  gap: 2rem;
+  margin-top: 2.5rem;
+  animation: pageReveal 1200ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.achievement-card {
-  position: relative;
-  overflow: hidden;
-  animation: pageReveal 1200ms cubic-bezier(0.22, 1, 0.36, 1) both;
+.competition-section {
   background: var(--bg-surface);
   border: 1px solid var(--card-border);
-  border-radius: 16px;
-  padding: 1.75rem;
+  border-radius: 20px;
+  padding: 1.5rem;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+}
+
+.competition-section h2 {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
   color: var(--text-main);
+}
+
+.competition-row {
   display: flex;
-  flex-direction: column;
-  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  gap: 1.25rem;
+  align-items: flex-start;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(148, 163, 184, 0.14);
 }
 
-.achievement-card::after {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 -35%;
-  width: 24%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
-  pointer-events: none;
-  animation: lightSweep 700ms 700ms ease-in-out both;
+.competition-row:first-of-type {
+  border-top: none;
+  padding-top: 0;
 }
 
-.achievement-card:nth-child(1) { animation-delay: 280ms; }
-.achievement-card:nth-child(2) { animation-delay: 360ms; }
-.achievement-card:nth-child(3) { animation-delay: 440ms; }
-.achievement-card:nth-child(4) { animation-delay: 520ms; }
-.achievement-card:nth-child(5) { animation-delay: 600ms; }
-.achievement-card:nth-child(6) { animation-delay: 680ms; }
-
-.achievement-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--card-border-hover);
-  box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.2);
-}
-
-.achievement-card-header {
+.certificate-gallery {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 1.1rem;
-}
-
-/* The "image" for each achievement: an icon badge rendered in the
-   site's own accent, matching .nav-card-icon / .skill-card imagery */
-.achievement-icon {
-  width: 46px;
-  height: 46px;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  min-width: 220px;
+  width: 220px;
   flex-shrink: 0;
+}
+
+.certificate-gallery img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
   border-radius: 12px;
-  background: rgba(56, 189, 248, 0.08);
-  border: 1px solid rgba(56, 189, 248, 0.18);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--accent-cyan);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: rgba(15, 23, 42, 0.7);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.2);
 }
 
-.achievement-date {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  color: var(--text-muted);
-  white-space: nowrap;
+.competition-copy {
+  flex: 1;
+  min-width: 0;
 }
 
-.achievement-card h3 {
+.competition-copy h3 {
+  margin: 0 0 0.45rem;
   font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
+  color: var(--text-main);
 }
 
-.achievement-card p {
+.competition-copy p {
+  margin: 0;
   color: var(--text-muted);
-  font-size: 0.875rem;
-  line-height: 1.55;
+  font-size: 0.95rem;
+  line-height: 1.7;
 }
 
 /* Reduced Motion */
@@ -263,7 +215,21 @@ main {
     padding-top: 2rem;
   }
 
-  .achievements-grid {
-    grid-template-columns: 1fr;
+  .competition-row {
+    flex-direction: column;
+  }
+
+  .certificate-gallery {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .certificate-gallery img {
+    flex: 1 1 180px;
+    height: 180px;
+  }
+
+  .competition-copy {
+    width: 100%;
   }
 }
