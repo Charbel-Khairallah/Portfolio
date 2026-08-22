@@ -1,6 +1,5 @@
 const viewer = document.getElementById('imageViewer');
 const viewerImage = document.getElementById('viewerImage');
-const viewerDownload = document.getElementById('viewerDownload');
 const prevBtn = document.querySelector('.viewer-prev');
 const nextBtn = document.querySelector('.viewer-next');
 const closeBtn = document.querySelector('.viewer-close');
@@ -24,9 +23,6 @@ function triggerImageTransition(direction) {
       void viewerImage.offsetWidth;
       viewerImage.classList.add('slide-left-in');
 
-      const fileName = currentImage.split('/').pop();
-      viewerDownload.href = currentImage;
-      viewerDownload.setAttribute('download', fileName);
     }, 180);
     return;
   }
@@ -40,20 +36,12 @@ function triggerImageTransition(direction) {
     viewerImage.classList.remove('slide-left-out');
     void viewerImage.offsetWidth;
     viewerImage.classList.add('slide-right-in');
-
-    const fileName = currentImage.split('/').pop();
-    viewerDownload.href = currentImage;
-    viewerDownload.setAttribute('download', fileName);
   }, 180);
 }
 
 function updateViewer(direction = 'next') {
   const currentImage = viewerImages[viewerIndex];
   if (!currentImage) return;
-
-  const fileName = currentImage.split('/').pop();
-  viewerDownload.href = currentImage;
-  viewerDownload.setAttribute('download', fileName);
 
   prevBtn.style.visibility = viewerImages.length > 1 ? 'visible' : 'hidden';
   nextBtn.style.visibility = viewerImages.length > 1 ? 'visible' : 'hidden';
@@ -75,9 +63,6 @@ function openViewer(images, title) {
   viewerImage.classList.remove('slide-left-out', 'slide-right-out', 'slide-left-in', 'slide-right-in');
   viewerImage.src = viewerImages[viewerIndex];
   viewerImage.alt = 'Achievement certificate';
-  const fileName = viewerImages[viewerIndex].split('/').pop();
-  viewerDownload.href = viewerImages[viewerIndex];
-  viewerDownload.setAttribute('download', fileName);
   prevBtn.style.visibility = viewerImages.length > 1 ? 'visible' : 'hidden';
   nextBtn.style.visibility = viewerImages.length > 1 ? 'visible' : 'hidden';
 }
