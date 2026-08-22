@@ -1,0 +1,1 @@
+document.getElementById("YearsOfExperience").textContent = new Date().getFullYear() - 2022;

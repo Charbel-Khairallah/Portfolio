@@ -1,5 +1,4 @@
-
-/* Reveal Animations (shared pattern with home.css) */
+/* Reveal Animations (shared pattern with home.css / profile.css) */
 @keyframes pageReveal {
   from {
     opacity: 0;
@@ -50,17 +49,15 @@
   }
 }
 
-
 main {
-    margin: 0 2.4rem;
+  margin: 0 2.4rem;
 }
-
 
 .bg-animation {
   animation: gridDrift 8000ms ease-in-out both infinite, gridDiagonalFade 2s linear 1500ms infinite;
 }
 
-/* Header */
+/* Header (identical pattern to profile.css) */
 .page-header {
   width: 100%;
   padding: 2rem 3.5rem 1rem 3.5rem;
@@ -71,25 +68,6 @@ main {
   position: relative;
   z-index: 10;
   animation: headerReveal 1400ms cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-.site-name {
-  text-align: left;
-  font-size: clamp(2rem, 3.75vw, 4rem);
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  margin: 0;
-  position: relative;
-  z-index: 1;
-}
-
-.site-name-link {
-  color: var(--text-main);
-  text-decoration: none;
-}
-
-.site-name-link:hover {
-  color: var(--accent-cyan);
 }
 
 .back-link {
@@ -130,66 +108,22 @@ main {
   animation: pageReveal 1300ms 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-/* Content Blocks (About / Skills / Philosophy) */
+/* Content Block wrapper (shared pattern) */
 .content-block {
-  margin-top: 3rem;
+  margin-top: 2.5rem;
   animation: pageReveal 1200ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.section-label {
-  display: flex;
-  align-items: baseline;
-  gap: 0.85rem;
-  margin-bottom: 0.8rem;
-}
-
-.section-index {
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: var(--accent-cyan);
-  opacity: 0.75;
-}
-
-.section-label h2 {
-  font-size: 1.4rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-}
-
-/* About Panel */
-.about-panel {
-  position: relative;
-  overflow: hidden;
-  background: var(--bg-surface);
-  border: 1px solid var(--card-border);
-  border-radius: 16px;
-  padding: 1.75rem 2rem;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-.about-panel p {
-  color: var(--text-muted);
-  font-size: 1rem;
-  line-height: 1.7;
-  text-align: justify;
-}
-
-.about-panel p + p {
-  margin-top: 1rem;
-}
-
-/* Quick Facts Strip */
-.facts-strip {
+/* Stats Strip */
+.stats-strip {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  margin-top: 1.75rem;
+  margin-bottom: 2.5rem;
   animation: pageReveal 1200ms 120ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.fact-chip {
+.stat-chip {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
@@ -199,27 +133,27 @@ main {
   border-radius: 12px;
 }
 
-.fact-label {
+.stat-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.stat-label {
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--text-muted);
 }
 
-.fact-value {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--text-main);
-}
-
-/* Skills Grid */
-.skills-grid {
+/* Achievements Grid */
+.achievements-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.25rem;
 }
 
-.skill-card {
+.achievement-card {
   position: relative;
   overflow: hidden;
   animation: pageReveal 1200ms cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -235,7 +169,7 @@ main {
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.skill-card::after {
+.achievement-card::after {
   content: "";
   position: absolute;
   inset: 0 auto 0 -35%;
@@ -245,64 +179,59 @@ main {
   animation: lightSweep 700ms 700ms ease-in-out both;
 }
 
-.skill-card:nth-child(1) { animation-delay: 280ms; }
-.skill-card:nth-child(2) { animation-delay: 360ms; }
-.skill-card:nth-child(3) { animation-delay: 440ms; }
-.skill-card:nth-child(4) { animation-delay: 520ms; }
+.achievement-card:nth-child(1) { animation-delay: 280ms; }
+.achievement-card:nth-child(2) { animation-delay: 360ms; }
+.achievement-card:nth-child(3) { animation-delay: 440ms; }
+.achievement-card:nth-child(4) { animation-delay: 520ms; }
+.achievement-card:nth-child(5) { animation-delay: 600ms; }
+.achievement-card:nth-child(6) { animation-delay: 680ms; }
 
-.skill-card:hover {
+.achievement-card:hover {
   transform: translateY(-4px);
   border-color: var(--card-border-hover);
   box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.2);
 }
 
-.skill-card h3 {
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 0.4rem;
-}
-
-.skill-card p {
-  color: var(--text-muted);
-  font-size: 0.875rem;
-  line-height: 1.5;
-  margin-bottom: 1rem;
-}
-
-.tag-list {
+.achievement-card-header {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-top: auto;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.1rem;
 }
 
-.tag {
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--accent-cyan);
+/* The "image" for each achievement: an icon badge rendered in the
+   site's own accent, matching .nav-card-icon / .skill-card imagery */
+.achievement-icon {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  border-radius: 12px;
   background: rgba(56, 189, 248, 0.08);
   border: 1px solid rgba(56, 189, 248, 0.18);
-  border-radius: 99px;
-  padding: 0.25rem 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-cyan);
 }
 
-/* Philosophy Panel */
-.philosophy-panel {
-  position: relative;
-  background: var(--bg-surface);
-  border: 1px solid var(--card-border);
-  border-left: 3px solid var(--accent-cyan);
-  border-radius: 12px;
-  padding: 1.75rem 2rem;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+.achievement-date {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--text-muted);
+  white-space: nowrap;
 }
 
-.philosophy-panel p {
-  color: var(--text-main);
-  font-size: 1.05rem;
-  line-height: 1.7;
-  font-style: italic;
+.achievement-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.achievement-card p {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  line-height: 1.55;
 }
 
 /* Reduced Motion */
@@ -310,14 +239,14 @@ main {
   .page-header,
   .hero,
   .content-block,
-  .facts-strip,
-  .skill-card,
+  .stats-strip,
+  .achievement-card,
   .site-name,
   .back-link,
   .gradient-text,
   .hero p,
   .bg-animation,
-  .skill-card::after {
+  .achievement-card::after {
     animation: none;
   }
 }
@@ -334,12 +263,7 @@ main {
     padding-top: 2rem;
   }
 
-  .skills-grid {
+  .achievements-grid {
     grid-template-columns: 1fr;
-  }
-
-  .about-panel,
-  .philosophy-panel {
-    padding: 1.5rem;
   }
 }
