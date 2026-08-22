@@ -282,6 +282,29 @@ main {
   color: var(--text-main);
 }
 
+.copy-notification {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 20;
+  max-width: min(360px, calc(100% - 2rem));
+  padding: 0.85rem 1.1rem;
+  background: var(--bg-surface-opaque);
+  border: 1px solid var(--card-border-strong);
+  border-radius: 12px;
+  color: var(--text-main);
+  box-shadow: 0 14px 30px var(--shadow-deep);
+  opacity: 0;
+  transform: translateY(1rem);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.copy-notification.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   .page-header,
@@ -314,5 +337,10 @@ main {
 
   .contact-grid {
     grid-template-columns: 1fr;
+  }
+
+  .copy-notification {
+    right: 1rem;
+    bottom: 1rem;
   }
 }
