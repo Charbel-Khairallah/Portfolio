@@ -50,11 +50,9 @@
   }
 }
 
-
 main {
     margin: 0 2.4rem;
 }
-
 
 .bg-animation {
   animation: gridDrift 8000ms ease-in-out both infinite, gridDiagonalFade 2s linear 1500ms infinite;
@@ -97,8 +95,8 @@ main {
   align-items: center;
   gap: 0.4rem;
   padding: 0.35rem 0.85rem;
-  background: rgba(56, 189, 248, 0.08);
-  border: 1px solid rgba(56, 189, 248, 0.25);
+  background: var(--accent-cyan-soft);
+  border: 1px solid var(--card-border-strong);
   border-radius: 99px;
   color: var(--accent-cyan);
   font-size: 0.825rem;
@@ -110,7 +108,7 @@ main {
 }
 
 .back-link:hover {
-  background: rgba(56, 189, 248, 0.16);
+  background: var(--accent-cyan-mid);
   transform: translateX(-2px);
 }
 
@@ -194,7 +192,7 @@ main {
   flex-direction: column;
   gap: 0.25rem;
   padding: 0.65rem 1.1rem;
-  background: rgba(56, 189, 248, 0.06);
+  background: var(--accent-cyan-soft);
   border: 1px solid var(--card-border);
   border-radius: 12px;
 }
@@ -240,7 +238,7 @@ main {
   position: absolute;
   inset: 0 auto 0 -35%;
   width: 24%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+  background: linear-gradient(90deg, transparent, var(--white-soft), transparent);
   pointer-events: none;
   animation: lightSweep 700ms 700ms ease-in-out both;
 }
@@ -253,7 +251,7 @@ main {
 .skill-card:hover {
   transform: translateY(-4px);
   border-color: var(--card-border-hover);
-  box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 10px 30px -10px var(--blue-shadow);
 }
 
 .skill-card h3 {
@@ -280,8 +278,8 @@ main {
   font-size: 0.75rem;
   font-weight: 500;
   color: var(--accent-cyan);
-  background: rgba(56, 189, 248, 0.08);
-  border: 1px solid rgba(56, 189, 248, 0.18);
+  background: var(--accent-cyan-soft);
+  border: 1px solid var(--card-border);
   border-radius: 99px;
   padding: 0.25rem 0.7rem;
 }

@@ -49,7 +49,6 @@
   }
 }
 
-
 main {
   margin: 0 2.4rem;
 }
@@ -76,8 +75,8 @@ main {
   align-items: center;
   gap: 0.4rem;
   padding: 0.35rem 0.85rem;
-  background: rgba(56, 189, 248, 0.08);
-  border: 1px solid rgba(56, 189, 248, 0.25);
+  background: var(--accent-cyan-soft);
+  border: 1px solid var(--card-border-strong);
   border-radius: 99px;
   color: var(--accent-cyan);
   font-size: 0.825rem;
@@ -89,7 +88,7 @@ main {
 }
 
 .back-link:hover {
-  background: rgba(56, 189, 248, 0.16);
+  background: var(--accent-cyan-mid);
   transform: translateX(-2px);
 }
 
@@ -142,7 +141,7 @@ main {
   gap: 1.25rem;
   align-items: flex-start;
   padding: 1rem 0;
-  border-top: 1px solid rgba(148, 163, 184, 0.14);
+  border-top: 1px solid var(--text-soft);
 }
 
 .competition-row:first-of-type {
@@ -152,8 +151,8 @@ main {
 
 .certificate-trigger {
   display: block;
-  border: 3px solid rgba(148, 163, 184, 0.1);
-  background: rgba(15, 23, 42, 0.7);
+  border: 3px solid var(--text-soft);
+  background: var(--bg-surface-alt);
   border-radius: 12px;
   width: 220px;
   min-width: 220px;
@@ -161,13 +160,13 @@ main {
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.2);
+  box-shadow: 0 10px 25px var(--shadow-card);
 }
 
 .certificate-trigger:hover {
   transform: scale(1.05);
-  border-color: rgba(56, 189, 248, 0.5);
-  box-shadow: 0 10px 25px rgba(76, 76, 248, 0.322);
+  border-color: var(--accent-cyan-strong);
+  box-shadow: 0 10px 30px -10px var(--blue-shadow);
 }
 
 .certificate-trigger img {
@@ -217,7 +216,7 @@ main {
 .viewer-backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(2, 6, 23, 0.78);
+  background: var(--bg-surface-deep);
   opacity: 0;
   transition: opacity 0.42s ease;
 }
@@ -232,10 +231,10 @@ main {
   width: 80vw;
   height: min(90vh, 90vw);
   max-height: 90vh;
-  background: rgba(15, 23, 42, 0.96);
-  border: 1px solid rgba(56, 189, 248, 0.25);
+  background: var(--bg-surface-opaque);
+  border: 1px solid var(--card-border-strong);
   border-radius: 18px;
-  box-shadow: 0 24px 70px rgba(2, 6, 23, 0.7);
+  box-shadow: 0 24px 70px var(--shadow-deep);
   padding: 1rem;
   opacity: 0;
   transform: scale(0.96) translateY(10px);
@@ -256,7 +255,7 @@ main {
   transform: translateY(-50%);
   z-index: 2;
   border: none;
-  background: rgba(15, 23, 42, 0.85);
+  background: var(--bg-surface-strong);
   color: var(--text-main);
   border-radius: 999px;
   width: 42px;
@@ -276,7 +275,7 @@ main {
 
 .viewer-close:hover,
 .viewer-nav:hover {
-  background: rgba(56, 189, 248, 0.2);
+  background: var(--accent-cyan-glow);
 }
 
 .viewer-prev {
@@ -291,7 +290,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(15, 23, 42, 0.8);
+  background: var(--bg-surface-strong);
   border-radius: 12px;
   flex: 1;
   min-height: 0;
@@ -389,7 +388,7 @@ main {
   align-items: center;
   justify-content: center;
   background: var(--gradient-primary);
-  color: white;
+  color: var(--text-main);
   padding: 0.7rem 1rem;
   border-radius: 10px;
   text-decoration: none;

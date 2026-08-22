@@ -50,7 +50,6 @@
   }
 }
 
-
 .page-header {
   animation: headerReveal 1400ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
@@ -81,8 +80,8 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.35rem 0.85rem;
-  background: rgba(56, 189, 248, 0.08);
-  border: 1px solid rgba(56, 189, 248, 0.25);
+  background: var(--accent-cyan-soft);
+  border: 1px solid var(--card-border-strong);
   border-radius: 99px;
   color: var(--accent-cyan);
   font-size: 0.825rem;
@@ -95,7 +94,6 @@
 .hero p {
   text-align: justify;
 }
-
 
 .status-dot {
   width: 7px;
@@ -131,7 +129,6 @@
   max-width: 780px;
   width: 100%;
 }
-
 
 .hero p {
   color: var(--text-muted);
@@ -173,7 +170,7 @@
   position: absolute;
   inset: 0 auto 0 -35%;
   width: 24%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+  background: linear-gradient(90deg, transparent, var(--white-soft), transparent);
   pointer-events: none;
   animation: lightSweep 700ms 700ms ease-in-out both;
 }
@@ -188,7 +185,7 @@
 .nav-card:hover {
   transform: translateY(-4px);
   border-color: var(--card-border-hover);
-  box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.2);
+  box-shadow: 0 10px 30px -10px var(--blue-shadow);
 }
 
 .nav-card:active {
@@ -206,8 +203,8 @@
   width: 42px;
   height: 42px;
   border-radius: 10px;
-  background: rgba(56, 189, 248, 0.08);
-  border: 1px solid rgba(56, 189, 248, 0.15);
+  background: var(--accent-cyan-soft);
+  border: 1px solid var(--card-border);
   display: flex;
   align-items: center;
   justify-content: center;
