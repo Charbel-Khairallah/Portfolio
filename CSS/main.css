@@ -31,6 +31,9 @@
   --blue-shadow: rgba(37, 99, 235, 0.2);
   --blue-violet-glow: rgba(76, 76, 248, 0.322);
   --glow-blue: rgba(37, 99, 235, 0.25);
+  --scrollbar-track: rgba(15, 23, 42, 0.72);
+  --scrollbar-thumb: rgb(19, 32, 63);
+  --scrollbar-thumb-hover: rgba(56, 189, 248, 0.7);
 
   --gradient-primary: linear-gradient(135deg, #38bdf8 0%, #2563eb 60%, #1d4ed8 100%);
   --gradient-text: linear-gradient(135deg, #e0f2fe 0%, #38bdf8 50%, #60a5fa 100%);
@@ -42,6 +45,31 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scrollbar-width: auto;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border: 2px solid var(--scrollbar-track);
+  border-radius: 999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+
+*::-webkit-scrollbar-corner {
+  background: var(--scrollbar-track);
 }
 
 html, body {
