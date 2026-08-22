@@ -294,6 +294,8 @@ main {
   padding: 1.75rem 2rem;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  opacity: 0;
+  animation: pageReveal 1200ms 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .philosophy-panel p {
@@ -315,7 +317,8 @@ main {
   .gradient-text,
   .hero p,
   .bg-animation,
-  .skill-card::after {
+  .skill-card::after,
+  .philosophy-panel {
     animation: none;
   }
 }

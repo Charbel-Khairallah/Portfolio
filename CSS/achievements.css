@@ -140,11 +140,11 @@ main {
   -webkit-backdrop-filter: blur(12px);
   opacity: 0;
   transform: translateY(36px);
-  animation: competitionSectionReveal 800ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: competitionSectionReveal 800ms 650ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .competition-section:nth-child(2) {
-  animation-delay: 180ms;
+  animation-delay: 850ms;
 }
 
 .competition-section h2 {
@@ -622,7 +622,8 @@ main {
   .gradient-text,
   .hero p,
   .bg-animation,
-  .achievement-card::after {
+  .achievement-card::after,
+  .competition-section {
     animation: none;
   }
 }
