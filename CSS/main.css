@@ -222,3 +222,19 @@ main {
   position: relative;
   z-index: 10;
 }
+
+.nav-card,
+.contact-card,
+.back-link,
+.skill-card,
+.competition-section,
+.certificate-trigger,
+.nav-card img,
+.contact-card img,
+.back-link svg,
+.skill-card img,
+.competition-section img,
+.certificate-trigger img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
