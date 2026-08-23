@@ -3,18 +3,32 @@ const projects = {
     label: "Game Development",
     projects: [
       {
-        title: "Unity Interactive Simulation",
-        description: "An interactive 2D / 3D experience built with Unity, combining reusable systems, custom tools, and carefully optimised assets.",
-        tags: ["Unity", "C#", "3D", "Shaders"],
-        media: "Add a project image or video",
-        links: []
+        title: "Fluency Cards",
+        date: "2024",
+        collaborative: true,
+        description: "A game built with Unity that provide English practice in an easy and engaging 'Uno-style' games.",
+        image: "../Resources/Images/Projects/FluencyCards.webp"
       },
       {
-        title: "Game Prototype",
-        description: "A focused gameplay prototype for exploring mechanics, feedback, and responsive player interactions from the first build onward.",
-        tags: ["Unity", "Gameplay", "Prototyping"],
-        media: "Add a project image or video",
-        links: []
+        title: "Jeflen",
+        date: "2024",
+        collaborative: true,
+        description: "A simple arcade game built with Unity that you can play in your free time and have fun.",
+        image: "../Resources/Images/Projects/Jeflen.webp"
+      },
+      {
+        title: "Magnet Chaos",
+        date: "2023",
+        collaborative: false,
+        description: "An original desktop game built with C++ SFML without any game engines. <br>Control the magnet strategically and kill as many robots as you can to survive.",
+        image: "../Resources/Images/Projects/MagnetChaos.webp"
+      },
+      {
+        title: "Asteroids",
+        date: "2022",
+        collaborative: false,
+        description: "A desktop game built with C++ SFML without any game engines. <br>Control a space ship to shoot asteroids and stay alive as much as possible.",
+        image: "../Resources/Images/Projects/Asteroids.webp"
       }
     ]
   },
@@ -22,11 +36,11 @@ const projects = {
     label: "Embedded Systems",
     projects: [
       {
-        title: "Embedded Systems Project",
-        description: "A hardware-software experiment focused on reliable communication between a microcontroller, sensors, and a custom control layer.",
-        tags: ["C++", "Microcontrollers", "Sensors"],
-        media: "Add a project image or video",
-        links: []
+        title: "Water Level Tracker",
+        date: "2026",
+        collaborative: false,
+        description: "A simple Arduino project that tracks the level of the water in a tank no matter what it's height is.",
+        image: "../Resources/Images/Projects/WaterLevelTracker.webp"
       }
     ]
   },
@@ -34,18 +48,18 @@ const projects = {
     label: "Web Development",
     projects: [
       {
-        title: "Portfolio Website",
-        description: "This portfolio is a lightweight, responsive website for presenting technical work, experience, and the ideas behind each project.",
-        tags: ["HTML", "CSS", "JavaScript"],
-        media: "Add a project image or video",
-        links: []
+        title: "Blood Seeker",
+        date: "2026",
+        collaborative: true,
+        description: "This is a personal group project that makes blood donations and requests easier. I worked on the backend part of it.",
+        image: "../Resources/Images/Projects/BloodSeeker.webp"
       },
       {
-        title: "Web Application",
-        description: "A full-stack web application built around a practical workflow, with attention to clear interfaces, data, and maintainable code.",
-        tags: ["Frontend", "Backend", "Database"],
-        media: "Add a project image or video",
-        links: []
+        title: "Fluency Test Prep",
+        date: "2026",
+        collaborative: true,
+        description: "A website designed for students to prepare for english tests and for teachers to track their students progress. I worked on the Frontend part of it.",
+        image: "../Resources/Images/Projects/FluencyTestPrep.webp"
       }
     ]
   }
@@ -53,10 +67,6 @@ const projects = {
 
 const tabs = [...document.querySelectorAll(".project-tab")];
 const panels = document.getElementById("project-panels");
-
-function projectIcon() {
-  return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="m8 10 3 2-3 2M13 15h3"></path></svg>`;
-}
 
 function renderPanel(category, isActive) {
   const panel = document.createElement("section");
@@ -70,11 +80,13 @@ function renderPanel(category, isActive) {
   const grid = document.createElement("div");
   grid.className = "project-grid";
   projects[category].projects.forEach((project, index) => {
-    const links = project.links.length
-      ? project.links.map((link) => `<a href="${link.url}" target="_blank" rel="noreferrer">${link.label}</a>`).join("")
-      : '<span class="project-link">Project links coming soon</span>';
-    const tags = project.tags.map((tag) => `<li>${tag}</li>`).join("");
-    grid.insertAdjacentHTML("beforeend", `<article class="project-card" style="animation-delay: ${index * 100}ms"><div class="project-media">${projectIcon()}<div><span>${project.media}</span></div></div><div class="project-content"><h2>${project.title}</h2><p>${project.description}</p><ul class="project-tags">${tags}</ul><div class="project-links">${links}</div></div></article>`);
+    const image = project.image
+      ? `<img src="${project.image}" alt="${project.title}" loading="lazy" draggable="false">`
+      : "";
+    const collaborationBadge = project.collaborative
+      ? '<span class="collaboration-badge">Collaborative</span>'
+      : "";
+    grid.insertAdjacentHTML("beforeend", `<article class="project-card" draggable="false" style="animation-delay: ${index * 100}ms"><div class="project-media">${image}${collaborationBadge}</div><div class="project-content"><div class="project-heading"><h2>${project.title}</h2><time class="project-date">${project.date}</time></div><p>${project.description}</p></div></article>`);
   });
   panel.appendChild(grid);
   panels.appendChild(panel);

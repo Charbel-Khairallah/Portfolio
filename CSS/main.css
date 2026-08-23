@@ -1,7 +1,7 @@
 
 /* Design Tokens: Deep Cobalt & Electric Cyan Theme */
 :root {
-  --bg-dark: #090d16;
+  --bg-dark: rgba(9, 13, 22, 1);
   --bg-surface: rgba(15, 23, 42, 0.6);
   --bg-surface-strong: rgba(15, 23, 42, 0.8);
   --bg-surface-opaque: rgba(15, 23, 42, 0.96);
@@ -12,12 +12,12 @@
   --card-border-strong: rgba(56, 189, 248, 0.25);
   --card-border-hover: rgba(56, 189, 248, 0.35);
 
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
+  --text-main: rgba(248, 250, 252, 1);
+  --text-muted: rgba(148, 163, 184, 1);
   --text-soft: rgba(148, 163, 184, 0.14);
 
-  --accent-blue: #2563eb;
-  --accent-cyan: #38bdf8;
+  --accent-blue: rgba(37, 99, 235, 1);
+  --accent-cyan: rgba(56, 189, 248, 1);
   --accent-cyan-soft: rgba(56, 189, 248, 0.08);
   --accent-cyan-mid: rgba(56, 189, 248, 0.16);
   --accent-cyan-glow: rgba(56, 189, 248, 0.2);
@@ -35,8 +35,8 @@
   --scrollbar-thumb: rgb(19, 32, 63);
   --scrollbar-thumb-hover: rgba(56, 189, 248, 0.7);
 
-  --gradient-primary: linear-gradient(135deg, #38bdf8 0%, #2563eb 60%, #1d4ed8 100%);
-  --gradient-text: linear-gradient(135deg, #e0f2fe 0%, #38bdf8 50%, #60a5fa 100%);
+  --gradient-primary: linear-gradient(135deg, rgba(56, 189, 248, 1) 0%, rgba(37, 99, 235, 1) 60%, rgba(29, 78, 216, 1) 100%);
+  --gradient-text: linear-gradient(135deg, rgba(224, 242, 254, 1) 0%, rgba(56, 189, 248, 1) 50%, rgba(96, 165, 250, 1) 100%);
 
   --font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
@@ -229,12 +229,14 @@ main {
 .skill-card,
 .competition-section,
 .certificate-trigger,
+.project-card,
 .nav-card img,
 .contact-card img,
 .back-link svg,
 .skill-card img,
 .competition-section img,
-.certificate-trigger img {
+.certificate-trigger img,
+.project-card img {
   -webkit-user-drag: none;
   user-select: none;
 }

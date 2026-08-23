@@ -93,7 +93,6 @@ main {
 }
 
 .hero p {
-  max-width: 760px;
   color: var(--text-muted);
   font-size: clamp(1.05rem, 2vw, 1.2rem);
   line-height: 1.6;
@@ -152,10 +151,13 @@ main {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
   gap: 1.25rem;
+  justify-items: center;
 }
 
 .project-card {
   display: flex;
+  width: 100%;
+  max-width: 400px;
   min-width: 0;
   flex-direction: column;
   overflow: hidden;
@@ -164,36 +166,94 @@ main {
   background: var(--bg-surface);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  cursor: pointer;
+  scale: 1;
+  transition: transform 0.2s ease, scale 0.2s ease-out, border-color 0.2s ease, box-shadow 0.2s ease;
   animation: cardReveal 600ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-.project-media {
-  display: grid;
-  place-items: center;
-  aspect-ratio: 16 / 9;
-  border-bottom: 1px solid var(--card-border);
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.22), rgba(15, 23, 42, 0.75));
-  color: var(--accent-cyan);
-  text-align: center;
+.project-card:hover {
+  border-color: var(--card-border-hover);
+  box-shadow: 0 10px 30px -10px var(--blue-shadow);
 }
 
-.project-media svg { width: 42px; height: 42px; margin-bottom: 0.5rem; }
-.project-media span { display: block; color: var(--text-muted); font-size: 0.78rem; }
+.project-card:active {
+  scale: 0.95;
+}
+
+.project-media {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  aspect-ratio: 16 / 9;
+  border-bottom: 1px solid var(--card-border);
+  background: var(--bg-surface-deep);
+}
+
+.project-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--bg-surface-deep), transparent);
+  pointer-events: none;
+}
+
+.collaboration-badge {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  border-radius: 6px;
+  background: rgba(8, 35, 72, 0.52);
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--text-main);
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.collaboration-badge::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  border-radius: 50%;
+  background-color: var(--accent-cyan);
+  box-shadow: 0 0 8px var(--accent-cyan);
+}
+
+.project-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.project-card:hover .project-media img {
+  transform: scale(1.12);
+}
+
 .project-content { display: flex; flex: 1; flex-direction: column; padding: 1.25rem; }
-.project-content h2 { margin-bottom: 0.5rem; font-size: 1.15rem; }
+.project-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 0.5rem; }
+.project-content h2 { font-size: 1.15rem; }
+.project-date { flex-shrink: 0; color: var(--accent-cyan); font-size: 0.78rem; font-weight: 600; white-space: nowrap; }
 .project-content p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.65; }
-.project-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 1rem 0 1.25rem; list-style: none; }
-.project-tags li { padding: 0.3rem 0.55rem; border: 1px solid var(--card-border-strong); border-radius: 6px; color: var(--text-muted); font-size: 0.75rem; }
-.project-links { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: auto; }
-.project-links a, .project-link { color: var(--accent-cyan); font-size: 0.82rem; font-weight: 600; text-decoration: none; }
-.project-links a:hover { text-decoration: underline; }
-.project-link { color: var(--text-muted); }
 
 @media (max-width: 640px) {
   main { width: 100%; max-width: 100%; margin: 0; padding: 0 1rem 3rem; }
   .page-header { padding: 2rem 1rem 1rem; }
   .hero { padding-top: 2rem; }
   .project-tab { padding-inline: 0.75rem; }
+  .project-heading { align-items: flex-start; gap: 0.65rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
