@@ -3,24 +3,69 @@ const projectDetails = {
     category: "Game Development",
     title: "Fluency Cards",
     date: "2024",
+    mainMedia: "../Resources/Images/Projects/FluencyCards.webp",
     description: ["Fluency Cards is a Unity game designed to make English practice feel quick, social, and approachable.", "The Uno-style format turns vocabulary and language challenges into a playful session that can be picked up whenever there is a few minutes to spare."],
     skills: ["Unity", "C#", "Game Design"],
-    media: [1, 2, 3].map((number) => ({ type: "image", src: "../Resources/Images/Projects/FluencyCards.webp", alt: `Fluency Cards preview ${number}` })),
+    media: [
+            {
+              type: "image",
+              src: "../Resources/Images/Projects/FluencyCards/FluencyCards-01.webp",
+              alt: "FluencyCards-01.webp"
+            },
+            {
+              type: "image",
+              src: "../Resources/Images/Projects/FluencyCards/FluencyCards-02.webp",
+              alt: "FluencyCards-02.webp"
+            },
+            {
+              type: "image",
+              src: "../Resources/Images/Projects/FluencyCards/FluencyCards-03.webp",
+              alt: "FluencyCards-03.webp"
+            },
+            {
+              type: "image",
+              src: "../Resources/Images/Projects/FluencyCards/FluencyCards-04.webp",
+              alt: "FluencyCards-04.webp"
+            }
+          ],
     links: []
   },
   jeflen: {
     category: "Game Development",
     title: "Jeflen",
     date: "2024",
+    mainMedia: "../Resources/Images/Projects/Jeflen.webp",
     description: ["Jeflen is a compact arcade game built with Unity for short, repeatable play sessions.", "Its simple rules leave room to focus on movement, timing, and the small satisfaction of improving a score run by run."],
     skills: ["Unity", "C#", "Game Development"],
-    media: [1, 2, 3].map((number) => ({ type: "image", src: "../Resources/Images/Projects/Jeflen.webp", alt: `Jeflen preview ${number}` })),
+    media: [
+            {
+              type: "image",
+              src: "../Resources/Images/Projects/Jeflen/Jeflen-01.webp",
+              alt: "Jeflen-01.webp"
+            },
+            {
+              type: "image",
+              src: "../Resources/Images/Projects/Jeflen/Jeflen-02.webp",
+              alt: "Jeflen-02.webp"
+            },
+            {
+              type: "image",
+              src: "../Resources/Images/Projects/Jeflen/Jeflen-03.webp",
+              alt: "Jeflen-03.webp"
+            },
+            {
+              type: "image",
+              src: "../Resources/Images/Projects/Jeflen/Jeflen-04.webp",
+              alt: "Jeflen-04.webp"
+            }
+          ],
     links: []
   },
   "magnet-chaos": {
     category: "Game Development",
     title: "Magnet Chaos",
     date: "2023",
+    mainMedia: "../Resources/Images/Projects/MagnetChaos.webp",
     description: ["Magnet Chaos is an original desktop game made with C++ and SFML without relying on a game engine.", "The player controls a magnet through a hostile arena, making careful positioning and quick decisions to destroy as many robots as possible before being overwhelmed."],
     skills: ["C++", "SFML", "Game Programming"],
     media: [1, 2, 3].map((number) => ({ type: "image", src: "../Resources/Images/Projects/MagnetChaos.webp", alt: `Magnet Chaos preview ${number}` })),
@@ -30,6 +75,7 @@ const projectDetails = {
     category: "Game Development",
     title: "Asteroids",
     date: "2022",
+    mainMedia: "../Resources/Images/Projects/Asteroids.webp",
     description: ["Asteroids is a desktop take on the classic arcade formula, built from the ground up with C++ and SFML.", "The goal is straightforward: pilot the spaceship, clear incoming asteroids, and keep the run alive for as long as possible."],
     skills: ["C++", "SFML", "Object-Oriented Programming"],
     media: [1, 2, 3].map((number) => ({ type: "image", src: "../Resources/Images/Projects/Asteroids.webp", alt: `Asteroids preview ${number}` })),
@@ -39,6 +85,7 @@ const projectDetails = {
     category: "Embedded Systems",
     title: "Water Level Tracker",
     date: "2026",
+    mainMedia: "../Resources/Images/Projects/WaterLevelTracker.webp",
     description: ["Water Level Tracker is an Arduino project for monitoring the amount of water in a tank.", "It is built around a simple measurement workflow that keeps the reading useful even when the tank dimensions change."],
     skills: ["Arduino", "C++", "Embedded Systems"],
     media: [1, 2, 3].map((number) => ({ type: "image", src: "../Resources/Images/Projects/WaterLevelTracker.webp", alt: `Water Level Tracker preview ${number}` })),
@@ -48,6 +95,7 @@ const projectDetails = {
     category: "Web Development",
     title: "Blood Seeker",
     date: "2026",
+    mainMedia: "../Resources/Images/Projects/BloodSeeker.webp",
     description: ["Blood Seeker is a group project focused on making blood donations and urgent requests easier to discover.", "My contribution centered on the backend, where the application rules and data flow connect donors with people who need help."],
     skills: ["Backend Development", "APIs", "Database Design"],
     media: [1, 2, 3].map((number) => ({ type: "image", src: "../Resources/Images/Projects/BloodSeeker.webp", alt: `Blood Seeker preview ${number}` })),
@@ -57,6 +105,7 @@ const projectDetails = {
     category: "Web Development",
     title: "Fluency Test Prep",
     date: "2026",
+    mainMedia: "../Resources/Images/Projects/FluencyTestPrep.webp",
     description: ["Fluency Test Prep is a learning website for students preparing for English tests and teachers following their progress.", "I worked on the frontend experience, turning the study and tracking workflows into clear, responsive interfaces for both audiences."],
     skills: ["Frontend Development", "JavaScript", "Responsive Design"],
     media: [1, 2, 3].map((number) => ({ type: "image", src: "../Resources/Images/Projects/FluencyTestPrep.webp", alt: `Fluency Test Prep preview ${number}` })),
@@ -87,7 +136,7 @@ function renderProject(project) {
         <h1><span class="gradient-text">${project.title}</span></h1>
       </div>
       <div class="project-cover-wrap">
-        ${mediaMarkup(project.media[0])}
+        ${mediaMarkup({ type: "image", src: project.mainMedia, alt: `${project.title} main image` })}
         <span class="project-year">${project.date}</span>
       </div>
     </header>
