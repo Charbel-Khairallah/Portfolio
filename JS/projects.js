@@ -95,6 +95,17 @@ const projects = {
 
 const tabs = [...document.querySelectorAll(".project-tab")];
 const panels = document.getElementById("project-panels");
+const projectTabStorageKey = "portfolio:last-project-tab";
+let savedCategory = null;
+
+try {
+  const storedCategory = localStorage.getItem(projectTabStorageKey);
+  if (storedCategory && Object.prototype.hasOwnProperty.call(projects, storedCategory)) {
+    savedCategory = storedCategory;
+  }
+} catch (error) {
+  savedCategory = null;
+}
 
 function renderPanel(category, isActive) {
   const panel = document.createElement("section");
@@ -120,7 +131,7 @@ function renderPanel(category, isActive) {
   panels.appendChild(panel);
 }
 
-Object.keys(projects).forEach((category, index) => renderPanel(category, index === 0));
+Object.keys(projects).forEach((category, index) => renderPanel(category, category === (savedCategory || Object.keys(projects)[0])));
 
 document.querySelectorAll(".project-card").forEach((card) => {
   const openProject = () => {
@@ -137,6 +148,11 @@ document.querySelectorAll(".project-card").forEach((card) => {
 
 function selectTab(tab) {
   const category = tab.dataset.category;
+  try {
+    localStorage.setItem(projectTabStorageKey, category);
+  } catch (error) {
+    // Storage may be unavailable when browser privacy settings block it.
+  }
   tabs.forEach((item) => {
     const selected = item === tab;
     item.classList.toggle("is-active", selected);
@@ -159,3 +175,8 @@ tabs.forEach((tab, index) => {
     selectTab(nextTab);
   });
 });
+
+if (savedCategory) {
+  const savedTab = tabs.find((tab) => tab.dataset.category === savedCategory);
+  if (savedTab) selectTab(savedTab);
+}
