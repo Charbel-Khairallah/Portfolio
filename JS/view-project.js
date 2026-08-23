@@ -4,27 +4,23 @@ const projectDetails = {
     title: "Fluency Cards",
     date: "2024",
     mainMedia: "../Resources/Images/Projects/FluencyCards.webp",
-    video: "",
+    video: [],
     description: ["Fluency Cards is a Unity game designed to make English practice feel quick, social, and approachable.", "The Uno-style format turns vocabulary and language challenges into a playful session that can be picked up whenever there is a few minutes to spare."],
     skills: ["Unity", "C#", "Game Design"],
     media: [
             {
-              type: "image",
               src: "../Resources/Images/Projects/FluencyCards/FluencyCards-01.webp",
               alt: "FluencyCards-01.webp"
             },
-            {
-              type: "image",
+            { 
               src: "../Resources/Images/Projects/FluencyCards/FluencyCards-02.webp",
               alt: "FluencyCards-02.webp"
             },
             {
-              type: "image",
               src: "../Resources/Images/Projects/FluencyCards/FluencyCards-03.webp",
               alt: "FluencyCards-03.webp"
             },
-            {
-              type: "image",
+            { 
               src: "../Resources/Images/Projects/FluencyCards/FluencyCards-04.webp",
               alt: "FluencyCards-04.webp"
             }
@@ -36,27 +32,23 @@ const projectDetails = {
     title: "Jeflen",
     date: "2024",
     mainMedia: "../Resources/Images/Projects/Jeflen.webp",
-    video: "",
+    video: ["../Resources/Videos/Projects/MagnetChaos/Test.mp4"],
     description: ["Jeflen is a compact arcade game built with Unity for short, repeatable play sessions.", "Its simple rules leave room to focus on movement, timing, and the small satisfaction of improving a score run by run."],
     skills: ["Unity", "C#", "Game Development"],
     media: [
             {
-              type: "image",
               src: "../Resources/Images/Projects/Jeflen/Jeflen-01.webp",
               alt: "Jeflen-01.webp"
             },
-            {
-              type: "image",
+            { 
               src: "../Resources/Images/Projects/Jeflen/Jeflen-02.webp",
               alt: "Jeflen-02.webp"
             },
             {
-              type: "image",
               src: "../Resources/Images/Projects/Jeflen/Jeflen-03.webp",
               alt: "Jeflen-03.webp"
             },
-            {
-              type: "image",
+            { 
               src: "../Resources/Images/Projects/Jeflen/Jeflen-04.webp",
               alt: "Jeflen-04.webp"
             }
@@ -68,10 +60,10 @@ const projectDetails = {
     title: "Magnet Chaos",
     date: "2023",
     mainMedia: "../Resources/Images/Projects/MagnetChaos.webp",
-    video: "../Resources/Videos/Projects/MagnetChaos/MagnetChaos-01.mp4",
+    video: ["../Resources/Videos/Projects/MagnetChaos/MagnetChaos-01.mp4", "../Resources/Videos/Projects/MagnetChaos/Test.mp4"],
     description: ["Magnet Chaos is an original desktop game made with C++ and SFML without relying on a game engine.", "The player controls a magnet through a hostile arena, making careful positioning and quick decisions to destroy as many robots as possible before being overwhelmed."],
     skills: ["C++", "SFML", "Game Programming"],
-    media: [1, 2, 3].map((number) => ({ type: "image", src: "../Resources/Images/Projects/MagnetChaos.webp", alt: `Magnet Chaos preview ${number}` })),
+    media: [1, 2, 3].map((number) => ({ src: "../Resources/Images/Projects/MagnetChaos.webp", alt: `Magnet Chaos preview ${number}` })),
     links: []
   },
   asteroids: {
@@ -79,10 +71,10 @@ const projectDetails = {
     title: "Asteroids",
     date: "2022",
     mainMedia: "../Resources/Images/Projects/Asteroids.webp",
-    video: "",
+    video: [],
     description: ["Asteroids is a desktop take on the classic arcade formula, built from the ground up with C++ and SFML.", "The goal is straightforward: pilot the spaceship, clear incoming asteroids, and keep the run alive for as long as possible."],
     skills: ["C++", "SFML", "Object-Oriented Programming"],
-    media: [1, 2, 3].map((number) => ({ type: "image", src: "../Resources/Images/Projects/Asteroids.webp", alt: `Asteroids preview ${number}` })),
+    media: [1, 2, 3].map((number) => ({ src: "../Resources/Images/Projects/Asteroids.webp", alt: `Asteroids preview ${number}` })),
     links: []
   },
   "water-level-tracker": {
@@ -90,10 +82,10 @@ const projectDetails = {
     title: "Water Level Tracker",
     date: "2026",
     mainMedia: "../Resources/Images/Projects/WaterLevelTracker.webp",
-    video: "",
+    video: [],
     description: ["Water Level Tracker is an Arduino project for monitoring the amount of water in a tank.", "It is built around a simple measurement workflow that keeps the reading useful even when the tank dimensions change."],
     skills: ["Arduino", "C++", "Embedded Systems"],
-    media: [1, 2, 3].map((number) => ({ type: "image", src: "../Resources/Images/Projects/WaterLevelTracker.webp", alt: `Water Level Tracker preview ${number}` })),
+    media: [1, 2, 3].map((number) => ({ src: "../Resources/Images/Projects/WaterLevelTracker.webp", alt: `Water Level Tracker preview ${number}` })),
     links: []
   },
   "blood-seeker": {
@@ -101,10 +93,10 @@ const projectDetails = {
     title: "Blood Seeker",
     date: "2026",
     mainMedia: "../Resources/Images/Projects/BloodSeeker.webp",
-    video: "",
+    video: [],
     description: ["Blood Seeker is a group project focused on making blood donations and urgent requests easier to discover.", "My contribution centered on the backend, where the application rules and data flow connect donors with people who need help."],
     skills: ["Backend Development", "APIs", "Database Design"],
-    media: [1, 2, 3].map((number) => ({ type: "image", src: "../Resources/Images/Projects/BloodSeeker.webp", alt: `Blood Seeker preview ${number}` })),
+    media: [1, 2, 3].map((number) => ({ src: "../Resources/Images/Projects/BloodSeeker.webp", alt: `Blood Seeker preview ${number}` })),
     links: []
   },
   "fluency-test-prep": {
@@ -112,10 +104,10 @@ const projectDetails = {
     title: "Fluency Test Prep",
     date: "2026",
     mainMedia: "../Resources/Images/Projects/FluencyTestPrep.webp",
-    video: "",
+    video: [],
     description: ["Fluency Test Prep is a learning website for students preparing for English tests and teachers following their progress.", "I worked on the frontend experience, turning the study and tracking workflows into clear, responsive interfaces for both audiences."],
     skills: ["Frontend Development", "JavaScript", "Responsive Design"],
-    media: [1, 2, 3].map((number) => ({ type: "image", src: "../Resources/Images/Projects/FluencyTestPrep.webp", alt: `Fluency Test Prep preview ${number}` })),
+    media: [1, 2, 3].map((number) => ({ src: "../Resources/Images/Projects/FluencyTestPrep.webp", alt: `Fluency Test Prep preview ${number}` })),
     links: []
   }
 };
@@ -127,6 +119,7 @@ const viewerClose = document.querySelector(".viewer-close");
 const selectedProject = projectDetails[new URLSearchParams(window.location.search).get("project")];
 let mediaIndex = 0;
 let viewerIndex = 0;
+let videoIndex = 0;
 
 function mediaMarkup(item) {
   if (item.type === "video") {
@@ -136,10 +129,14 @@ function mediaMarkup(item) {
 }
 
 function projectVideoMarkup(project) {
-  if (!project.video) return "";
+  if (!project.video.length) return "";
   return `
     <div class="project-video-section">
-      <video id="project-video" class="project-video" src="${project.video}" preload="metadata" aria-label="${project.title} project video"></video>
+      <div class="project-video-frame">
+        <video id="project-video" class="project-video" src="${project.video[0]}" preload="metadata" aria-label="${project.title} project video"></video>
+        <button id="video-prev" class="video-nav video-prev" type="button" aria-label="Previous project video">&#10094;</button>
+        <button id="video-next" class="video-nav video-next" type="button" aria-label="Next project video">&#10095;</button>
+      </div>
       <div class="video-controls" aria-label="Video controls">
         <button id="video-play" class="video-button" type="button" aria-label="Play video" aria-pressed="false">&#9654;</button>
         <span id="video-current-time" class="video-time">0:00</span>
@@ -157,7 +154,7 @@ function renderProject(project) {
         <h1><span class="gradient-text">${project.title}</span></h1>
       </div>
       <div class="project-cover-wrap">
-        ${mediaMarkup({ type: "image", src: project.mainMedia, alt: `${project.title} main image` })}
+        ${mediaMarkup({ src: project.mainMedia, alt: `${project.title} main image` })}
         <span class="project-year">${project.date}</span>
       </div>
     </header>
@@ -182,7 +179,7 @@ function renderProject(project) {
   updateMedia(project);
   document.getElementById("media-prev").addEventListener("click", () => changeMedia(project, -1));
   document.getElementById("media-next").addEventListener("click", () => changeMedia(project, 1));
-  setupVideoPlayer();
+  setupVideoPlayer(project);
 }
 
 function formatVideoTime(seconds) {
@@ -192,13 +189,20 @@ function formatVideoTime(seconds) {
   return `${minutes}:${remainingSeconds}`;
 }
 
-function setupVideoPlayer() {
+function setupVideoPlayer(project) {
   const video = document.getElementById("project-video");
   if (!video) return;
   const playButton = document.getElementById("video-play");
   const progress = document.getElementById("video-progress");
   const currentTime = document.getElementById("video-current-time");
   const duration = document.getElementById("video-duration");
+  const previousVideo = document.getElementById("video-prev");
+  const nextVideo = document.getElementById("video-next");
+
+  previousVideo.hidden = project.video.length < 2;
+  nextVideo.hidden = project.video.length < 2;
+  previousVideo.disabled = videoIndex === 0;
+  nextVideo.disabled = videoIndex === project.video.length - 1;
 
   const updateVideoControls = () => {
     progress.value = video.duration ? (video.currentTime / video.duration) * 100 : 0;
@@ -216,8 +220,23 @@ function setupVideoPlayer() {
   progress.addEventListener("input", () => {
     if (video.duration) video.currentTime = (Number(progress.value) / 100) * video.duration;
   });
+  previousVideo.addEventListener("click", () => changeVideo(project, -1));
+  nextVideo.addEventListener("click", () => changeVideo(project, 1));
   ["loadedmetadata", "timeupdate", "play", "pause", "ended"].forEach((eventName) => video.addEventListener(eventName, updateVideoControls));
   updateVideoControls();
+}
+
+function changeVideo(project, direction) {
+  const video = document.getElementById("project-video");
+  if (!video) return;
+  const nextVideoIndex = videoIndex + direction;
+  if (nextVideoIndex < 0 || nextVideoIndex >= project.video.length) return;
+  videoIndex = nextVideoIndex;
+  video.pause();
+  video.src = project.video[videoIndex];
+  video.load();
+  document.getElementById("video-prev").disabled = videoIndex === 0;
+  document.getElementById("video-next").disabled = videoIndex === project.video.length - 1;
 }
 
 function updateMedia(project) {
