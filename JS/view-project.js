@@ -4,7 +4,7 @@ const projectDetails = {
     title: "Fluency Cards",
     date: "2024",
     mainMedia: "../Resources/Images/Projects/FluencyCards.webp",
-    video: [],
+    video: ["../Resources/Videos/Projects/FluencyCards/FluencyCards-01.mp4", "../Resources/Videos/Projects/FluencyCards/FluencyCards-02.mp4"],
     description: ["Fluency Cards is a Unity game designed to make English practice feel quick, social, and approachable.", "The Uno-style format turns vocabulary and language challenges into a playful session that can be picked up whenever there is a few minutes to spare."],
     skills: ["Unity", "C#", "Game Design"],
     media: [
@@ -32,7 +32,7 @@ const projectDetails = {
     title: "Jeflen",
     date: "2024",
     mainMedia: "../Resources/Images/Projects/Jeflen.webp",
-    video: ["../Resources/Videos/Projects/MagnetChaos/Test.mp4"],
+    video: [],
     description: ["Jeflen is a compact arcade game built with Unity for short, repeatable play sessions.", "Its simple rules leave room to focus on movement, timing, and the small satisfaction of improving a score run by run."],
     skills: ["Unity", "C#", "Game Development"],
     media: [
@@ -60,10 +60,10 @@ const projectDetails = {
     title: "Magnet Chaos",
     date: "2023",
     mainMedia: "../Resources/Images/Projects/MagnetChaos.webp",
-    video: ["../Resources/Videos/Projects/MagnetChaos/MagnetChaos-01.mp4", "../Resources/Videos/Projects/MagnetChaos/Test.mp4"],
+    video: ["../Resources/Videos/Projects/MagnetChaos/MagnetChaos-01.mp4"],
     description: ["Magnet Chaos is an original desktop game made with C++ and SFML without relying on a game engine.", "The player controls a magnet through a hostile arena, making careful positioning and quick decisions to destroy as many robots as possible before being overwhelmed."],
     skills: ["C++", "SFML", "Game Programming"],
-    media: [1, 2, 3].map((number) => ({ src: "../Resources/Images/Projects/MagnetChaos.webp", alt: `Magnet Chaos preview ${number}` })),
+    media: [],
     links: []
   },
   asteroids: {
@@ -71,10 +71,10 @@ const projectDetails = {
     title: "Asteroids",
     date: "2022",
     mainMedia: "../Resources/Images/Projects/Asteroids.webp",
-    video: [],
+    video: ["../Resources/Videos/Projects/Asteroids/Asteroids-01.mp4", "../Resources/Videos/Projects/Asteroids/Asteroids-02.mp4"],
     description: ["Asteroids is a desktop take on the classic arcade formula, built from the ground up with C++ and SFML.", "The goal is straightforward: pilot the spaceship, clear incoming asteroids, and keep the run alive for as long as possible."],
     skills: ["C++", "SFML", "Object-Oriented Programming"],
-    media: [1, 2, 3].map((number) => ({ src: "../Resources/Images/Projects/Asteroids.webp", alt: `Asteroids preview ${number}` })),
+    media: [],
     links: []
   },
   "water-level-tracker": {
@@ -82,10 +82,15 @@ const projectDetails = {
     title: "Water Level Tracker",
     date: "2026",
     mainMedia: "../Resources/Images/Projects/WaterLevelTracker.webp",
-    video: [],
+    video: ["../Resources/Videos/Projects/WaterLevelTracker/WaterLevelTracker-01.mp4"],
     description: ["Water Level Tracker is an Arduino project for monitoring the amount of water in a tank.", "It is built around a simple measurement workflow that keeps the reading useful even when the tank dimensions change."],
     skills: ["Arduino", "C++", "Embedded Systems"],
-    media: [1, 2, 3].map((number) => ({ src: "../Resources/Images/Projects/WaterLevelTracker.webp", alt: `Water Level Tracker preview ${number}` })),
+    media: [
+            {
+              src: "../Resources/Images/Projects/WaterLevelTracker/CircuitDiagram.webp",
+              alt: "CircuitDiagram.webp"
+            }
+          ],
     links: []
   },
   "blood-seeker": {
@@ -96,7 +101,12 @@ const projectDetails = {
     video: [],
     description: ["Blood Seeker is a group project focused on making blood donations and urgent requests easier to discover.", "My contribution centered on the backend, where the application rules and data flow connect donors with people who need help."],
     skills: ["Backend Development", "APIs", "Database Design"],
-    media: [1, 2, 3].map((number) => ({ src: "../Resources/Images/Projects/BloodSeeker.webp", alt: `Blood Seeker preview ${number}` })),
+    media: [
+            {
+              src: "../Resources/Images/Projects/BloodSeeker/BloodSeker-01.webp",
+              alt: "BloodSeeker-01.webp"
+            }
+          ],
     links: []
   },
   "fluency-test-prep": {
@@ -104,10 +114,10 @@ const projectDetails = {
     title: "Fluency Test Prep",
     date: "2026",
     mainMedia: "../Resources/Images/Projects/FluencyTestPrep.webp",
-    video: [],
+    video: ["../Resources/Videos/Projects/FluencyTestPrep/FluencyTestPrep-01.mp4"],
     description: ["Fluency Test Prep is a learning website for students preparing for English tests and teachers following their progress.", "I worked on the frontend experience, turning the study and tracking workflows into clear, responsive interfaces for both audiences."],
     skills: ["Frontend Development", "JavaScript", "Responsive Design"],
-    media: [1, 2, 3].map((number) => ({ src: "../Resources/Images/Projects/FluencyTestPrep.webp", alt: `Fluency Test Prep preview ${number}` })),
+    media: [],
     links: []
   }
 };
