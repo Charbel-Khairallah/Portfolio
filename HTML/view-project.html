@@ -29,6 +29,16 @@
     <p class="loading-state">Loading project...</p>
   </main>
 
+  <div id="imageViewer" class="image-viewer hidden" aria-hidden="true">
+    <div class="viewer-backdrop" data-close="true"></div>
+    <div class="viewer-dialog" role="dialog" aria-modal="true" aria-label="Project image viewer">
+      <button class="viewer-close" type="button" aria-label="Close image viewer">&#10005;</button>
+      <div class="viewer-stage">
+        <img id="viewerImage" src="" alt="Viewed project image" draggable="false">
+      </div>
+    </div>
+  </div>
+
   <script src="../JS/view-project.js"></script>
 </body>
 </html>

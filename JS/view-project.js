@@ -65,8 +65,12 @@ const projectDetails = {
 };
 
 const detail = document.getElementById("project-detail");
+const viewer = document.getElementById("imageViewer");
+const viewerImage = document.getElementById("viewerImage");
+const viewerClose = document.querySelector(".viewer-close");
 const selectedProject = projectDetails[new URLSearchParams(window.location.search).get("project")];
 let mediaIndex = 0;
+let viewerIndex = 0;
 
 function mediaMarkup(item) {
   if (item.type === "video") {
@@ -91,7 +95,7 @@ function renderProject(project) {
       <h2>About the project</h2>
       ${project.description.map((paragraph) => `<p>${paragraph}</p>`).join("")}
       <section class="project-media-viewer" aria-label="${project.title} media">
-        <div id="project-media-stage" class="project-media-stage">${mediaMarkup(project.media[0])}</div>
+        <div id="project-media-stage" class="project-media-stage"></div>
         <button id="media-prev" class="media-nav media-prev" type="button" aria-label="Previous project media">&#10094;</button>
         <button id="media-next" class="media-nav media-next" type="button" aria-label="Next project media">&#10095;</button>
         <p id="media-count" class="media-count"></p>
@@ -104,22 +108,88 @@ function renderProject(project) {
 
   const linksSection = document.getElementById("links-section");
   if (!project.links.length) linksSection.hidden = true;
+  document.querySelector(".project-cover-wrap img")?.addEventListener("click", () => openViewer(project));
   updateMedia(project);
   document.getElementById("media-prev").addEventListener("click", () => changeMedia(project, -1));
   document.getElementById("media-next").addEventListener("click", () => changeMedia(project, 1));
 }
 
 function updateMedia(project) {
-  document.getElementById("project-media-stage").innerHTML = mediaMarkup(project.media[mediaIndex]);
+  const mediaStage = document.getElementById("project-media-stage");
+  let track = mediaStage.querySelector(".media-track");
+  if (!track) {
+    mediaStage.innerHTML = `<div class="media-track">${project.media.map((item, index) => `<div class="media-slide" data-media-index="${index}">${mediaMarkup(item)}</div>`).join("")}</div>`;
+    track = mediaStage.querySelector(".media-track");
+    track.querySelectorAll(".media-slide").forEach((slide) => {
+      slide.addEventListener("click", () => {
+        mediaIndex = Number(slide.dataset.mediaIndex);
+        updateMedia(project);
+        if (slide.querySelector("img")) openViewer(project);
+      });
+    });
+  }
+  track.querySelectorAll(".media-slide").forEach((slide, index) => slide.classList.toggle("is-current", index === mediaIndex));
+  const firstSlide = track.querySelector(".media-slide");
+  const gap = parseFloat(getComputedStyle(track).gap) || 0;
+  const step = firstSlide.getBoundingClientRect().width + gap;
+  track.style.transform = `translateX(calc(50% - ${mediaIndex * step + firstSlide.getBoundingClientRect().width / 2}px))`;
   document.getElementById("media-count").textContent = project.media.length > 1 ? `${mediaIndex + 1} / ${project.media.length}` : "";
-  document.getElementById("media-prev").hidden = project.media.length < 2;
-  document.getElementById("media-next").hidden = project.media.length < 2;
+  const previousButton = document.getElementById("media-prev");
+  const nextButton = document.getElementById("media-next");
+  previousButton.hidden = project.media.length < 2;
+  nextButton.hidden = project.media.length < 2;
+  previousButton.disabled = mediaIndex === 0;
+  nextButton.disabled = mediaIndex === project.media.length - 1;
 }
 
 function changeMedia(project, direction) {
-  mediaIndex = (mediaIndex + direction + project.media.length) % project.media.length;
+  const nextIndex = mediaIndex + direction;
+  if (nextIndex < 0 || nextIndex >= project.media.length) return;
+  mediaIndex = nextIndex;
   updateMedia(project);
 }
+
+function triggerViewerTransition(direction) {
+  const transitionClasses = ["slide-left-out", "slide-right-out", "slide-left-in", "slide-right-in"];
+  viewerImage.classList.remove(...transitionClasses);
+  void viewerImage.offsetWidth;
+  const exitClass = direction === "next" ? "slide-right-out" : "slide-left-out";
+  const enterClass = direction === "next" ? "slide-left-in" : "slide-right-in";
+  viewerImage.classList.add(exitClass);
+  setTimeout(() => {
+    viewerImage.src = selectedProject.media[viewerIndex].src;
+    viewerImage.alt = selectedProject.media[viewerIndex].alt;
+    viewerImage.classList.remove(exitClass);
+    void viewerImage.offsetWidth;
+    viewerImage.classList.add(enterClass);
+  }, 180);
+}
+
+function updateViewer(direction) {
+  if (direction) {
+    triggerViewerTransition(direction);
+    return;
+  }
+  viewerImage.src = selectedProject.media[viewerIndex].src;
+  viewerImage.alt = selectedProject.media[viewerIndex].alt;
+}
+
+function openViewer(project) {
+  viewerIndex = mediaIndex;
+  viewer.classList.remove("hidden");
+  viewer.setAttribute("aria-hidden", "false");
+  updateViewer();
+}
+
+function closeViewer() {
+  viewer.classList.add("hidden");
+  viewer.setAttribute("aria-hidden", "true");
+}
+
+viewerClose.addEventListener("click", closeViewer);
+viewer.addEventListener("click", (event) => {
+  if (event.target.matches("[data-close=\"true\"]")) closeViewer();
+});
 
 if (selectedProject) {
   document.title = `${selectedProject.title} — Charbel Khairallah`;
@@ -129,7 +199,12 @@ if (selectedProject) {
 }
 
 document.addEventListener("keydown", (event) => {
-  if (!selectedProject || selectedProject.media.length < 2) return;
+  if (!selectedProject) return;
+  if (!viewer.classList.contains("hidden")) {
+    if (event.key === "Escape") closeViewer();
+    return;
+  }
+  if (selectedProject.media.length < 2) return;
   if (event.key === "ArrowLeft") changeMedia(selectedProject, -1);
   if (event.key === "ArrowRight") changeMedia(selectedProject, 1);
 });
