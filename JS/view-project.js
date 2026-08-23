@@ -108,7 +108,6 @@ function renderProject(project) {
 
   const linksSection = document.getElementById("links-section");
   if (!project.links.length) linksSection.hidden = true;
-  document.querySelector(".project-cover-wrap img")?.addEventListener("click", () => openViewer(project));
   updateMedia(project);
   document.getElementById("media-prev").addEventListener("click", () => changeMedia(project, -1));
   document.getElementById("media-next").addEventListener("click", () => changeMedia(project, 1));
@@ -131,8 +130,10 @@ function updateMedia(project) {
   track.querySelectorAll(".media-slide").forEach((slide, index) => slide.classList.toggle("is-current", index === mediaIndex));
   const firstSlide = track.querySelector(".media-slide");
   const gap = parseFloat(getComputedStyle(track).gap) || 0;
-  const step = firstSlide.getBoundingClientRect().width + gap;
-  track.style.transform = `translateX(calc(50% - ${mediaIndex * step + firstSlide.getBoundingClientRect().width / 2}px))`;
+  const slideWidth = firstSlide.offsetWidth;
+  const step = slideWidth + gap;
+  const centeredOffset = mediaStage.clientWidth / 2 - (mediaIndex * step + slideWidth / 2);
+  track.style.transform = `translateX(${centeredOffset}px)`;
   document.getElementById("media-count").textContent = project.media.length > 1 ? `${mediaIndex + 1} / ${project.media.length}` : "";
   const previousButton = document.getElementById("media-prev");
   const nextButton = document.getElementById("media-next");
@@ -148,6 +149,10 @@ function changeMedia(project, direction) {
   mediaIndex = nextIndex;
   updateMedia(project);
 }
+
+window.addEventListener("resize", () => {
+  if (selectedProject && document.querySelector(".media-track")) updateMedia(selectedProject);
+});
 
 function triggerViewerTransition(direction) {
   const transitionClasses = ["slide-left-out", "slide-right-out", "slide-left-in", "slide-right-in"];
