@@ -103,8 +103,16 @@ const projectDetails = {
     skills: ["Backend Development", "APIs", "Database Design"],
     media: [
             {
-              src: "../Resources/Images/Projects/BloodSeeker/BloodSeker-01.webp",
-              alt: "BloodSeeker-01.webp"
+              src: "../Resources/Images/Projects/BloodSeeker/BloodSeeker-01.PNG",
+              alt: "BloodSeeker-01.PNG"
+            },
+            {
+              src: "../Resources/Images/Projects/BloodSeeker/BloodSeeker-02.PNG",
+              alt: "BloodSeeker-02.PNG"
+            },
+            {
+              src: "../Resources/Images/Projects/BloodSeeker/BloodSeeker-03.PNG",
+              alt: "BloodSeeker-03.PNG"
             }
           ],
     links: []
