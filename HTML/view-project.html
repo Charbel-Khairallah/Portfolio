@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project — Charbel Khairallah</title>
+  <link rel="stylesheet" href="../CSS/main.css">
+  <link rel="stylesheet" href="../CSS/view-project.css">
+</head>
+<body>
+  <div class="ambient-glow"></div>
+  <svg class="bg-animation" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" aria-hidden="true">
+    <defs>
+      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(56, 189, 248, 0.18)" stroke-width="1"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#grid)" />
+  </svg>
+
+  <header class="page-header">
+    <a href="projects.html" class="back-link">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg>
+      Back to projects
+    </a>
+  </header>
+
+  <main id="project-detail" class="project-detail" aria-live="polite">
+    <p class="loading-state">Loading project...</p>
+  </main>
+
+  <script src="../JS/view-project.js"></script>
+</body>
+</html>
