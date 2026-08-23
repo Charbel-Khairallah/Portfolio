@@ -92,14 +92,14 @@ function renderProject(project) {
       </div>
     </header>
     <section class="info-section project-description">
-      <h2>About the project</h2>
-      ${project.description.map((paragraph) => `<p>${paragraph}</p>`).join("")}
       <section class="project-media-viewer" aria-label="${project.title} media">
         <div id="project-media-stage" class="project-media-stage"></div>
         <button id="media-prev" class="media-nav media-prev" type="button" aria-label="Previous project media">&#10094;</button>
         <button id="media-next" class="media-nav media-next" type="button" aria-label="Next project media">&#10095;</button>
         <p id="media-count" class="media-count"></p>
       </section>
+      <h2>About the project</h2>
+      ${project.description.map((paragraph) => `<p>${paragraph}</p>`).join("")}
     </section>
     <div class="project-info">
       <section id="links-section" class="info-section"><h2>Project links</h2><div class="project-links">${project.links.map((link) => `<a class="project-link" href="${link.url}" target="_blank" rel="noreferrer">${link.label} &#8599;</a>`).join("")}</div></section>
