@@ -49,7 +49,8 @@ main { margin: 0 auto; width: 92vw; max-width: none; min-width: 0; overflow-x: c
 .project-title-block { padding-top: 1.25rem; }
 .project-cover-wrap { position: relative; width: 220px; height: 150px; justify-self: end; overflow: hidden; border-radius: 14px; animation: mediaReveal 900ms 300ms cubic-bezier(0.22, 1, 0.36, 1) both; }
 .project-cover-wrap img, .project-cover-wrap video { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
-.project-year { position: absolute; top: 0.7rem; right: 0.7rem; padding: 0.3rem 0.6rem; border: 1px solid var(--card-border-strong); border-radius: 6px; background: rgba(8, 35, 72, 0.72); box-shadow: 0 0 16px rgba(56, 189, 248, 0.2); color: var(--text-main); font-size: 0.76rem; font-weight: 700; }
+.project-year { position: absolute; top: 0.7rem; right: 0.7rem; display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.3rem 0.6rem; border: 1px solid var(--card-border-strong); border-radius: 6px; background: rgba(8, 35, 72, 0.72); box-shadow: 0 0 16px rgba(56, 189, 248, 0.2); color: var(--text-main); font-size: 0.76rem; font-weight: 700; }
+.project-year::before { content: ""; width: 7px; height: 7px; flex: 0 0 7px; border-radius: 50%; background-color: var(--accent-cyan); box-shadow: 0 0 8px var(--accent-cyan); }
 
 .project-description { width: 100%; max-width: 100%; overflow: hidden; }
 .project-media-viewer { position: relative; width: 100%; max-width: 100%; margin: 2rem auto 0; min-width: 0; animation: mediaReveal 900ms 300ms cubic-bezier(0.22, 1, 0.36, 1) both; }
