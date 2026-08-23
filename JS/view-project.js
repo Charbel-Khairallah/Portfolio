@@ -126,6 +126,20 @@ function updateMedia(project) {
         if (slide.querySelector("img")) openViewer(project);
       });
     });
+    let touchStartX = 0;
+    let touchStartY = 0;
+    mediaStage.addEventListener("touchstart", (event) => {
+      touchStartX = event.changedTouches[0].clientX;
+      touchStartY = event.changedTouches[0].clientY;
+    }, { passive: true });
+    mediaStage.addEventListener("touchend", (event) => {
+      const touchEndX = event.changedTouches[0].clientX;
+      const touchEndY = event.changedTouches[0].clientY;
+      const horizontalDistance = touchEndX - touchStartX;
+      const verticalDistance = touchEndY - touchStartY;
+      if (Math.abs(horizontalDistance) < 40 || Math.abs(horizontalDistance) <= Math.abs(verticalDistance)) return;
+      changeMedia(project, horizontalDistance < 0 ? 1 : -1);
+    }, { passive: true });
   }
   track.querySelectorAll(".media-slide").forEach((slide, index) => slide.classList.toggle("is-current", index === mediaIndex));
   const firstSlide = track.querySelector(".media-slide");
