@@ -156,6 +156,17 @@ function projectVideoMarkup(project) {
     </div>`;
 }
 
+function projectMediaMarkup(project) {
+  if (!project.media.length) return "";
+  return `
+    <section class="project-media-viewer" aria-label="${project.title} media">
+      <div id="project-media-stage" class="project-media-stage"></div>
+      <button id="media-prev" class="media-nav media-prev" type="button" aria-label="Previous project media">&#10094;</button>
+      <button id="media-next" class="media-nav media-next" type="button" aria-label="Next project media">&#10095;</button>
+      <p id="media-count" class="media-count"></p>
+    </section>`;
+}
+
 function renderProject(project) {
   detail.innerHTML = `
     <header class="project-detail-header">
@@ -169,12 +180,7 @@ function renderProject(project) {
       </div>
     </header>
     <section class="info-section project-description">
-      <section class="project-media-viewer" aria-label="${project.title} media">
-        <div id="project-media-stage" class="project-media-stage"></div>
-        <button id="media-prev" class="media-nav media-prev" type="button" aria-label="Previous project media">&#10094;</button>
-        <button id="media-next" class="media-nav media-next" type="button" aria-label="Next project media">&#10095;</button>
-        <p id="media-count" class="media-count"></p>
-      </section>
+      ${projectMediaMarkup(project)}
       <h2>About the project</h2>
       ${project.description.map((paragraph) => `<p>${paragraph}</p>`).join("")}
       ${projectVideoMarkup(project)}
@@ -186,9 +192,11 @@ function renderProject(project) {
 
   const linksSection = document.getElementById("links-section");
   if (!project.links.length) linksSection.hidden = true;
-  updateMedia(project);
-  document.getElementById("media-prev").addEventListener("click", () => changeMedia(project, -1));
-  document.getElementById("media-next").addEventListener("click", () => changeMedia(project, 1));
+  if (project.media.length) {
+    updateMedia(project);
+    document.getElementById("media-prev").addEventListener("click", () => changeMedia(project, -1));
+    document.getElementById("media-next").addEventListener("click", () => changeMedia(project, 1));
+  }
   setupVideoPlayer(project);
 }
 
