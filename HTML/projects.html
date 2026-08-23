@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Projects — Charbel Khairallah</title>
+  <link rel="stylesheet" href="../CSS/main.css">
+  <link rel="stylesheet" href="../CSS/projects.css">
+</head>
+<body>
+
+  <div class="ambient-glow"></div>
+
+  <svg class="bg-animation" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" aria-hidden="true">
+    <defs>
+      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(56, 189, 248, 0.18)" stroke-width="1"/>
+      </pattern>
+    </defs>
+    <rect width="100%" height="100%" fill="url(#grid)" />
+  </svg>
+
+  <header class="page-header">
+    <a href="home.html" class="back-link">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"></path><path d="m12 19-7-7 7-7"></path></svg>
+      Back
+    </a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1><span class="gradient-text">My Projects</span></h1>
+      <p>Experiments, products, and ideas I've brought to life across games, hardware, and the web.</p>
+    </section>
+
+    <section class="projects-area" aria-label="Projects by discipline">
+      <div class="project-tabs" role="tablist" aria-label="Project categories">
+        <button class="project-tab is-active" id="game-tab" type="button" role="tab" aria-selected="true" aria-controls="game-panel" tabindex="0" data-category="game">Game Development</button>
+        <button class="project-tab" id="embedded-tab" type="button" role="tab" aria-selected="false" aria-controls="embedded-panel" tabindex="-1" data-category="embedded">Embedded Systems</button>
+        <button class="project-tab" id="web-tab" type="button" role="tab" aria-selected="false" aria-controls="web-panel" tabindex="-1" data-category="web">Web Development</button>
+      </div>
+
+      <div id="project-panels"></div>
+    </section>
+  </main>
+
+  <script src="../JS/projects.js"></script>
+</body>
+</html>
