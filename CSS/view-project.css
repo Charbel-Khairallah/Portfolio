@@ -76,6 +76,13 @@ main { margin: 0 auto; width: 92vw; max-width: none; min-width: 0; overflow-x: c
 .info-section h2 { margin-bottom: 0.8rem; color: var(--accent-cyan); font-size: 1rem; }
 .project-description p { margin-top: 0.85rem; color: var(--text-muted); font-size: 0.95rem; line-height: 1.75; }
 .project-description p:first-of-type { margin-top: 0; }
+.project-video-section { position: relative; margin: 2rem 0; padding: 1.25rem 0; border-top: 1px solid rgba(248, 250, 252, 0.28); border-bottom: 1px solid rgba(248, 250, 252, 0.28); }
+.project-video { display: block; width: 100%; max-height: min(60vh, 620px); border-radius: 10px; background: var(--bg-surface-deep); object-fit: contain; }
+.video-controls { display: flex; align-items: center; gap: 0.75rem; margin-top: 0.8rem; }
+.video-button { display: inline-flex; align-items: center; justify-content: center; width: 36px; height: 36px; flex: 0 0 36px; border: 1px solid var(--card-border-strong); border-radius: 999px; background: var(--accent-cyan-soft); color: var(--accent-cyan); font-size: 0.78rem; cursor: pointer; transition: background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease; }
+.video-button:hover, .video-button:focus-visible { background: var(--accent-cyan-mid); box-shadow: 0 0 16px var(--accent-cyan-glow); outline: none; transform: scale(1.05); }
+.video-time { min-width: 2.3rem; color: var(--text-muted); font-size: 0.75rem; font-variant-numeric: tabular-nums; }
+.video-progress { width: 100%; height: 5px; margin: 0; accent-color: var(--accent-cyan); cursor: pointer; }
 .skills-section { margin-top: 2rem; }
 .skills-list, .project-links { display: flex; flex-wrap: wrap; gap: 0.55rem; list-style: none; }
 .skill { padding: 0.35rem 0.65rem; border: 1px solid var(--card-border-strong); border-radius: 6px; background: var(--accent-cyan-soft); color: var(--text-main); font-size: 0.78rem; }
