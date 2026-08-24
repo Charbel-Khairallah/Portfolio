@@ -85,6 +85,9 @@ main {
 .progress-panel {
   margin-top: 2.5rem;
   padding: 1.5rem;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
   background: var(--bg-surface);
   border: 1px solid var(--card-border);
   border-radius: 20px;
@@ -243,7 +246,7 @@ main {
   }
 
   .page-header {
-    padding: 1.5rem 1rem 0.5rem;
+    padding: 2rem 1rem 1rem;
   }
 
   .hero {
@@ -257,6 +260,8 @@ main {
   .progress-panel {
     margin-top: 1.75rem;
     padding: 1rem;
+    width: 100%;
+    max-width: 100%;
   }
 
   .status-legend {
