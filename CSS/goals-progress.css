@@ -145,7 +145,7 @@ main {
 .year-group {
   position: relative;
   display: grid;
-  grid-template-columns: 7.5rem minmax(0, 1fr);
+  grid-template-columns: 6.5rem minmax(0, 1fr);
   gap: 1.5rem;
   padding-bottom: 2rem;
   opacity: 0;
@@ -164,25 +164,26 @@ main {
   z-index: 1;
   display: flex;
   justify-content: flex-end;
-  align-items: flex-start;
-  padding-top: 0.35rem;
+  align-items: center;
+  height: 1.5rem;
 }
 
 .year-marker::after {
   content: "";
   position: absolute;
-  top: 0.65rem;
-  right: 0.05rem;
+  top: 50%;
+  right: 0.7rem;
   width: 0.7rem;
   height: 0.7rem;
   border: 2px solid var(--accent-cyan);
   border-radius: 50%;
   background: var(--bg-dark);
   box-shadow: 0 0 0 5px var(--accent-cyan-soft), 0 0 14px var(--accent-cyan-glow);
+  transform: translateY(-50%);
 }
 
 .year-marker span {
-  padding-right: 1.3rem;
+  padding-right: 2.25rem;
   color: var(--accent-cyan);
   font-size: 1.35rem;
   font-weight: 700;
@@ -280,18 +281,18 @@ main {
 
   .year-marker {
     justify-content: flex-start;
-    padding-top: 0;
+    height: 1.5rem;
   }
 
   .year-marker::after {
-    top: 0.35rem;
-    left: 0.05rem;
+    top: 50%;
+    left: -0.1rem;
     right: auto;
   }
 
   .year-marker span {
     position: absolute;
-    top: 1.2rem;
+    top: 1.35rem;
     left: -0.1rem;
     padding: 0;
     font-size: 0.75rem;
