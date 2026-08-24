@@ -1,4 +1,3 @@
-
 /* Reveal Animations (shared pattern with home.css) */
 @keyframes pageReveal {
   from {
@@ -6,6 +5,7 @@
     transform: translateY(28px) scale(0.97);
     filter: blur(8px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -19,6 +19,7 @@
     transform: translateY(-18px) scale(0.98);
     filter: blur(6px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -31,6 +32,7 @@
     opacity: 0;
     transform: translateX(18px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -42,8 +44,15 @@
     opacity: 0;
     transform: translateX(-140%) skewX(-18deg);
   }
-  15% { opacity: 1; }
-  82% { opacity: 1; }
+
+  15% {
+    opacity: 1;
+  }
+
+  82% {
+    opacity: 1;
+  }
+
   100% {
     opacity: 0;
     transform: translateX(600%) skewX(-18deg);
@@ -51,7 +60,7 @@
 }
 
 main {
-    margin: 0 2.4rem;
+  margin: 0 2.4rem;
 }
 
 .bg-animation {
@@ -174,7 +183,7 @@ main {
   text-align: justify;
 }
 
-.about-panel p + p {
+.about-panel p+p {
   margin-top: 1rem;
 }
 
@@ -243,10 +252,21 @@ main {
   animation: lightSweep 700ms 700ms ease-in-out both;
 }
 
-.skill-card:nth-child(1) { animation-delay: 280ms; }
-.skill-card:nth-child(2) { animation-delay: 360ms; }
-.skill-card:nth-child(3) { animation-delay: 440ms; }
-.skill-card:nth-child(4) { animation-delay: 520ms; }
+.skill-card:nth-child(1) {
+  animation-delay: 280ms;
+}
+
+.skill-card:nth-child(2) {
+  animation-delay: 360ms;
+}
+
+.skill-card:nth-child(3) {
+  animation-delay: 440ms;
+}
+
+.skill-card:nth-child(4) {
+  animation-delay: 520ms;
+}
 
 .skill-card:hover {
   transform: translateY(-4px);
@@ -311,6 +331,7 @@ main {
 
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
+
   .page-header,
   .hero,
   .content-block,

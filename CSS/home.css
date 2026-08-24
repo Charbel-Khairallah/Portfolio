@@ -1,4 +1,3 @@
-
 /* Hero Section */
 @keyframes pageReveal {
   from {
@@ -6,6 +5,7 @@
     transform: translateY(28px) scale(0.97);
     filter: blur(8px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -19,6 +19,7 @@
     transform: translateY(-18px) scale(0.98);
     filter: blur(6px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
@@ -31,6 +32,7 @@
     opacity: 0;
     transform: translateX(18px);
   }
+
   to {
     opacity: 1;
     transform: translateX(0);
@@ -42,8 +44,15 @@
     opacity: 0;
     transform: translateX(-140%) skewX(-18deg);
   }
-  15% { opacity: 1; }
-  82% { opacity: 1; }
+
+  15% {
+    opacity: 1;
+  }
+
+  82% {
+    opacity: 1;
+  }
+
   100% {
     opacity: 0;
     transform: translateX(600%) skewX(-18deg);
@@ -175,12 +184,29 @@
   animation: lightSweep 700ms 700ms ease-in-out both;
 }
 
-.nav-card:nth-child(1) { animation-delay: 280ms; }
-.nav-card:nth-child(2) { animation-delay: 360ms; }
-.nav-card:nth-child(3) { animation-delay: 440ms; }
-.nav-card:nth-child(4) { animation-delay: 520ms; }
-.nav-card:nth-child(5) { animation-delay: 600ms; }
-.nav-card:nth-child(6) { animation-delay: 680ms; }
+.nav-card:nth-child(1) {
+  animation-delay: 280ms;
+}
+
+.nav-card:nth-child(2) {
+  animation-delay: 360ms;
+}
+
+.nav-card:nth-child(3) {
+  animation-delay: 440ms;
+}
+
+.nav-card:nth-child(4) {
+  animation-delay: 520ms;
+}
+
+.nav-card:nth-child(5) {
+  animation-delay: 600ms;
+}
+
+.nav-card:nth-child(6) {
+  animation-delay: 680ms;
+}
 
 .nav-card:hover {
   transform: translateY(-4px);
@@ -235,6 +261,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   .page-header,
   .hero,
   .nav-card,
