@@ -529,6 +529,15 @@ main {
   animation: slideInFromRight 0.38s ease forwards;
 }
 
+.viewer-stage img.transition-hidden {
+  visibility: hidden;
+}
+
+.viewer-stage img.slide-left-in.transition-paused,
+.viewer-stage img.slide-right-in.transition-paused {
+  animation-play-state: paused;
+}
+
 .viewer-footer {
   display: flex;
   align-items: center;

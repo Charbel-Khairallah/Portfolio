@@ -6,38 +6,53 @@ const closeBtn = document.querySelector('.viewer-close');
 
 let viewerImages = [];
 let viewerIndex = 0;
-const slideDuration = 380;
+let transitionInProgress = false;
 
 function triggerImageTransition(direction) {
+  if (transitionInProgress) return;
+
+  transitionInProgress = true;
   const currentClasses = ['slide-left-out', 'slide-right-out', 'slide-left-in', 'slide-right-in'];
   viewerImage.classList.remove(...currentClasses);
   void viewerImage.offsetWidth;
 
-  if (direction === 'next') {
-    viewerImage.classList.add('slide-right-out');
-    setTimeout(() => {
-      const currentImage = viewerImages[viewerIndex];
-      if (!currentImage) return;
+  const exitClass = direction === 'next' ? 'slide-right-out' : 'slide-left-out';
+  const entryClass = direction === 'next' ? 'slide-left-in' : 'slide-right-in';
+  const exitAnimation = direction === 'next' ? 'slideOutRight' : 'slideOutLeft';
+
+  const showNextImage = (event) => {
+    if (event.animationName !== exitAnimation) return;
+
+    viewerImage.removeEventListener('animationend', showNextImage);
+    viewerImage.classList.remove(exitClass);
+    viewerImage.classList.add('transition-hidden');
+
+    const currentImage = viewerImages[viewerIndex];
+    if (!currentImage) {
+      transitionInProgress = false;
+      return;
+    }
+
+    const preloadedImage = new Image();
+    const revealNextImage = () => {
       viewerImage.src = currentImage;
       viewerImage.alt = 'Achievement certificate';
-      viewerImage.classList.remove('slide-right-out');
+      viewerImage.classList.add(entryClass, 'transition-paused');
       void viewerImage.offsetWidth;
-      viewerImage.classList.add('slide-left-in');
 
-    }, slideDuration);
-    return;
-  }
+      requestAnimationFrame(() => {
+        viewerImage.classList.remove('transition-paused', 'transition-hidden');
+        transitionInProgress = false;
+      });
+    };
 
-  viewerImage.classList.add('slide-left-out');
-  setTimeout(() => {
-    const currentImage = viewerImages[viewerIndex];
-    if (!currentImage) return;
-    viewerImage.src = currentImage;
-    viewerImage.alt = 'Achievement certificate';
-    viewerImage.classList.remove('slide-left-out');
-    void viewerImage.offsetWidth;
-    viewerImage.classList.add('slide-right-in');
-  }, slideDuration);
+    preloadedImage.onload = revealNextImage;
+    preloadedImage.onerror = revealNextImage;
+    preloadedImage.src = currentImage;
+  };
+
+  viewerImage.addEventListener('animationend', showNextImage);
+  viewerImage.classList.add(exitClass);
 }
 
 function updateViewer(direction = 'next') {
@@ -62,6 +77,8 @@ function openViewer(images, title) {
   viewer.classList.remove('hidden');
   viewer.setAttribute('aria-hidden', 'false');
   viewerImage.classList.remove('slide-left-out', 'slide-right-out', 'slide-left-in', 'slide-right-in');
+  viewerImage.classList.remove('transition-hidden', 'transition-paused');
+  transitionInProgress = false;
   viewerImage.src = viewerImages[viewerIndex];
   viewerImage.alt = 'Achievement certificate';
   prevBtn.style.visibility = viewerImages.length > 1 ? 'visible' : 'hidden';
