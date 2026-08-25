@@ -198,6 +198,16 @@ function projectMediaMarkup(project) {
     </section>`;
 }
 
+function projectLinkMarkup(link) {
+  const isGithubLink = link.toLowerCase().includes("github.com");
+  const linkLabel = isGithubLink ? "View on GitHub" : "Play or download game";
+  const iconTitle = isGithubLink ? "GitHub" : "Game link";
+  const iconMarkup = isGithubLink
+     ? `<svg class="project-link-icon" viewBox="0 0 24 24" role="img" aria-label="GitHub"><title>${iconTitle}</title><path fill="currentColor" d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.74.08-.74 1.2.08 1.84 1.23 1.84 1.23 1.07 1.83 2.8 1.3 3.48.99.11-.77.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.4 11.4 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.6-2.8 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57A12 12 0 0 0 12 .5Z"/></svg>`
+    : `<svg class="project-link-icon" viewBox="0 0 24 24" role="img" aria-labelledby="game-link-icon-title"><title id="game-link-icon-title">${iconTitle}</title><path fill="currentColor" d="M7.5 7h9a5.5 5.5 0 0 1 5.27 7.07l-1.14 3.8a2.85 2.85 0 0 1-5.03 1.02l-1.83-2.4h-3.54l-1.83 2.4a2.85 2.85 0 0 1-5.03-1.02l-1.14-3.8A5.5 5.5 0 0 1 7.5 7Zm-.5 2v2H5v2h2v2h2v-2h2v-2H9V9H7Zm8.5 1.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2Zm2.5 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/></svg>`;
+  return `<a class="project-link" href="${link}" target="_blank" rel="noreferrer">${iconMarkup}<span>${linkLabel}</span></a>`;
+}
+
 function renderProject(project) {
   detail.innerHTML = `
     <header class="project-detail-header">
@@ -213,13 +223,11 @@ function renderProject(project) {
     <section class="info-section project-description">
       <h2>About the project</h2>
       ${project.description.map((paragraph) => `<p>${paragraph}</p>`).join("")}
+      <section id="links-section" class="project-links-section"><h2>Project links</h2><div class="project-links">${project.links.map(projectLinkMarkup).join("")}</div></section>
       <div class="skills-section"><ul class="skills-list">${project.skills.map((skill) => `<li class="skill">${skill}</li>`).join("")}</ul></div>
       ${projectMediaMarkup(project)}
       ${projectVideoMarkup(project)}
     </section>
-    <div class="project-info">
-      <section id="links-section" class="info-section"><h2>Project links</h2><div class="project-links">${project.links.map((link) => `<a class="project-link" href="${link.url}" target="_blank" rel="noreferrer">${link.label} &#8599;</a>`).join("")}</div></section>
-    </div>
     `;
 
   const linksSection = document.getElementById("links-section");
