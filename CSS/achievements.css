@@ -295,7 +295,7 @@ main {
   border: 1px solid var(--card-border);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 14px 28px rgba(10, 15, 30, 0.12);
+  box-shadow: 0 14px 28px var(--table-shadow);
 }
 
 .rank-table thead th {
@@ -320,7 +320,7 @@ main {
 }
 
 .rank-table tbody tr:nth-child(even) {
-  background: rgba(148, 163, 184, 0.04);
+  background: var(--table-row-alt);
 }
 
 .competition-actions {

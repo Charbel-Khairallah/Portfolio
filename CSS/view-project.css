@@ -143,8 +143,8 @@ main {
   padding: 0.3rem 0.6rem;
   border: 1px solid var(--card-border-strong);
   border-radius: 6px;
-  background: rgba(8, 35, 72, 0.72);
-  box-shadow: 0 0 16px rgba(56, 189, 248, 0.2);
+  background: var(--badge-surface-strong);
+  box-shadow: 0 0 16px var(--accent-cyan-glow);
   color: var(--text-main);
   font-size: 0.76rem;
   font-weight: 700;
