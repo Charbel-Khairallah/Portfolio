@@ -5,26 +5,33 @@ const projectDetails = {
     date: "2024",
     mainMedia: "../Resources/Images/Projects/FluencyCards.webp",
     video: ["../Resources/Videos/Projects/FluencyCards/FluencyCards-01.mp4", "../Resources/Videos/Projects/FluencyCards/FluencyCards-02.mp4"],
-    description: ["Fluency Cards is a Unity game designed to make English practice feel quick, social, and approachable.", "The Uno-style format turns vocabulary and language challenges into a playful session that can be picked up whenever there is a few minutes to spare."],
-    skills: ["Unity", "C#", "Game Design"],
+    description: [
+      `Fluency Cards is a Unity game built in collaboration with <a href=''>Gilbert Ziade</a> 
+      and <a href=''>Jason Levine</a>.<br>This game is designed to make English practice feel easy 
+      by following an Uno-Style format which turns an already fun game into one that you can learn from.`,
+      `This game improved my skills and introduced me to new concepts and helped me better understand how Unity works.
+      It took a while to finish the first version of it but it was worth it, and currently there are still plans to 
+      improve the game and add more features to it.`
+    ],
+    skills: ["Unity 2D/3D", "C# .Net", "Shaders", "Animations", "Collaboration"],
     media: [
-            {
-              src: "../Resources/Images/Projects/FluencyCards/FluencyCards-01.webp",
-              alt: "FluencyCards-01.webp"
-            },
-            { 
-              src: "../Resources/Images/Projects/FluencyCards/FluencyCards-02.webp",
-              alt: "FluencyCards-02.webp"
-            },
-            {
-              src: "../Resources/Images/Projects/FluencyCards/FluencyCards-03.webp",
-              alt: "FluencyCards-03.webp"
-            },
-            { 
-              src: "../Resources/Images/Projects/FluencyCards/FluencyCards-04.webp",
-              alt: "FluencyCards-04.webp"
-            }
-          ],
+      {
+        src: "../Resources/Images/Projects/FluencyCards/FluencyCards-01.webp",
+        alt: "FluencyCards-01.webp"
+      },
+      {
+        src: "../Resources/Images/Projects/FluencyCards/FluencyCards-02.webp",
+        alt: "FluencyCards-02.webp"
+      },
+      {
+        src: "../Resources/Images/Projects/FluencyCards/FluencyCards-03.webp",
+        alt: "FluencyCards-03.webp"
+      },
+      {
+        src: "../Resources/Images/Projects/FluencyCards/FluencyCards-04.webp",
+        alt: "FluencyCards-04.webp"
+      }
+    ],
     links: []
   },
   jeflen: {
@@ -36,28 +43,28 @@ const projectDetails = {
     description: ["Jeflen is a compact arcade game built with Unity for short, repeatable play sessions.", "Its simple rules leave room to focus on movement, timing, and the small satisfaction of improving a score run by run."],
     skills: ["Unity", "C#", "Game Development"],
     media: [
-            {
-              src: "../Resources/Images/Projects/Jeflen/Jeflen-01.png",
-              alt: "Jeflen-01"
-            },
-            { 
-              src: "../Resources/Images/Projects/Jeflen/Jeflen-02.png",
-              alt: "Jeflen-02"
-            },
-            {
-              src: "../Resources/Images/Projects/Jeflen/Jeflen-03.png",
-              alt: "Jeflen-03"
-            },
-            { 
-              src: "../Resources/Images/Projects/Jeflen/Jeflen-04.png",
-              alt: "Jeflen-04"
-            }
-            ,
-            { 
-              src: "../Resources/Images/Projects/Jeflen/Jeflen-05.png",
-              alt: "Jeflen-05"
-            }
-          ],
+      {
+        src: "../Resources/Images/Projects/Jeflen/Jeflen-01.png",
+        alt: "Jeflen-01"
+      },
+      {
+        src: "../Resources/Images/Projects/Jeflen/Jeflen-02.png",
+        alt: "Jeflen-02"
+      },
+      {
+        src: "../Resources/Images/Projects/Jeflen/Jeflen-03.png",
+        alt: "Jeflen-03"
+      },
+      {
+        src: "../Resources/Images/Projects/Jeflen/Jeflen-04.png",
+        alt: "Jeflen-04"
+      }
+      ,
+      {
+        src: "../Resources/Images/Projects/Jeflen/Jeflen-05.png",
+        alt: "Jeflen-05"
+      }
+    ],
     links: []
   },
   "magnet-chaos": {
@@ -91,11 +98,11 @@ const projectDetails = {
     description: ["Water Level Tracker is an Arduino project for monitoring the amount of water in a tank.", "It is built around a simple measurement workflow that keeps the reading useful even when the tank dimensions change."],
     skills: ["Arduino", "C++", "Embedded Systems"],
     media: [
-            {
-              src: "../Resources/Images/Projects/WaterLevelTracker/CircuitDiagram.webp",
-              alt: "CircuitDiagram.webp"
-            }
-          ],
+      {
+        src: "../Resources/Images/Projects/WaterLevelTracker/CircuitDiagram.webp",
+        alt: "CircuitDiagram.webp"
+      }
+    ],
     links: []
   },
   "blood-seeker": {
@@ -107,19 +114,19 @@ const projectDetails = {
     description: ["Blood Seeker is a group project focused on making blood donations and urgent requests easier to discover.", "My contribution centered on the backend, where the application rules and data flow connect donors with people who need help."],
     skills: ["Backend Development", "APIs", "Database Design"],
     media: [
-            {
-              src: "../Resources/Images/Projects/BloodSeeker/BloodSeeker-01.PNG",
-              alt: "BloodSeeker-01.PNG"
-            },
-            {
-              src: "../Resources/Images/Projects/BloodSeeker/BloodSeeker-02.PNG",
-              alt: "BloodSeeker-02.PNG"
-            },
-            {
-              src: "../Resources/Images/Projects/BloodSeeker/BloodSeeker-03.PNG",
-              alt: "BloodSeeker-03.PNG"
-            }
-          ],
+      {
+        src: "../Resources/Images/Projects/BloodSeeker/BloodSeeker-01.PNG",
+        alt: "BloodSeeker-01.PNG"
+      },
+      {
+        src: "../Resources/Images/Projects/BloodSeeker/BloodSeeker-02.PNG",
+        alt: "BloodSeeker-02.PNG"
+      },
+      {
+        src: "../Resources/Images/Projects/BloodSeeker/BloodSeeker-03.PNG",
+        alt: "BloodSeeker-03.PNG"
+      }
+    ],
     links: []
   },
   "fluency-test-prep": {
