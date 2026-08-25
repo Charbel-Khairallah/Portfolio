@@ -6,6 +6,7 @@ const closeBtn = document.querySelector('.viewer-close');
 
 let viewerImages = [];
 let viewerIndex = 0;
+const slideDuration = 380;
 
 function triggerImageTransition(direction) {
   const currentClasses = ['slide-left-out', 'slide-right-out', 'slide-left-in', 'slide-right-in'];
@@ -23,7 +24,7 @@ function triggerImageTransition(direction) {
       void viewerImage.offsetWidth;
       viewerImage.classList.add('slide-left-in');
 
-    }, 180);
+    }, slideDuration);
     return;
   }
 
@@ -36,7 +37,7 @@ function triggerImageTransition(direction) {
     viewerImage.classList.remove('slide-left-out');
     void viewerImage.offsetWidth;
     viewerImage.classList.add('slide-right-in');
-  }, 180);
+  }, slideDuration);
 }
 
 function updateViewer(direction = 'next') {
