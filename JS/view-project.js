@@ -200,15 +200,16 @@ function renderProject(project) {
       </div>
     </header>
     <section class="info-section project-description">
-      ${projectMediaMarkup(project)}
       <h2>About the project</h2>
       ${project.description.map((paragraph) => `<p>${paragraph}</p>`).join("")}
+      <div class="skills-section"><ul class="skills-list">${project.skills.map((skill) => `<li class="skill">${skill}</li>`).join("")}</ul></div>
+      ${projectMediaMarkup(project)}
       ${projectVideoMarkup(project)}
     </section>
     <div class="project-info">
       <section id="links-section" class="info-section"><h2>Project links</h2><div class="project-links">${project.links.map((link) => `<a class="project-link" href="${link.url}" target="_blank" rel="noreferrer">${link.label} &#8599;</a>`).join("")}</div></section>
     </div>
-    <section class="info-section skills-section"><h2>Skills</h2><ul class="skills-list">${project.skills.map((skill) => `<li class="skill">${skill}</li>`).join("")}</ul></section>`;
+    `;
 
   const linksSection = document.getElementById("links-section");
   if (!project.links.length) linksSection.hidden = true;

@@ -189,11 +189,11 @@ main {
 .project-media-stage::after {
   content: "";
   position: absolute;
-  left: 7.5%;
-  right: 7.5%;
+  left: 1%;
+  right: 1%;
   z-index: 1;
   height: 1px;
-  background: rgba(248, 250, 252, 0.28);
+  background: color-mix(var(--text-muted) 40%, transparent);
   pointer-events: none;
 }
 
@@ -323,6 +323,7 @@ main {
   font-size: 1rem;
 }
 
+
 .project-description p {
   margin-top: 0.85rem;
   color: var(--text-muted);
@@ -338,24 +339,6 @@ main {
   position: relative;
   margin: 2rem 0;
   padding: 1.25rem 7.5%;
-}
-
-.project-video-section::before,
-.project-video-section::after {
-  content: "";
-  position: absolute;
-  left: 7.5%;
-  right: 7.5%;
-  height: 1px;
-  background: rgba(248, 250, 252, 0.28);
-}
-
-.project-video-section::before {
-  top: 0;
-}
-
-.project-video-section::after {
-  bottom: 0;
 }
 
 .project-video-frame {
@@ -456,6 +439,7 @@ main {
 }
 
 .skills-section {
+  width: 80%;
   margin-top: 2rem;
 }
 
@@ -680,6 +664,12 @@ main {
   }
 }
 
+@media (min-width: 761px) {
+  .project-description {
+    padding: 20px 5%;
+  }
+}
+
 @media (max-width: 760px) {
   main {
     width: 100%;
@@ -741,6 +731,7 @@ main {
   }
 
   .skills-section {
+    width: 100%;
     margin-top: 1.25rem;
   }
 
