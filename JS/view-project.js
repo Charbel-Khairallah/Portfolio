@@ -12,11 +12,12 @@ const projectDetails = {
       `Fluency Cards is a Unity game built in collaboration with ` + GILBERT + ` 
       and ` + JASON + `.<br>This game is designed to make English practice feel easy 
       by following an Uno-Style format which turns an already fun game into one that you can learn from.`,
-      `This game improved my skills and introduced me to new concepts and helped me better understand how Unity works.
+      `This game improved my skills and introduced me to new concepts and helped me better understand how Unity works. I aslo
+      worked on the responsive design of the game.<br>
       It took a while to finish the first version of it but it was worth it, and currently there are still plans to 
       improve the game and add more features to it.`
     ],
-    skills: ["Unity 2D/3D", "C# .Net", "Shaders", "Animations", "Collaboration"],
+    skills: ["Unity 2D/3D", "C# .Net", "Shaders", "UI/UX", "Animations", "Collaboration"],
     media: [
       {
         src: "../Resources/Images/Projects/FluencyCards/FluencyCards-01.webp",
@@ -84,10 +85,18 @@ const projectDetails = {
     date: "2023",
     mainMedia: "../Resources/Images/Projects/MagnetChaos.webp",
     video: ["../Resources/Videos/Projects/MagnetChaos/MagnetChaos-01.mp4"],
-    description: ["Magnet Chaos is an original desktop game made with C++ and SFML without relying on a game engine.", "The player controls a magnet through a hostile arena, making careful positioning and quick decisions to destroy as many robots as possible before being overwhelmed."],
-    skills: ["C++", "SFML", "Game Programming"],
+    description: [
+      `Magnet Chaos is an original desktop game where the player controls a magnet to either attract or repel iron blocks 
+      with other game mechanics that allow mergin blocks to form copper blocks with different properties. The player has to kill
+      bots with those blocks to survive and some upgrades can be done to the magnet when getting higher scores to keep the game going.`,
+      `I learned a lot through this game, it allowed me to master many advanced C++ topics and introduced me to some other usefull ones.`
+    ],
+    skills: ["C++", "SFML", "OOP", "Memory Management", "Optimizations", "Multithreading", "Animations"],
     media: [],
-    links: []
+    links: [
+      "https://github.com/Charbel-Khairallah/MagnetChaosV3",
+      "https://1drv.ms/f/c/2886283a5a6b80ea/IgDqgGtaOiiGIIAoaRkAAAAAAd2Z-5oC6_cGgQn8flSjBRE?e=KPsVsD"
+    ]
   },
   asteroids: {
     category: "Game Development",
@@ -95,10 +104,15 @@ const projectDetails = {
     date: "2022",
     mainMedia: "../Resources/Images/Projects/Asteroids.webp",
     video: ["../Resources/Videos/Projects/Asteroids/Asteroids-01.mp4", "../Resources/Videos/Projects/Asteroids/Asteroids-02.mp4"],
-    description: ["Asteroids is a desktop take on the classic arcade formula, built from the ground up with C++ and SFML.", "The goal is straightforward: pilot the spaceship, clear incoming asteroids, and keep the run alive for as long as possible."],
-    skills: ["C++", "SFML", "Object-Oriented Programming"],
+    description: [
+      `Asteroids is a classic game built around a spaceship shooting asteroids in space. This game also includes a bot playing it, 
+      relying on pure algorithms (no AI here), you can see it in the second video down below.`,
+      `This is my first personal project that I made, it helped me expand my knowledge and apply what I learned throught
+      the years on a real project. Most improtantly, it helped me build a solid foundation in C++.`
+    ],
+    skills: ["C++", "SFML", "OOP"],
     media: [],
-    links: []
+    links: ["https://1drv.ms/f/c/2886283a5a6b80ea/IgDqgGtaOiiGIIAovBAAAAAAAWRPTErgvNqIw-7txB3IlZ0?e=ztoEVa"]
   },
   "water-level-tracker": {
     category: "Embedded Systems",
@@ -106,7 +120,13 @@ const projectDetails = {
     date: "2026",
     mainMedia: "../Resources/Images/Projects/WaterLevelTracker.webp",
     video: ["../Resources/Videos/Projects/WaterLevelTracker/WaterLevelTracker-01.mp4"],
-    description: ["Water Level Tracker is an Arduino project for monitoring the amount of water in a tank.", "It is built around a simple measurement workflow that keeps the reading useful even when the tank dimensions change."],
+    description: [
+      `This is an Arduino project for monitoring the level of water in a tank, no matter what it's height is.<br> I start by 
+      rotating the motor up and down with a joystick manually to record the minimum and maximum rotation allowed, and then it will 
+      automatically rotate to keep the water sensor touching the water and it will track the water level depending on the total rotation.`,
+      `This project helped me understand how embedded systems work and let me apply my programming knowledge to a physical project. It also
+      helped me understand how electronic components work and how I can read data from them and control what a component does.`
+    ],
     skills: ["Arduino", "C++", "Embedded Systems"],
     media: [
       {
@@ -114,7 +134,9 @@ const projectDetails = {
         alt: "CircuitDiagram.webp"
       }
     ],
-    links: []
+    links: [
+      "https://github.com/Charbel-Khairallah/WaterLevelMeasure"
+    ]
   },
   "blood-seeker": {
     category: "Web Development",
@@ -122,8 +144,13 @@ const projectDetails = {
     date: "2026",
     mainMedia: "../Resources/Images/Projects/BloodSeeker.webp",
     video: [],
-    description: ["Blood Seeker is a group project focused on making blood donations and urgent requests easier to discover.", "My contribution centered on the backend, where the application rules and data flow connect donors with people who need help."],
-    skills: ["Backend Development", "APIs", "Database Design"],
+    description: [
+      `Blood Seeker is a group project focused on making blood donations and urgent requests easier to discover. It was made in 
+      collaboration with ` + GILBERT + ` and other developers.`,
+      `In this project I worked on the backend part, where I learned how to build a backend with asp.Net following industry standards
+      apply security measures where needed and creating unit tests for the code.` 
+    ],
+    skills: ["Backend Development", "C# Asp.Net", "Database", "API", "MySql"],
     media: [
       {
         src: "../Resources/Images/Projects/BloodSeeker/BloodSeeker-01.PNG",
@@ -146,8 +173,12 @@ const projectDetails = {
     date: "2026",
     mainMedia: "../Resources/Images/Projects/FluencyTestPrep.webp",
     video: ["../Resources/Videos/Projects/FluencyTestPrep/FluencyTestPrep-01.mp4"],
-    description: ["Fluency Test Prep is a learning website for students preparing for English tests and teachers following their progress.", "I worked on the frontend experience, turning the study and tracking workflows into clear, responsive interfaces for both audiences."],
-    skills: ["Frontend Development", "JavaScript", "Responsive Design"],
+    description: [
+      `Fluency Test Prep is a learning website for students preparing for English tests and teachers following their progress. 
+      It was built in collaboration with ` + GILBERT + ` and ` + JASON + `.`,
+      `I worked on the frontend part where I learned how to work with angular to build a responsive website.`
+    ],
+    skills: ["HTML", "CSS", "TS", "Frontend Development", "UI/UX", "Responsive Design"],
     media: [],
     links: []
   }
