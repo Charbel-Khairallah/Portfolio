@@ -37,20 +37,25 @@ const projectDetails = {
     skills: ["Unity", "C#", "Game Development"],
     media: [
             {
-              src: "../Resources/Images/Projects/Jeflen/Jeflen-01.webp",
-              alt: "Jeflen-01.webp"
+              src: "../Resources/Images/Projects/Jeflen/Jeflen-01.png",
+              alt: "Jeflen-01"
             },
             { 
-              src: "../Resources/Images/Projects/Jeflen/Jeflen-02.webp",
-              alt: "Jeflen-02.webp"
+              src: "../Resources/Images/Projects/Jeflen/Jeflen-02.png",
+              alt: "Jeflen-02"
             },
             {
-              src: "../Resources/Images/Projects/Jeflen/Jeflen-03.webp",
-              alt: "Jeflen-03.webp"
+              src: "../Resources/Images/Projects/Jeflen/Jeflen-03.png",
+              alt: "Jeflen-03"
             },
             { 
-              src: "../Resources/Images/Projects/Jeflen/Jeflen-04.webp",
-              alt: "Jeflen-04.webp"
+              src: "../Resources/Images/Projects/Jeflen/Jeflen-04.png",
+              alt: "Jeflen-04"
+            }
+            ,
+            { 
+              src: "../Resources/Images/Projects/Jeflen/Jeflen-05.png",
+              alt: "Jeflen-05"
             }
           ],
     links: []
