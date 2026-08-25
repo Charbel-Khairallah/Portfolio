@@ -1,6 +1,9 @@
 const GILBERT = "<a class='link' href='https://gilbert-ziade.studio.site/' target='_blank'>Gilbert Ziade</a>";
 const JASON = "<a class='link' href='https://fluencymc.com/' target='_blank'>Jason Levine</a>";
 
+const GAME = "game";
+const GITHUB = "github"
+
 const projectDetails = {
   "fluency-cards": {
     category: "Game Development",
@@ -37,8 +40,8 @@ const projectDetails = {
       }
     ],
     links: [
-      { url: "https://crossedgamez.itch.io/fluency-cards", type: "game", label: "Play on itch.io" },
-      { url: "https://play.google.com/store/apps/details?id=com.CrossedGameZ.FluencyCards&hl=en", type: "game", label: "Android Download Link" }
+      { url: "https://crossedgamez.itch.io/fluency-cards", type: GAME, label: "Play on itch.io" },
+      { url: "https://play.google.com/store/apps/details?id=com.CrossedGameZ.FluencyCards&hl=en", type: GAME, label: "Android Download Link" }
     ]
   },
   jeflen: {
@@ -76,7 +79,7 @@ const projectDetails = {
       }
     ],
     links: [
-      { url: "https://play.google.com/store/apps/details?id=com.CrossedGameZ.Jeflen&hl=en", type: "game", label: "Android Download Link" }
+      { url: "https://play.google.com/store/apps/details?id=com.CrossedGameZ.Jeflen&hl=en", type: GAME, label: "Android Download Link" }
     ]
   },
   "magnet-chaos": {
@@ -94,8 +97,8 @@ const projectDetails = {
     skills: ["C++", "SFML", "OOP", "Memory Management", "Optimizations", "Multithreading", "Animations"],
     media: [],
     links: [
-      { url: "https://github.com/Charbel-Khairallah/MagnetChaosV3", type: "github", label: "View On GitHub" },
-      { url: "https://1drv.ms/f/c/2886283a5a6b80ea/IgDqgGtaOiiGIIAoaRkAAAAAAd2Z-5oC6_cGgQn8flSjBRE?e=KPsVsD", type: "game", label: "Download The Game Installer For Windows" }
+      { url: "https://github.com/Charbel-Khairallah/MagnetChaosV3", type: GITHUB, label: "View On GitHub" },
+      { url: "https://1drv.ms/f/c/2886283a5a6b80ea/IgDqgGtaOiiGIIAoaRkAAAAAAd2Z-5oC6_cGgQn8flSjBRE?e=KPsVsD", type: GAME, label: "Download The Game Installer For Windows" }
     ]
   },
   asteroids: {
@@ -113,7 +116,7 @@ const projectDetails = {
     skills: ["C++", "SFML", "OOP"],
     media: [],
     links: [
-      { url: "https://1drv.ms/f/c/2886283a5a6b80ea/IgDqgGtaOiiGIIAovBAAAAAAAWRPTErgvNqIw-7txB3IlZ0?e=ztoEVa", type: "game", label: "Download The Game Installer For Windows" }
+      { url: "https://1drv.ms/f/c/2886283a5a6b80ea/IgDqgGtaOiiGIIAovBAAAAAAAWRPTErgvNqIw-7txB3IlZ0?e=ztoEVa", type: GAME, label: "Download The Game Installer For Windows" }
     ]
   },
   "water-level-tracker": {
@@ -137,7 +140,7 @@ const projectDetails = {
       }
     ],
     links: [
-      { url: "https://github.com/Charbel-Khairallah/WaterLevelMeasure", type: "github", label: "View On GitHub" }
+      { url: "https://github.com/Charbel-Khairallah/WaterLevelMeasure", type: GITHUB, label: "View On GitHub" }
     ]
   },
   "blood-seeker": {
@@ -232,7 +235,7 @@ function projectMediaMarkup(project) {
 }
 
 function projectLinkMarkup(link) {
-  const isGithubLink = link.type === "github";
+  const isGithubLink = link.type === GITHUB;
   const iconTitle = isGithubLink ? "GitHub" : "Game link";
   const iconMarkup = isGithubLink
      ? `<svg class="project-link-icon" viewBox="0 0 24 24" role="img" aria-label="GitHub"><title>${iconTitle}</title><path fill="currentColor" d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.74.08-.74 1.2.08 1.84 1.23 1.84 1.23 1.07 1.83 2.8 1.3 3.48.99.11-.77.42-1.3.76-1.6-2.67-.3-5.47-1.34-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.4 11.4 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.65.24 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.6-2.8 5.62-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.83.57A12 12 0 0 0 12 .5Z"/></svg>`
