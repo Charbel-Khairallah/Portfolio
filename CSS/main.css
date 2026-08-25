@@ -247,6 +247,21 @@ main {
   z-index: 10;
 }
 
+
+.link {
+  color: var(--text-main);
+  text-decoration: none;
+  border-bottom: 2px solid var(--card-border-strong);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.link:hover,
+.link:focus-visible {
+  color: var(--accent-cyan);
+  border-bottom-color: var(--accent-cyan);
+  outline: none;
+}
+
 .nav-card,
 .contact-card,
 .back-link,

@@ -172,19 +172,6 @@ main {
   font-size: 1.1rem;
 }
 
-.company-link {
-  color: var(--text-main);
-  text-decoration: none;
-  border-bottom: 1px solid var(--card-border-strong);
-  transition: color 0.2s ease, border-color 0.2s ease;
-}
-
-.company-link:hover,
-.company-link:focus-visible {
-  color: var(--accent-cyan);
-  border-bottom-color: var(--accent-cyan);
-  outline: none;
-}
 
 .experience-year {
   flex-shrink: 0;

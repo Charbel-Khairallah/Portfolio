@@ -1,3 +1,6 @@
+const GILBERT = "<a class='link' href='https://gilbert-ziade.studio.site/' target='_blank'>Gilbert Ziade</a>";
+const JASON = "<a class='link' href='https://fluencymc.com/' target='_blank'>Jason Levine</a>";
+
 const projectDetails = {
   "fluency-cards": {
     category: "Game Development",
@@ -6,8 +9,8 @@ const projectDetails = {
     mainMedia: "../Resources/Images/Projects/FluencyCards.webp",
     video: ["../Resources/Videos/Projects/FluencyCards/FluencyCards-01.mp4", "../Resources/Videos/Projects/FluencyCards/FluencyCards-02.mp4"],
     description: [
-      `Fluency Cards is a Unity game built in collaboration with <a href=''>Gilbert Ziade</a> 
-      and <a href=''>Jason Levine</a>.<br>This game is designed to make English practice feel easy 
+      `Fluency Cards is a Unity game built in collaboration with ` + GILBERT + ` 
+      and ` + JASON + `.<br>This game is designed to make English practice feel easy 
       by following an Uno-Style format which turns an already fun game into one that you can learn from.`,
       `This game improved my skills and introduced me to new concepts and helped me better understand how Unity works.
       It took a while to finish the first version of it but it was worth it, and currently there are still plans to 
@@ -32,7 +35,10 @@ const projectDetails = {
         alt: "FluencyCards-04.webp"
       }
     ],
-    links: []
+    links: [
+      "https://crossedgamez.itch.io/fluency-cards",
+      "https://play.google.com/store/apps/details?id=com.CrossedGameZ.FluencyCards&hl=en"
+    ]
   },
   jeflen: {
     category: "Game Development",
@@ -40,8 +46,11 @@ const projectDetails = {
     date: "2024",
     mainMedia: "../Resources/Images/Projects/Jeflen.webp",
     video: [],
-    description: ["Jeflen is a compact arcade game built with Unity for short, repeatable play sessions.", "Its simple rules leave room to focus on movement, timing, and the small satisfaction of improving a score run by run."],
-    skills: ["Unity", "C#", "Game Development"],
+    description: [
+      `Jeflen is a simple casual game you can play in your free time and have fun. It was made in collaboration with ` + GILBERT + `.`,
+      `While this game is very simple, it helped me to get started with Unity and build my foundation in game development with an engine.`
+    ],
+    skills: ["Unity 2D", "C# .Net", "Game Development", "Collaboeration"],
     media: [
       {
         src: "../Resources/Images/Projects/Jeflen/Jeflen-01.png",
@@ -65,7 +74,9 @@ const projectDetails = {
         alt: "Jeflen-05"
       }
     ],
-    links: []
+    links: [
+      "https://play.google.com/store/apps/details?id=com.CrossedGameZ.Jeflen&hl=en"
+    ]
   },
   "magnet-chaos": {
     category: "Game Development",
