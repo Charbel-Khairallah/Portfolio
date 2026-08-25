@@ -7,11 +7,13 @@ const closeBtn = document.querySelector('.viewer-close');
 let viewerImages = [];
 let viewerIndex = 0;
 let transitionInProgress = false;
+let transitionId = 0;
 
 function triggerImageTransition(direction) {
   if (transitionInProgress) return;
 
   transitionInProgress = true;
+  const activeTransitionId = ++transitionId;
   const currentClasses = ['slide-left-out', 'slide-right-out', 'slide-left-in', 'slide-right-in'];
   viewerImage.classList.remove(...currentClasses);
   void viewerImage.offsetWidth;
@@ -35,6 +37,11 @@ function triggerImageTransition(direction) {
 
     const preloadedImage = new Image();
     const revealNextImage = () => {
+      if (activeTransitionId !== transitionId || viewer.classList.contains('hidden')) {
+        transitionInProgress = false;
+        return;
+      }
+
       viewerImage.src = currentImage;
       viewerImage.alt = 'Achievement certificate';
       viewerImage.classList.add(entryClass, 'transition-paused');
@@ -74,6 +81,7 @@ function updateViewer(direction = 'next') {
 function openViewer(images, title) {
   viewerImages = Array.isArray(images) ? images : [images];
   viewerIndex = 0;
+  transitionId += 1;
   viewer.classList.remove('hidden');
   viewer.setAttribute('aria-hidden', 'false');
   viewerImage.classList.remove('slide-left-out', 'slide-right-out', 'slide-left-in', 'slide-right-in');
@@ -86,8 +94,13 @@ function openViewer(images, title) {
 }
 
 function closeViewer() {
+  transitionId += 1;
+  transitionInProgress = false;
   viewer.classList.add('hidden');
   viewer.setAttribute('aria-hidden', 'true');
+  viewerImage.classList.remove('slide-left-out', 'slide-right-out', 'slide-left-in', 'slide-right-in', 'transition-hidden', 'transition-paused');
+  viewerImage.removeAttribute('src');
+  viewerImage.removeAttribute('alt');
 }
 
 document.querySelectorAll('.certificate-trigger, .view-certificates').forEach((button) => {

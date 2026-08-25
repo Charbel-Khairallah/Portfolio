@@ -430,7 +430,7 @@ viewer.addEventListener("click", (event) => {
 });
 
 if (selectedProject) {
-  document.title = `${selectedProject.title} — Charbel Khairallah`;
+  document.title = `${selectedProject.title} - Charbel Khairallah`;
   renderProject(selectedProject);
 } else {
   detail.innerHTML = '<h1><span class="gradient-text">Project not found</span></h1><p class="empty-state">Choose a project from the projects page to view its details.</p>';
