@@ -20,7 +20,7 @@ const projectDetails = {
       It took a while to finish the first version of it but it was worth it, and currently there are still plans to 
       improve the game and add more features to it.`
     ],
-    skills: ["Unity 2D/3D", "C# .Net", "Shaders", "UI/UX", "Animations", "Collaboration"],
+    skills: ["Unity 2D/3D", "C# .Net", "OOP", "Shaders", "UI/UX", "Animations", "Collaboration"],
     media: [
       {
         src: "../Resources/Images/Projects/FluencyCards/FluencyCards-01.webp",
@@ -54,7 +54,7 @@ const projectDetails = {
       `Jeflen is a simple casual game you can play in your free time and have fun. It was made in collaboration with ` + GILBERT + `.`,
       `While this game is very simple, it helped me to get started with Unity and build my foundation in game development with an engine.`
     ],
-    skills: ["Unity 2D", "C# .Net", "Game Development", "Collaboeration"],
+    skills: ["Unity 2D", "C# .Net", "Game Development", "Collaboration"],
     media: [
       {
         src: "../Resources/Images/Projects/Jeflen/Jeflen-01.png",
@@ -90,11 +90,11 @@ const projectDetails = {
     video: ["../Resources/Videos/Projects/MagnetChaos/MagnetChaos-01.mp4"],
     description: [
       `Magnet Chaos is an original desktop game where the player controls a magnet to either attract or repel iron blocks 
-      with other game mechanics that allow mergin blocks to form copper blocks with different properties. The player has to kill
-      bots with those blocks to survive and some upgrades can be done to the magnet when getting higher scores to keep the game going.`,
+      with other game mechanics that allow merging blocks to form a copper block with different properties. The player has to kill
+      bots with those blocks to survive and some upgrades can be made to the magnet when getting higher scores to keep the game going.`,
       `I learned a lot through this game, it allowed me to master many advanced C++ topics and introduced me to some other usefull ones.`
     ],
-    skills: ["C++", "SFML", "OOP", "Memory Management", "Optimizations", "Multithreading", "Animations"],
+    skills: ["C++", "SFML", "OOP", "Memory Management", "Optimizations", "Multithreading", "Animations", "Problem Solving"],
     media: [],
     links: [
       { url: "https://github.com/Charbel-Khairallah/MagnetChaosV3", type: GITHUB, label: "View On GitHub" },
@@ -113,7 +113,7 @@ const projectDetails = {
       `This is my first personal project that I made, it helped me expand my knowledge and apply what I learned throught
       the years on a real project. Most improtantly, it helped me build a solid foundation in C++.`
     ],
-    skills: ["C++", "SFML", "OOP"],
+    skills: ["C++", "SFML", "OOP", "Problem Solving"],
     media: [],
     links: [
       { url: "https://1drv.ms/f/c/2886283a5a6b80ea/IgDqgGtaOiiGIIAovBAAAAAAAWRPTErgvNqIw-7txB3IlZ0?e=ztoEVa", type: GAME, label: "Download The Game Installer For Windows" }
@@ -152,8 +152,8 @@ const projectDetails = {
     description: [
       `Blood Seeker is a group project focused on making blood donations and urgent requests easier to discover. It was made in 
       collaboration with ` + GILBERT + ` and other developers.`,
-      `In this project I worked on the backend part, where I learned how to build a backend with asp.Net following industry standards
-      apply security measures where needed and creating unit tests for the code.` 
+      `In this project I worked on the backend part, where I learned how to build a backend with asp.Net following industry standards,
+      applying security measures where needed, and creating unit tests for the code.` 
     ],
     skills: ["Backend Development", "C# Asp.Net", "Database", "API", "MySql"],
     media: [
@@ -183,7 +183,7 @@ const projectDetails = {
       It was built in collaboration with ` + GILBERT + ` and ` + JASON + `.`,
       `I worked on the frontend part where I learned how to work with angular to build a responsive website.`
     ],
-    skills: ["HTML", "CSS", "TS", "Frontend Development", "UI/UX", "Responsive Design"],
+    skills: ["Angular", "HTML", "CSS", "TS", "Frontend Development", "UI/UX", "Responsive Design"],
     media: [],
     links: []
   }

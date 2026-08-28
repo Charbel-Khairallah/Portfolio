@@ -18,7 +18,7 @@ const projects = {
         title: "Jeflen",
         date: "2024",
         collaborative: true,
-        description: "A simple arcade game built with Unity that you can play in your free time and have fun.",
+        description: "A simple game built with Unity that you can play in your free time and have fun.",
         image: "../Resources/Images/Projects/Jeflen.webp",
         skills: ["Unity", "C#", "Game Development"],
         media: [{ type: "image", src: "../Resources/Images/Projects/Jeflen.webp", alt: "Jeflen gameplay" }],
