@@ -15,10 +15,9 @@ const projectDetails = {
       `Fluency Cards is a Unity game built in collaboration with ` + GILBERT + ` 
       and ` + JASON + `.<br>This game is designed to make English practice feel easy 
       by following an Uno-Style format which turns an already fun game into one that you can learn from.`,
-      `This game improved my skills and introduced me to new concepts and helped me better understand how Unity works. I aslo
+      `This game improved my skills and introduced me to new concepts, and it helped me better understand how Unity works. I also
       worked on the responsive design of the game.<br>
-      It took a while to finish the first version of it but it was worth it, and currently there are still plans to 
-      improve the game and add more features to it.`
+      It took a while to finish the first version, but it was worth it, and there are still plans to improve the game and add more features.`
     ],
     skills: ["Unity 2D/3D", "C# .Net", "OOP", "Shaders", "UI/UX", "Animations", "Collaboration"],
     media: [
@@ -92,7 +91,7 @@ const projectDetails = {
       `Magnet Chaos is an original desktop game where the player controls a magnet to either attract or repel iron blocks 
       with other game mechanics that allow merging blocks to form a copper block with different properties. The player has to kill
       bots with those blocks to survive and some upgrades can be made to the magnet when getting higher scores to keep the game going.`,
-      `I learned a lot through this game, it allowed me to master many advanced C++ topics and introduced me to some other usefull ones.`
+      `I learned a lot through this game. It allowed me to master many advanced C++ topics and introduced me to several other useful ones.`
     ],
     skills: ["C++", "SFML", "OOP", "Memory Management", "Optimizations", "Multithreading", "Animations", "Problem Solving"],
     media: [],
@@ -110,8 +109,7 @@ const projectDetails = {
     description: [
       `Asteroids is a classic game built around a spaceship shooting asteroids in space. This game also includes a bot playing it, 
       relying on pure algorithms (no AI here), you can see it in the second video down below.`,
-      `This is my first personal project that I made, it helped me expand my knowledge and apply what I learned throught
-      the years on a real project. Most improtantly, it helped me build a solid foundation in C++.`
+      `This is my first personal project. It helped me expand my knowledge and apply what I learned throughout the years to a real project. Most importantly, it helped me build a solid foundation in C++.`
     ],
     skills: ["C++", "SFML", "OOP", "Problem Solving"],
     media: [],
@@ -126,9 +124,9 @@ const projectDetails = {
     mainMedia: "../Resources/Images/Projects/WaterLevelTracker.webp",
     video: ["../Resources/Videos/Projects/WaterLevelTracker/WaterLevelTracker-01.mp4"],
     description: [
-      `This is an Arduino project for monitoring the level of water in a tank, no matter what it's height is.<br> I start by 
-      rotating the motor up and down with a joystick manually to record the minimum and maximum rotation allowed, and then it will 
-      automatically rotate to keep the water sensor touching the water and it will track the water level depending on the total rotation.`,
+      `This is an Arduino project for monitoring the water level in a tank, regardless of its height.<br> I start by
+      rotating the motor up and down with a joystick manually to record the minimum and maximum rotation allowed, and then it will
+      automatically rotate to keep the water sensor touching the water while tracking the water level based on the total rotation.`,
       `This project helped me understand how embedded systems work and let me apply my programming knowledge to a physical project. It also
       helped me understand how electronic components work and how I can read data from them and control what a component does.`
     ],
@@ -150,10 +148,10 @@ const projectDetails = {
     mainMedia: "../Resources/Images/Projects/BloodSeeker.webp",
     video: [],
     description: [
-      `Blood Seeker is a group project focused on making blood donations and urgent requests easier to discover. It was made in 
+      `Blood Seeker is a group project focused on making blood donations and urgent requests easier to discover. It was made in
       collaboration with ` + GILBERT + ` and other developers.`,
-      `In this project I worked on the backend part, where I learned how to build a backend with asp.Net following industry standards,
-      applying security measures where needed, and creating unit tests for the code.` 
+      `In this project, I worked on the backend, where I learned how to build a backend with ASP.NET following industry standards,
+      applying security measures where needed and creating unit tests for the code.`
     ],
     skills: ["Backend Development", "C# Asp.Net", "Database", "API", "MySql"],
     media: [
@@ -179,9 +177,9 @@ const projectDetails = {
     mainMedia: "../Resources/Images/Projects/FluencyTestPrep.webp",
     video: ["../Resources/Videos/Projects/FluencyTestPrep/FluencyTestPrep-01.mp4"],
     description: [
-      `Fluency Test Prep is a learning website for students preparing for English tests and teachers following their progress. 
+      `Fluency Test Prep is a learning website for students preparing for English tests and teachers tracking their progress.
       It was built in collaboration with ` + GILBERT + ` and ` + JASON + `.`,
-      `I worked on the frontend part where I learned how to work with angular to build a responsive website.`
+      `I worked on the frontend, where I learned how to work with Angular to build a responsive website.`
     ],
     skills: ["Angular", "HTML", "CSS", "TS", "Frontend Development", "UI/UX", "Responsive Design"],
     media: [],
